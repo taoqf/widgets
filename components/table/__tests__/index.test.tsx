@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Table, Code } from 'components';
-import { cellActions } from 'components/table/table-cell';
+import { TableCellActions as cellActions } from 'components/table/table-cell';
 import { nativeEvent, updateWrapper } from 'tests/utils';
 import { act } from 'react-dom/test-utils';
 
@@ -174,7 +174,7 @@ describe('Table', () => {
 	});
 
 	it('should wraning when prop missing', () => {
-		const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+		const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
 		mount(
 			<Table data={data}>
 				<Table.Column prop="" label="property" />

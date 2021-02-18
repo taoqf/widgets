@@ -3,7 +3,7 @@ import useTheme from '../use-theme';
 import withDefaults from '../utils/with-defaults';
 import { NormalSizes, ButtonTypes } from '../utils/prop-types';
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context';
-import { GeistUIThemesPalette } from 'components/themes/presets';
+import { UIThemesPalette } from 'components/themes/presets';
 
 interface Props {
 	disabled?: boolean;
@@ -27,7 +27,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 export type ButtonGroupProps = Props & typeof defaultProps & NativeAttrs;
 
 const getGroupBorderColors = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	props: ButtonGroupProps,
 ): string => {
 	const { ghost, type } = props;

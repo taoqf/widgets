@@ -181,16 +181,16 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 						cursor: ${cursor};
 						pointer-events: ${events};
 						box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
-						--geist-ui-button-padding: ${padding};
-						--geist-ui-button-height: ${height};
-						--geist-ui-button-color: ${color};
-						--geist-ui-button-bg: ${bg};
+						--mm-button-padding: ${padding};
+						--mm-button-height: ${height};
+						--mm-button-color: ${color};
+						--mm-button-bg: ${bg};
 					}
 
 					.btn:hover,
 					.btn:focus {
 						color: ${hover.color};
-						--geist-ui-button-color: ${hover.color};
+						--mm-button-color: ${hover.color};
 						background-color: ${hover.bg};
 						border-color: ${hover.border};
 						cursor: ${cursor};

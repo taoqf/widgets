@@ -24,34 +24,33 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
 }) => {
 	return (
 		<span
-			className={`icon ${isRight ? 'right' : ''} ${
-				isSingle ? 'single' : ''
-			} ${className}`}
+			className={`icon ${isRight ? 'right' : ''} ${isSingle ? 'single' : ''
+				} ${className}`}
 			{...props}>
 			{children}
 			<style jsx>{`
 				.icon {
 					position: absolute;
-					left: var(--geist-ui-button-padding);
+					left: var(--mm-button-padding);
 					right: auto;
 					top: 50%;
 					transform: translateY(-50%);
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					color: var(--geist-ui-button-color);
+					color: var(--mm-button-color);
 					z-index: 1;
 				}
 
 				.right {
-					right: var(--geist-ui-button-padding);
+					right: var(--mm-button-padding);
 					left: auto;
 				}
 
 				.icon :global(svg) {
 					background: transparent;
-					height: calc(var(--geist-ui-button-height) / 2.35);
-					width: calc(var(--geist-ui-button-height) / 2.35);
+					height: calc(var(--mm-button-height) / 2.35);
+					width: calc(var(--mm-button-height) / 2.35);
 				}
 
 				.single {

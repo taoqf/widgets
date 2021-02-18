@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Text, Button } from '@geist-ui/react';
+import { Page, Text, Button } from '@mmstudio/widgets';
 
 const Home = () => (
 	<Page>

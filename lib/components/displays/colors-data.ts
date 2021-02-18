@@ -1,7 +1,7 @@
-import { GeistUIThemesPalette } from 'components/themes/presets';
+import { UIThemesPalette } from 'components/themes/presets';
 
 export type ColorEnum = {
-	[key in keyof GeistUIThemesPalette]?: string;
+	[key in keyof UIThemesPalette]?: string;
 };
 
 const normal: ColorEnum = {
@@ -74,7 +74,7 @@ export const getColorData = (type: string): ColorEnum => {
 };
 
 export const getCurrentColor = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	type: string,
 	index: number,
 ): string => {

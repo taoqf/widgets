@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { GeistProvider, CssBaseline } from '@geist-ui/react';
+import { MMProvider, CssBaseline } from '@mmstudio/widgets';
 import Home from './home';
 
 const App = () => {
 	return (
-		<GeistProvider>
+		<MMProvider>
 			<CssBaseline />
 			<Home />
-		</GeistProvider>
+		</MMProvider>
 	);
 };
 

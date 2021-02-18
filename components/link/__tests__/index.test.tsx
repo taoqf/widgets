@@ -6,17 +6,17 @@ describe('Link', () => {
 	it('should render correctly', () => {
 		const wrapper = mount(
 			<div>
-				<Link href="https://react.geist-ui.dev">link</Link>
-				<Link href="https://react.geist-ui.dev" color>
+				<Link href="https://vercel.com/taoqf/widgets">link</Link>
+				<Link href="https://vercel.com/taoqf/widgets" color>
 					link
 				</Link>
-				<Link href="https://react.geist-ui.dev" icon>
+				<Link href="https://vercel.com/taoqf/widgets" icon>
 					link
 				</Link>
-				<Link href="https://react.geist-ui.dev" underline>
+				<Link href="https://vercel.com/taoqf/widgets" underline>
 					link
 				</Link>
-				<Link href="https://react.geist-ui.dev" block>
+				<Link href="https://vercel.com/taoqf/widgets" block>
 					link
 				</Link>
 			</div>,
@@ -45,7 +45,7 @@ describe('Link', () => {
 	});
 
 	it('an warning should be thrown when using the pure prop', () => {
-		const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+		const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => { });
 		mount(<Link pure />);
 		expect(errorSpy).toHaveBeenCalled();
 		errorSpy.mockRestore();

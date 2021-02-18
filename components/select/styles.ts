@@ -1,5 +1,5 @@
 import { NormalSizes } from 'components/utils/prop-types';
-import { GeistUIThemes } from 'components/themes/presets';
+import { UIThemes } from 'components/themes/presets';
 
 export interface SelectSize {
 	height: string;
@@ -7,7 +7,7 @@ export interface SelectSize {
 	minWidth: string;
 }
 
-export const getSizes = (theme: GeistUIThemes, size?: NormalSizes) => {
+export const getSizes = (theme: UIThemes, size?: NormalSizes) => {
 	const sizes: { [key in NormalSizes]: SelectSize } = {
 		medium: {
 			height: `calc(1.688 * ${theme.layout.gap})`,

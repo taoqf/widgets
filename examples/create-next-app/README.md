@@ -1,4 +1,4 @@
-# Next.js demo for Geist UI React
+# Next.js demo for MMStudio widgets
 
 ## Getting Started
 

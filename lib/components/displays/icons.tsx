@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Input, useInput, Modal, useModal, Snippet } from 'components';
-import * as Icon from '@geist-ui/react-icons';
+import * as Icon from 'components/icons';
 import IconsCell, { getImportString } from './icons-cell';
 import { useConfigs } from 'lib/config-context';
 
@@ -25,13 +25,14 @@ const Icons: React.FC = () => {
 		title: '',
 		single: '',
 		normal: '',
+		total: ''
 	});
 	const icons = Object.entries(Icon).filter(
 		([name]) => !query || name.toLowerCase().includes(query.toLowerCase()),
 	);
 	const onCellClick = (name: string) => {
-		const { single, normal } = getImportString(name);
-		setImportStr({ title: name, single, normal });
+		const { single, normal, total } = getImportString(name);
+		setImportStr({ title: name, single, normal, total });
 		setVisible(true);
 	};
 
@@ -58,10 +59,12 @@ const Icons: React.FC = () => {
 				<Modal {...modalBindings}>
 					<Modal.Title>{importStr.title}</Modal.Title>
 					<Modal.Content>
+						<p>{isChinese ? '引入单个组件(推荐):' : 'Import single component(recommanded):'}</p>
+						<ImportSnippet>{importStr.single}</ImportSnippet>
+						<p>{isChinese ? '方便使用:' : 'Import simple:'}</p>
+						<ImportSnippet>{importStr.total}</ImportSnippet>
 						<p>{isChinese ? '引入:' : 'Import:'}</p>
 						<ImportSnippet>{importStr.normal}</ImportSnippet>
-						<p>{isChinese ? '引入单个组件:' : 'Import single component:'}</p>
-						<ImportSnippet>{importStr.single}</ImportSnippet>
 					</Modal.Content>
 				</Modal>
 			</Card>

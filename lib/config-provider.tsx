@@ -3,12 +3,12 @@ import withDefaults from 'components/utils/with-defaults';
 import { ConfigContext, Configs } from 'lib/config-context';
 import { useRouter } from 'next/router';
 import { DeepPartial } from 'components/utils/types';
-import { GeistUIThemes, Themes } from 'components';
+import { Themes, UIThemes } from 'components';
 import { useTheme } from 'components';
 import { CHINESE_LANGUAGE_IDENT, CUSTOM_THEME_TYPE } from './constants';
 
 interface Props {
-	onThemeChange?: (themes: DeepPartial<GeistUIThemes>) => void;
+	onThemeChange?: (themes: DeepPartial<UIThemes>) => void;
 	onThemeTypeChange?: (type: string) => void;
 }
 
@@ -25,12 +25,12 @@ const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = R
 		);
 		const [scrollHeight, setScrollHeight] = useState<number>(0);
 		const [tabbarFixed, setTabbarFixed] = useState<boolean>(false);
-		const [customTheme, setCustomTheme] = useState<GeistUIThemes>(theme);
+		const [customTheme, setCustomTheme] = useState<UIThemes>(theme);
 
 		const updateSidebarScrollHeight = (height: number) => setScrollHeight(height);
 		const updateChineseState = (state: boolean) => setIsChinese(state);
 		const updateTabbarFixed = (state: boolean) => setTabbarFixed(state);
-		const updateCustomTheme = (nextTheme: DeepPartial<GeistUIThemes>) => {
+		const updateCustomTheme = (nextTheme: DeepPartial<UIThemes>) => {
 			const mergedTheme = Themes.create(theme, {
 				...nextTheme,
 				type: CUSTOM_THEME_TYPE,

@@ -18,7 +18,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
 
 				html {
 					font-size: 16px;
-					--geist-icons-background: ${theme.palette.background};
+					--mm-icons-background: ${theme.palette.background};
 				}
 
 				body {

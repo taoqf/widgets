@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import useTheme from '../use-theme';
 import withDefaults from '../utils/with-defaults';
 import { NormalTypes } from '../utils/prop-types';
-import { GeistUIThemes } from '../themes/presets';
+import { UIThemes } from '../themes/presets';
 
 interface Props {
 	type?: NormalTypes;
@@ -23,7 +23,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 export type NoteProps = Props & typeof defaultProps & NativeAttrs;
 
-const getStatusColor = (type: NormalTypes, filled: boolean, theme: GeistUIThemes) => {
+const getStatusColor = (type: NormalTypes, filled: boolean, theme: UIThemes) => {
 	const colors: { [key in NormalTypes]?: string } = {
 		secondary: theme.palette.secondary,
 		success: theme.palette.success,

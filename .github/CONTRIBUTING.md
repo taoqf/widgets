@@ -1,6 +1,6 @@
-##  Geist UI - React Contributing Guide
+# MMstudio Widgets - Contributing Guide
 
-### Ready to start
+## Ready to start
 
 We welcome everyone to join in the construction of the project.
 As a pre requirement, you need to have a preliminary understanding of React,
@@ -19,29 +19,29 @@ At any time, you think it's ok, you can start the following steps to submit your
 3. Run `git commit -ma '{YOUR_MESSAGE}'` to commit changes. Commit info should be formatted by the [rules](https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/config-conventional/README.md).
 4. Push code to your own repo and [create PullRequest](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) at GitHub.
 
-### Common steps
+## Common steps
 
-#### **Create component**
+### **Create component**
 
 1. Create a folder in `components`, and add `import` to `components/index.ts`.
 2. Create a document file in `pages/en-us/components/`.
 3. Restart local server view changes: `yarn dev`.
 
-#### **About document page**
+### **About document page**
 
-1. Document page must have `meta` field. refer to [here](https://github.com/geist-org/react/blame/master/pages/en-us/components/avatar.mdx#L4).
+1. Document page must have `meta` field. refer to [here](https://github.com/taoqf/widgets/blame/master/pages/en-us/components/avatar.mdx#L4).
 2. If you are creating a new component, please provide at least one document.
 3. Dodcument using [mdx-js](https://github.com/mdx-js/mdx), here is [vs-code plug-in](https://github.com/silvenon/vscode-mdx),
 [web-storm support](https://youtrack.jetbrains.com/issue/WEB-32599)
 
-#### **Create testcase**
+### **Create testcase**
 
 1. If you are creating a new component, the testcase is required.
 2. If you only modify components, please note update **test snapshot**: `yarn test-update`.
 3. (Optional) Modifying `testRegex` in `.jest.config.js` allows you to test only a single component.
 4. Please check coverage locally before submit.
 
-### Q & A
+## Q & A
 
 > How to choose the target branch of PR ?
 
@@ -59,8 +59,7 @@ At any time, you think it's ok, you can start the following steps to submit your
 
 - refer to [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
+## Get stuck
 
-### Get stuck
-
-- Create new issue to tell us: [create issue](https://github.com/geist-org/react/issues/new/choose).
-- Ask in [chat room](https://spectrum.chat/geist-ui/react?tab=posts).
+- Create new issue to tell us: [create issue](https://github.com/taoqf/widgets/issues/new/choose).
+- Ask in [chat room](https://spectrum.chat/taoqf/widgets?tab=posts).

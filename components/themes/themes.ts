@@ -1,9 +1,9 @@
-import { GeistUIThemes } from './presets/index';
+import { UIThemes } from './presets/index';
 import { DeepPartial } from '../utils/types';
 import lightTheme from './presets/default';
 import darkTheme from './presets/dark';
 
-export type GeistUserTheme = DeepPartial<GeistUIThemes> & { type: string };
+export type UserTheme = DeepPartial<UIThemes> & { type: string };
 
 export const isObject = (target: unknown) => target && typeof target === 'object';
 
@@ -34,11 +34,11 @@ export const deepDuplicable = <T extends Record<string, unknown>>(
 	return result;
 };
 
-const getPresets = (): Array<GeistUIThemes> => {
+const getPresets = (): Array<UIThemes> => {
 	return [lightTheme, darkTheme];
 };
 
-const getPresetStaticTheme = (): GeistUIThemes => {
+const getPresetStaticTheme = (): UIThemes => {
 	return lightTheme;
 };
 
@@ -50,7 +50,7 @@ const isAvailableThemeType = (type?: string): boolean => {
 };
 
 const isPresetTheme = (
-	themeOrType?: GeistUserTheme | GeistUIThemes | string,
+	themeOrType?: UserTheme | UIThemes | string,
 ): boolean => {
 	if (!themeOrType) return false;
 	const isType = typeof themeOrType === 'string';
@@ -60,20 +60,20 @@ const isPresetTheme = (
 	return !isAvailableThemeType(type);
 };
 
-const hasUserCustomTheme = (themes: Array<GeistUIThemes> = []): boolean => {
+const hasUserCustomTheme = (themes: Array<UIThemes> = []): boolean => {
 	return !!themes.find(item => isAvailableThemeType(item.type));
 };
 
-const create = (base: GeistUIThemes, custom: GeistUserTheme): GeistUIThemes => {
+const create = (base: UIThemes, custom: UserTheme): UIThemes => {
 	if (!isAvailableThemeType(custom.type)) {
 		throw new Error('Duplicate or unavailable theme type');
 	}
 
-	return deepDuplicable(base, custom) as GeistUIThemes;
+	return deepDuplicable(base, custom) as UIThemes;
 };
 
-const createFromDark = (custom: GeistUserTheme) => create(darkTheme, custom);
-const createFromLight = (custom: GeistUserTheme) => create(lightTheme, custom);
+const createFromDark = (custom: UserTheme) => create(darkTheme, custom);
+const createFromLight = (custom: UserTheme) => create(lightTheme, custom);
 
 const Themes = {
 	isPresetTheme,

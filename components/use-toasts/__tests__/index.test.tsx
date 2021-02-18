@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
-import { useToasts, GeistProvider } from 'components';
+import { useToasts, MMProvider } from 'components';
 import { nativeEvent, updateWrapper } from 'tests/utils';
 
 const MockToast: React.FC<unknown> = () => {
@@ -41,9 +41,9 @@ const expectToastIsHidden = (wrapper: ReactWrapper) => {
 describe('UseToast', () => {
 	it('should render correctly', async () => {
 		const wrapper = mount(
-			<GeistProvider>
+			<MMProvider>
 				<MockToast />
-			</GeistProvider>,
+			</MMProvider>,
 		);
 
 		expectToastIsHidden(wrapper);
@@ -54,9 +54,9 @@ describe('UseToast', () => {
 
 	it('should work with different types', async () => {
 		const wrapper = mount(
-			<GeistProvider>
+			<MMProvider>
 				<MockToast />
-			</GeistProvider>,
+			</MMProvider>,
 		);
 
 		expectToastIsHidden(wrapper);
@@ -68,9 +68,9 @@ describe('UseToast', () => {
 
 	it('should close toast', async () => {
 		const wrapper = mount(
-			<GeistProvider>
+			<MMProvider>
 				<MockToast />
-			</GeistProvider>,
+			</MMProvider>,
 		);
 
 		expectToastIsHidden(wrapper);
@@ -85,9 +85,9 @@ describe('UseToast', () => {
 
 	it('the removeal should be delayed when hover is triggerd', async () => {
 		const wrapper = mount(
-			<GeistProvider>
+			<MMProvider>
 				<MockToast />
-			</GeistProvider>,
+			</MMProvider>,
 		);
 
 		expectToastIsHidden(wrapper);
@@ -111,18 +111,18 @@ describe('UseToast', () => {
 
 	it('should render different actions', async () => {
 		const wrapper = mount(
-			<GeistProvider>
+			<MMProvider>
 				<MockToast />
-			</GeistProvider>,
+			</MMProvider>,
 		);
 		const actions = [
 			{
 				name: 'remove',
-				handler: () => {},
+				handler: () => { },
 			},
 			{
 				name: 'remove',
-				handler: () => {},
+				handler: () => { },
 				passive: true,
 			},
 		];
@@ -135,9 +135,9 @@ describe('UseToast', () => {
 
 	it('should close toast when action triggered', async () => {
 		const wrapper = mount(
-			<GeistProvider>
+			<MMProvider>
 				<MockToast />
-			</GeistProvider>,
+			</MMProvider>,
 		);
 		const actions = [
 			{
@@ -160,9 +160,9 @@ describe('UseToast', () => {
 
 	it('should work with multiple toasts', async () => {
 		const wrapper = mount(
-			<GeistProvider>
+			<MMProvider>
 				<MockToast />
-			</GeistProvider>,
+			</MMProvider>,
 		);
 
 		expectToastIsHidden(wrapper);

@@ -59,10 +59,10 @@ const CustomizationCodes: React.FC<unknown> = () => {
  *
  *  export const App = () => {
  *    return (
- *      <GeistProvider themes={[myTheme]} themeType="${CUSTOM_THEME_TYPE}">
+ *      <MMProvider themes={[myTheme]} themeType="${CUSTOM_THEME_TYPE}">
  *        <CssBaseline />
  *        <YourComponent />
- *      </GeistProvider>
+ *      </MMProvider>
  *    )
  *  }
  **/`;
@@ -82,10 +82,10 @@ const CustomizationCodes: React.FC<unknown> = () => {
 					这里是你所有的变更，点击 <Code>copy</Code> 按钮即可使用在你自己的项目中。
 				</Text>
 			) : (
-				<Text>
-					This is all your changes, click <Code>copy</Code> to use it in your own project.
-				</Text>
-			)}
+					<Text>
+						This is all your changes, click <Code>copy</Code> to use it in your own project.
+					</Text>
+				)}
 			<Spacer y={2} />
 			<div className="codes">
 				<div className="copy" onClick={copyCode}>

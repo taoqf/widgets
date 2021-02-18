@@ -13,12 +13,12 @@ const makeVirtualValues = <S,>(values: S): ContextStates<S> => {
 	const handlers = keys.reduce<ContextHandler<S>>((pre, current) => {
 		const updateHandler = {
 			// @ts-ignore
-			[`set${capitalize(current)}`]: (next: S[typeof current]) => {},
+			[`set${capitalize(current)}`]: (next: S[typeof current]) => { },
 		};
 		return { ...pre, ...updateHandler };
 	}, {} as ContextHandler<S>);
 	// @ts-ignore
-	const update: ContextHandlerWhere<S> = (key, next) => {};
+	const update: ContextHandlerWhere<S> = (key, next) => { };
 	return {
 		update,
 		...values,
@@ -26,28 +26,28 @@ const makeVirtualValues = <S,>(values: S): ContextStates<S> => {
 	};
 };
 
-export type GeistNamedContext<T, N> = {
+export type NamedContext<T, N> = {
 	[key in string as `use${Capitalize<string & N>}Context`]: () => T;
 };
 
-export type GeistNamedProvider<T, N> = {
+export type NamedProvider<T, N> = {
 	[key in string as `${Capitalize<string & N>}Provider`]: T;
 };
 
-export const createGeistContext = <S extends Record<string, unknown>, N extends string>(
+export const createContext = <S extends Record<string, unknown>, N extends string>(
 	name: N,
 	initialStates: S,
 ) => {
 	const virtualValues = makeVirtualValues(initialStates);
 	const Context = React.createContext<ContextStates<S>>(virtualValues);
 
-	type GeistContextProps = {
+	type MMContextProps = {
 		defaultValues?: Partial<S> | (() => Partial<S>);
 		onChange?: ContextStateOnChange<S>;
 		onChangeBefore?: ContextStateFilter<S>;
 	};
 
-	const GeistContext = React.forwardRef<S, React.PropsWithChildren<GeistContextProps>>(
+	const MMContext = React.forwardRef<S, React.PropsWithChildren<MMContextProps>>(
 		({ defaultValues, children, onChange, onChangeBefore }, ref) => {
 			const initialValues =
 				typeof defaultValues === 'function'
@@ -58,7 +58,7 @@ export const createGeistContext = <S extends Record<string, unknown>, N extends 
 				...initialValues,
 			} as Required<S>;
 			const [states, , statesRef] = useContextState(mergedValues, {
-				onChange: onChange ? onChange : () => {},
+				onChange: onChange ? onChange : () => { },
 				filter: onChangeBefore ? onChangeBefore : () => true,
 			});
 
@@ -68,11 +68,11 @@ export const createGeistContext = <S extends Record<string, unknown>, N extends 
 		},
 	);
 
-	type ResultType = GeistNamedProvider<typeof GeistContext, N> &
-		GeistNamedContext<ContextStates<S>, N>;
+	type ResultType = NamedProvider<typeof MMContext, N> &
+		NamedContext<ContextStates<S>, N>;
 
 	return {
-		[`${capitalize(name)}Provider`]: GeistContext,
+		[`${capitalize(name)}Provider`]: MMContext,
 		[`use${capitalize(name)}Context`]: () => React.useContext<ContextStates<S>>(Context),
 	} as ResultType;
 };

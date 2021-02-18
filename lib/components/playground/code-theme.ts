@@ -1,7 +1,7 @@
 import { PrismTheme } from 'prism-react-renderer';
-import { GeistUIThemes } from 'components/themes/presets';
+import { UIThemes } from 'components/themes/presets';
 
-const makeCodeTheme = (theme: GeistUIThemes): PrismTheme => ({
+const makeCodeTheme = (theme: UIThemes): PrismTheme => ({
 	plain: {
 		backgroundColor: theme.palette.background,
 		color: theme.palette.accents_4,

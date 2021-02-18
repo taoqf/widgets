@@ -1,8 +1,8 @@
 import { PageSize } from './page';
 import { NormalSizes } from '../utils/prop-types';
-import { GeistUIThemesLayout } from '../themes/presets';
+import { ThemesLayout } from '../themes/presets';
 
-export const getPageSize = (size: PageSize, layout: GeistUIThemesLayout): string => {
+export const getPageSize = (size: PageSize, layout: ThemesLayout): string => {
 	const presets: { [key in NormalSizes]: string } = {
 		medium: layout.pageWidth,
 		small: `calc(${layout.pageWidth} - 100pt)`,

@@ -1,5 +1,5 @@
 import { NormalSizes, NormalTypes } from '../utils/prop-types';
-import { GeistUIThemesPalette } from '../themes/presets';
+import { UIThemesPalette } from '../themes/presets';
 
 export type InputSize = {
 	heightRatio: string;
@@ -36,7 +36,7 @@ export type InputColor = {
 };
 
 export const getColors = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	status?: NormalTypes,
 ): InputColor => {
 	const colors: { [key in NormalTypes]: InputColor } = {

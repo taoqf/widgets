@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-<img alt="Codecov" src="https://img.shields.io/codecov/c/github/geist-org/react?style=for-the-badge&labelColor=000000">
-<img alt="CircleCI" src="https://img.shields.io/circleci/build/github/geist-org/react?style=for-the-badge&labelColor=000000">
-<img alt="npm (scoped)" src="https://img.shields.io/npm/v/@geist-ui/react?style=for-the-badge&labelColor=000000">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/taoqf/widgets?style=for-the-badge&labelColor=000000">
+<img alt="CircleCI" src="https://img.shields.io/circleci/build/github/taoqf/widgets?style=for-the-badge&labelColor=000000">
+<img alt="npm (scoped)" src="https://img.shields.io/npm/v/@mmstudio/widgets?style=for-the-badge&labelColor=000000">
 </p>
 
 > Modern and minimalist React UI library, originating from Vercel's design.
@@ -14,18 +14,18 @@
 
 ## Quick Start
 
-1. run `yarn add @geist-ui/react` or `npm i @geist-ui/react` install it.
+1. run `yarn add @mmstudio/widgets` or `npm i @mmstudio/widgets` install it.
 
 2. import into project:
 
 ```jsx
-import { GeistProvider, CssBaseline } from '@geist-ui/react';
+import { MMProvider, CssBaseline } from '@mmstudio/widgets';
 
 const Application = () => (
-	<GeistProvider>
+	<MMProvider>
 		<CssBaseline /> // ---> Normalize styles
 		<AppComponent /> // ---> Your App Component
-	</GeistProvider>
+	</MMProvider>
 );
 ```
 
@@ -33,25 +33,20 @@ const Application = () => (
 
 ## Documentation
 
-- [Document Site](https://react.geist-ui.dev)
-- [中文文档](https://react.geist-ui.dev/zh-cn)
+- [Document Site](https://vercel.com/taoqf/widgets)
+- [中文文档](https://vercel.com/taoqf/widgets/zh-cn)
 
 <br/>
 
 ## Development
 
-- [Contributing Guide](https://github.com/geist-org/react/blob/master/.github/CONTRIBUTING.md)
+- [Contributing Guide](https://github.com/taoqf/widgets/blob/master/.github/CONTRIBUTING.md)
 
 <br/>
 
 ## Showcases
 
-- [Article view count](https://docs.views.show/)
-- [Tree viewer for CDN](https://cdn.unix.bio/)
-- [Better social image](https://img.unix.bio/)
-- [SentiNEO: Near-Earth Objects Viewer](https://sentineo.app)
-- [Dashboard Design](https://github.com/ofekashery/react-dashboard-design)
-- [Add here](https://github.com/geist-org/react/issues/new)
+- [Add here](https://github.com/taoqf/widgets/issues/new)
 
 <br/>
 

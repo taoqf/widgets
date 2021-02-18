@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { NormalTypes } from '../utils/prop-types';
 import useCurrentState from '../utils/use-current-state';
-import { useGeistUIContext } from '../utils/use-geist-ui-context';
+import { useContext } from '../utils/use-ui-context';
 import { ToastWithID } from './toast-container';
 import { getId } from '../utils/collections';
 
@@ -27,7 +27,7 @@ let maxDestoryTime: number = 0;
 let destoryTimer: number | undefined;
 
 const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
-	const { updateToasts, toastHovering, toasts } = useGeistUIContext();
+	const { updateToasts, toastHovering, toasts } = useContext();
 	const [, setHovering, hoveringRef] = useCurrentState<boolean>(toastHovering);
 
 	useEffect(() => setHovering(toastHovering), [toastHovering]);

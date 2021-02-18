@@ -13,17 +13,17 @@ export const meta = {
 
 Ensure your have the latest version of <Link href="https://nodejs.org/en/download/">NodeJS</Link>,
 and a package manager: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> or <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
-If you want to see a complete example, please browse our <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/tree/master/examples">sample collection</Link>.
+If you want to see a complete example, please browse our <Link target="_blank" color rel="nofollow" href="https://github.com/taoqf/widgetstree/master/examples">sample collection</Link>.
 
 <Spacer y={1} />
 <Dot type="success" /> 1. Run script to download:
 <Spacer y={0.8} />
 <Tabs initialValue="yarn" hideDivider>
 	<Tabs.Item label="Yarn" value="yarn">
-		<Snippet width="400px">yarn add @geist-ui/react</Snippet>
+		<Snippet width="400px">yarn add @mmstudio/widgets</Snippet>
 	</Tabs.Item>
 	<Tabs.Item label="Npm" value="npm">
-		<Snippet width="400px">npm i @geist-ui/react</Snippet>
+		<Snippet width="400px">npm i @mmstudio/widgets</Snippet>
 	</Tabs.Item>
 </Tabs>
 <Spacer y={1.5} />
@@ -33,26 +33,26 @@ If you want to see a complete example, please browse our <Link target="_blank" c
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { GeistProvider, CssBaseline } from '@geist-ui/react';
+import { MMProvider, CssBaseline } from '@mmstudio/widgets';
 
 const Application = () => (
-	<GeistProvider>
+	<MMProvider>
 		<CssBaseline /> // ---> Normalize styles
 		<AppComponent /> // ---> Your App Component
-	</GeistProvider>
+	</MMProvider>
 );
 ```
 
 </Grid>
 </Grid.Container>
 <Spacer y={.5} />
-<Dot type="success" /> 3. Use the Geist UI components anywhere:
+<Dot type="success" /> 3. Use the MMStudio Widgets components anywhere:
 
 <Grid.Container>
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { Button } from '@geist-ui/react';
+import { Button } from '@mmstudio/widgets';
 
 const MyComponent = () => <Button>Click Me</Button>;
 ```
@@ -97,7 +97,7 @@ import 'inter-ui/inter.css';
 
 ### Single component
 
-Geist UI supports importing single, specific components when you need them. This is referred to as `tree-shaking`.
+MMStudio Widgets supports importing single, specific components when you need them. This is referred to as `tree-shaking`.
 
 E.g.
 
@@ -105,7 +105,7 @@ E.g.
 <Grid xs={24} sm={16}>
 
 ```jsx
-import Button from '@geist-ui/react/esm/button';
+import Button from '@mmstudio/widgets/esm/button';
 
 const MyComponent = () => <Button>Click Me</Button>;
 ```
@@ -118,16 +118,16 @@ const MyComponent = () => <Button>Click Me</Button>;
 ### Create React App
 
 A React project created by <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> can
-also easily use `@geist-ui/react`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">a
+also easily use `@mmstudio/widgets`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">a
 sample project related to create react app here</Link>.
 
-If you want to eject certain configs, `tree-shaking`, please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
+If you want to eject certain configs, `tree-shaking`, please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/taoqf/widgets/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
 
 <Spacer y={2.5} />
 
 ### Next.js
 
 In the `next.js` project, you need to customize the <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> entry file to load the provider.
-Start your NextJS project with <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/create-next-app/README.md">this example</Link>.
+Start your NextJS project with <Link target="_blank" color rel="nofollow" href="https://github.com/taoqf/widgets/blob/master/examples/create-next-app/README.md">this example</Link>.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

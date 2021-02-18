@@ -132,11 +132,11 @@ and very small size. Of course, it still supports dynamic props and custom break
 
 <PlaygroundTitle
 	title="custom breakpoints"
-	desc="Override the default breakpoints of the `@geist-ui/react`."
+	desc="Override the default breakpoints of the `@mmstudio/widgets`."
 />
 
 ```tsx
-const breakpoints: GeistUIThemesBreakpoints = {
+const breakpoints: ThemesBreakpoints = {
 	xs: { min: '0', max: '650px' },
 	sm: { min: '650px', max: '900px' },
 	md: { min: '900px', max: '1280px' },
@@ -145,10 +145,10 @@ const breakpoints: GeistUIThemesBreakpoints = {
 };
 
 const App = () => (
-	<GeistProvider theme={{ breakpoints: breakpoints }}>
+	<MMProvider theme={{ breakpoints: breakpoints }}>
 		<CssBaseline />
 		<AppComponent />
-	</GeistProvider>
+	</MMProvider>
 );
 ```
 

@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import usePortal from '../utils/use-portal';
 import useTheme from '../use-theme';
-import { useGeistUIContext } from '../utils/use-geist-ui-context';
+import { useContext } from '../utils/use-ui-context';
 import { Toast } from './use-toast';
 import ToastItem from './toast-item';
 
@@ -17,7 +17,7 @@ const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
 	const theme = useTheme();
 	const [hover, setHover] = useState<boolean>(false);
 	const timer = useRef<number | undefined>();
-	const { toasts, updateToastHoverStatus } = useGeistUIContext();
+	const { toasts, updateToastHoverStatus } = useContext();
 	const toastElements = useMemo(
 		() =>
 			toasts.map((t, i) => (

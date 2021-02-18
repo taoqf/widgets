@@ -1,8 +1,10 @@
 import { Layout, Playground, Attributes } from 'lib/components';
 import Title from 'lib/components/playground/title';
 import { Spacer, Tabs, Snippet } from 'components';
-import * as Icon from '@geist-ui/react-icons';
-import Github from '@geist-ui/react-icons/github';
+import * as MM from 'components';
+import { Icons } from 'components';
+// import * as Icons from 'components/icons';
+import Github from 'components/icons/github';
 import IconsGallery from 'lib/components/displays/icons';
 
 export const meta = {
@@ -14,30 +16,22 @@ export const meta = {
 
 Display semantic vector graphics in SVG format.
 
-<Title title="Installation" desc="Install the package in your project directory." />
-<Tabs initialValue="yarn">
-	<Tabs.Item label="Yarn" value="yarn">
-		<Spacer y={0.6} />
-		<Snippet width="400px">yarn add @geist-ui/react-icons</Snippet>
-	</Tabs.Item>
-	<Tabs.Item label="npm" value="npm">
-		<Spacer y={0.6} />
-		<Snippet width="400px">npm i @geist-ui/react-icons</Snippet>
-	</Tabs.Item>
-</Tabs>
-
 <Playground
   title="Import"
-  scope={{ Icon, Github, Spacer }}
+  scope={{ Icons, MM, Github, Spacer }}
   code={`
-// import * as Icon from '@geist-ui/react-icons'
+// import * as MM from '@mmstudio/widgets';
 // or
-// import { Github } from '@geist-ui/react-icons'
+// import * as Icons from '@mmstudio/widgets';
+// or
+// import { Github } from '@mmstudio/widgets/icons';
 // or, for tree-shaking:
-// import Github from '@geist-ui/react-icons/github'
+// import Github from '@mmstudio/widgets/icons/github';
 
 <>
-	<Icon.Github />
+	<MM.Icons.Github />
+	<Spacer x={1} inline />
+	<Icons.Github />
 	<Spacer x={1} inline />
 	<Github />
 </>
@@ -69,7 +63,7 @@ Display semantic vector graphics in SVG format.
 <IconsGallery />
 
 <Attributes edit="/pages/en-us/components/icons.mdx">
-<Attributes.Title>Icon.Props</Attributes.Title>
+<Attributes.Title>Icons.Props</Attributes.Title>
 
 | Attribute | Description  | Type            | Accepted values                  | Default |
 | --------- | ------------ | --------------- | -------------------------------- | ------- |

@@ -1,5 +1,5 @@
 import { CardTypes } from '../utils/prop-types';
-import { GeistUIThemesPalette } from '../themes/presets';
+import { UIThemesPalette } from '../themes/presets';
 
 export type CardStyles = {
 	color: string;
@@ -9,7 +9,7 @@ export type CardStyles = {
 
 export const getStyles = (
 	type: CardTypes,
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	isShadow?: boolean,
 ): CardStyles => {
 	const colors: { [key in CardTypes]: Omit<CardStyles, 'borderColor'> } = {

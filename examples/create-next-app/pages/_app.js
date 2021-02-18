@@ -1,11 +1,11 @@
-import { GeistProvider, CssBaseline } from '@geist-ui/react';
+import { MMProvider, CssBaseline } from '@mmstudio/widgets';
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<GeistProvider>
+		<MMProvider>
 			<CssBaseline />
 			<Component {...pageProps} />
-		</GeistProvider>
+		</MMProvider>
 	);
 }
 export default MyApp;

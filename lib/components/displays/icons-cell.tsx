@@ -7,11 +7,13 @@ export const getFileName = (name: string): string => {
 
 export const getImportString = (name: string) => {
 	const fileName = getFileName(name);
-	const single = `import ${name} from '@geist-ui/react-icons/${fileName}'`;
-	const normal = `import { ${name} } from '@geist-ui/react-icons'`;
+	const single = `import ${name} from '@mmstudio/widgets/icons/${fileName}';`;
+	const normal = `import { ${name} } from '@mmstudio/widgets/icons';`;
+	const total = `import { Icons } from '@mmstudio/widgets';`;
 	return {
 		single,
 		normal,
+		total
 	};
 };
 

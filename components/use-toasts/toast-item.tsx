@@ -3,7 +3,7 @@ import useTheme from '../use-theme';
 import { Toast, ToastAction } from './use-toast';
 import Button from '../button';
 import { NormalTypes } from '../utils/prop-types';
-import { GeistUIThemesPalette } from '../themes/presets';
+import { UIThemesPalette } from '../themes/presets';
 
 type ToastWithID = Toast & {
 	id: string;
@@ -40,7 +40,7 @@ const toastActions = (actions: Toast['actions'], cancelHandle: () => void) => {
 	));
 };
 
-const getColors = (palette: GeistUIThemesPalette, type?: NormalTypes) => {
+const getColors = (palette: UIThemesPalette, type?: NormalTypes) => {
 	const colors: { [key in NormalTypes]: string } = {
 		default: palette.background,
 		secondary: palette.secondary,
@@ -78,13 +78,11 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(
 			const calc = `100% + -75px + -${20 * reverseIndex}px`;
 			if (reverseIndex >= 4) return `translate3d(0, -75px, -${reverseIndex}px) scale(.7)`;
 			if (onHover) {
-				return `translate3d(0, ${reverseIndex * -75}px, -${reverseIndex}px) scale(${
-					total === 1 ? 1 : 0.98205
-				})`;
+				return `translate3d(0, ${reverseIndex * -75}px, -${reverseIndex}px) scale(${total === 1 ? 1 : 0.98205
+					})`;
 			}
-			return `translate3d(0, calc(${calc}), -${reverseIndex}px) scale(${
-				1 - 0.05 * reverseIndex
-			})`;
+			return `translate3d(0, calc(${calc}), -${reverseIndex}px) scale(${1 - 0.05 * reverseIndex
+				})`;
 		}, [onHover, index, total, reverseIndex]);
 
 		useEffect(() => {

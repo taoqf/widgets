@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { LiveEditor } from 'react-live';
 import { useConfigs } from 'lib/config-context';
 import { useTheme, useToasts, Row, Col, useClipboard } from 'components';
-import CopyIcon from '@geist-ui/react-icons/copy';
-import RightIcon from '@geist-ui/react-icons/chevronRight';
+import CopyIcon from 'components/icons/copy';
+import RightIcon from 'components/icons/chevronRight';
 
 interface Props {
 	code: string;

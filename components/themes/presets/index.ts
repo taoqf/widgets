@@ -1,4 +1,4 @@
-export interface GeistUIThemesPalette {
+export interface UIThemesPalette {
 	accents_1: string;
 	accents_2: string;
 	accents_3: string;
@@ -39,7 +39,7 @@ export interface GeistUIThemesPalette {
 	alert: string;
 }
 
-export interface GeistUIThemesExpressiveness {
+export interface ThemesExpressiveness {
 	linkStyle: string;
 	linkHoverStyle: string;
 	dropdownBoxShadow: string;
@@ -51,7 +51,7 @@ export interface GeistUIThemesExpressiveness {
 	portalOpacity: number;
 }
 
-export interface GeistUIThemesLayout {
+export interface ThemesLayout {
 	gap: string;
 	gapNegative: string;
 	gapHalf: string;
@@ -66,7 +66,7 @@ export interface GeistUIThemesLayout {
 	radius: string;
 }
 
-export interface GeistUIThemesFont {
+export interface ThemesFont {
 	sans: string;
 	mono: string;
 }
@@ -76,7 +76,7 @@ export interface BreakpointsItem {
 	max: string;
 }
 
-export interface GeistUIThemesBreakpoints {
+export interface ThemesBreakpoints {
 	xs: BreakpointsItem;
 	sm: BreakpointsItem;
 	md: BreakpointsItem;
@@ -84,11 +84,11 @@ export interface GeistUIThemesBreakpoints {
 	xl: BreakpointsItem;
 }
 
-export interface GeistUIThemes {
+export interface UIThemes {
 	type: string;
-	font: GeistUIThemesFont;
-	layout: GeistUIThemesLayout;
-	palette: GeistUIThemesPalette;
-	breakpoints: GeistUIThemesBreakpoints;
-	expressiveness: GeistUIThemesExpressiveness;
+	font: ThemesFont;
+	layout: ThemesLayout;
+	palette: UIThemesPalette;
+	breakpoints: ThemesBreakpoints;
+	expressiveness: ThemesExpressiveness;
 }

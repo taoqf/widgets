@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, useTheme } from 'components';
-import SlidersIcon from '@geist-ui/react-icons/sliders';
+import SlidersIcon from 'components/icons/sliders';
 
 interface Props {
 	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -17,7 +17,7 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
 			<Button className="toggle" auto type="abort" onClick={handler}>
 				<SlidersIcon size={16} />
 			</Button>
-			<span>Geist UI</span>
+			<span>MMStudio Widgets</span>
 			<style jsx>{`
 				.tabbar {
 					position: fixed;

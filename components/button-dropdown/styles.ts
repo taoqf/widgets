@@ -1,4 +1,4 @@
-import { GeistUIThemesPalette } from '../themes/presets';
+import { UIThemesPalette } from '../themes/presets';
 import { NormalTypes } from '../utils/prop-types';
 
 type ButtonDropdownColors = {
@@ -10,7 +10,7 @@ type ButtonDropdownColors = {
 };
 
 export const getColor = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	type: NormalTypes | undefined,
 	disabled: boolean = false,
 ) => {

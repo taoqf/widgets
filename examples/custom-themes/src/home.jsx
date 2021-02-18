@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Tag, useTheme, Select } from '@geist-ui/react';
+import { Text, Tag, useTheme, Select } from '@mmstudio/widgets';
 
 const Home = ({ onThemeChange }) => {
 	const theme = useTheme();

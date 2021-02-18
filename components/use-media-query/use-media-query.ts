@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import useTheme from '../use-theme';
 import { tuple } from '../utils/prop-types';
-import { BreakpointsItem, GeistUIThemesBreakpoints } from '../themes/presets';
+import { BreakpointsItem, ThemesBreakpoints } from '../themes/presets';
 
 const breakpoints = tuple('xs', 'sm', 'md', 'lg', 'xl', 'mobile');
 export type ResponsiveBreakpoint = typeof breakpoints[number];
@@ -18,12 +18,12 @@ const defaultResponsiveOptions = {
 };
 
 const makeQueries = (
-	bp: GeistUIThemesBreakpoints,
+	bp: ThemesBreakpoints,
 	up: boolean,
 	down: boolean,
 ): {
-	[key in ResponsiveBreakpoint]: string;
-} => {
+		[key in ResponsiveBreakpoint]: string;
+	} => {
 	const queryString = (item: BreakpointsItem) => {
 		const upQuery = `(min-width: ${item.min})`;
 		const downQuery = `(max-width: ${item.max})`;

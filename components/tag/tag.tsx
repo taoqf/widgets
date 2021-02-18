@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import withDefaults from '../utils/with-defaults';
 import useTheme from '../use-theme';
 import { SnippetTypes } from '../utils/prop-types';
-import { GeistUIThemesPalette } from '../themes/presets';
+import { UIThemesPalette } from '../themes/presets';
 
 interface Props {
 	type?: SnippetTypes;
@@ -27,7 +27,7 @@ export type TagColors = {
 
 const getColors = (
 	type: SnippetTypes,
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	invert: boolean,
 ) => {
 	const colors: {
@@ -68,10 +68,10 @@ const getColors = (
 	return !invert
 		? cardStyle
 		: {
-				...cardStyle,
-				color: cardStyle.bgColor,
-				bgColor: cardStyle.color,
-		  };
+			...cardStyle,
+			color: cardStyle.bgColor,
+			bgColor: cardStyle.color,
+		};
 };
 
 const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({

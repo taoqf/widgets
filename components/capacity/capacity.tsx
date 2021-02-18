@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import withDefaults from '../utils/with-defaults';
 import useTheme from '../use-theme';
 import { useProportions } from '../utils/calculations';
-import { GeistUIThemesPalette } from '../themes/presets';
+import { UIThemesPalette } from '../themes/presets';
 
 interface Props {
 	value?: number;
@@ -21,7 +21,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 export type CapacityProps = Props & typeof defaultProps & NativeAttrs;
 
-const getColor = (val: number, palette: GeistUIThemesPalette): string => {
+const getColor = (val: number, palette: UIThemesPalette): string => {
 	if (val < 33) return palette.cyan;
 	if (val < 66) return palette.warning;
 	return palette.errorDark;

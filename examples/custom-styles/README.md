@@ -1,6 +1,6 @@
 ## Custom styles
 
-This is an example of **how to override styles in `geist-ui`**.
+This is an example of **how to override styles in `@mmstudio/widgets`**.
 
 ## Getting Started
 

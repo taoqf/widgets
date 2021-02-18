@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { GeistProvider, CssBaseline, Page, Button } from '@geist-ui/react';
+import { MMProvider, CssBaseline, Page, Button } from '@mmstudio/widgets';
 
 const App = () => {
 	return (
@@ -13,10 +13,10 @@ const App = () => {
 
 ReactDOM.render(
 	<React.StrictMode>
-		<GeistProvider>
+		<MMProvider>
 			<CssBaseline />
 			<App />
-		</GeistProvider>
+		</MMProvider>
 	</React.StrictMode>,
 	document.getElementById('app'),
 );

@@ -2,7 +2,7 @@ const warningStack: { [key: string]: boolean } = {};
 
 const useWarning = (message: string, component?: string) => {
 	const tag = component ? ` [${component}]` : ' ';
-	const log = `[Geist UI]${tag}: ${message}`;
+	const log = `[MMStudio widgets]${tag}: ${message}`;
 
 	if (typeof console === 'undefined') return;
 	if (warningStack[log]) return;

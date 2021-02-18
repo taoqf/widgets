@@ -1,6 +1,6 @@
 const { override, fixBabelImports } = require('customize-cra');
 module.exports = override(
-	fixBabelImports('@geist-ui/react', {
+	fixBabelImports('@mmstudio/widgets', {
 		libraryDirectory: 'esm',
 	}),
 );

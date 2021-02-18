@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Tree } from 'components';
 import { nativeEvent } from 'tests/utils';
 import { FileTreeValue } from 'components/tree/tree';
-import Github from '@geist-ui/react-icons/github';
+import Github from 'components/icons/github';
 
 const mockFiles: Array<FileTreeValue> = [
 	{

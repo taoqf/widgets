@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { NextPage } from 'next';
 import { AppProps } from 'next/app';
 import React, { useEffect, useState } from 'react';
-import { CssBaseline, GeistProvider, useTheme, GeistUIThemes } from 'components';
+import { CssBaseline, MMProvider, useTheme, UIThemes } from 'components';
 import Menu from 'lib/components/menu';
 import ConfigContext from 'lib/config-provider';
 import useDomClean from 'lib/use-dom-clean';
@@ -11,8 +11,8 @@ import 'inter-ui/inter.css';
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
 	const theme = useTheme();
 	const [themeType, setThemeType] = useState<string>();
-	const [customTheme, setCustomTheme] = useState<GeistUIThemes>(theme);
-	const themeChangeHandle = (theme: GeistUIThemes) => {
+	const [customTheme, setCustomTheme] = useState<UIThemes>(theme);
+	const themeChangeHandle = (theme: UIThemes) => {
 		setCustomTheme(theme);
 		setThemeType(theme.type);
 	};
@@ -27,16 +27,16 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Head>
-				<title>React - Geist UI</title>
+				<title>React - MMStudio Widgets</title>
 				<meta name="google" content="notranslate" />
 				<meta name="twitter:creator" content="@echo_witt" />
 				<meta name="referrer" content="strict-origin" />
-				<meta property="og:title" content="React - Geist UI" />
-				<meta property="og:site_name" content="React - Geist UI" />
-				<meta property="og:url" content="https://react.geist-ui.dev" />
-				<link rel="dns-prefetch" href="//react.geist-ui.dev" />
+				<meta property="og:title" content="React - MMStudio Widgets" />
+				<meta property="og:site_name" content="React - MMStudio Widgets" />
+				<meta property="og:url" content="https://vercel.com/taoqf/widgets" />
+				<link rel="dns-prefetch" href="//vercel.com/taoqf/widgets" />
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="generator" content="Geist UI" />
+				<meta name="generator" content="MMStudio Widgets" />
 				<meta
 					name="description"
 					content="An open-source design system for building modern websites and applications."
@@ -63,7 +63,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
 					content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
 				/>
 			</Head>
-			<GeistProvider themeType={themeType} themes={[customTheme]}>
+			<MMProvider themeType={themeType} themes={[customTheme]}>
 				<CssBaseline />
 				<ConfigContext
 					onThemeChange={themeChangeHandle}
@@ -122,7 +122,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
 						border-radius: ${theme.layout.radius};
 					}
 				`}</style>
-			</GeistProvider>
+			</MMProvider>
 		</>
 	);
 };

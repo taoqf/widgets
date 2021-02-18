@@ -1,6 +1,6 @@
-## Custom themes
+# Custom themes
 
-This is an example of **how to custom Themes in `geist-ui`**.
+This is an example of **how to custom Themes in `@mmstudio/widgets`**.
 
 ## Getting Started
 

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import withDefaults from '../utils/with-defaults';
 import useTheme from '../use-theme';
-import { GeistUIThemes } from '../themes/presets';
+import { UIThemes } from '../themes/presets';
 
 interface Props {
 	command?: boolean;
@@ -30,7 +30,7 @@ type CustomLayout = {
 	minWidth: string;
 };
 
-const getLayout = (small: boolean, theme: GeistUIThemes): CustomLayout => {
+const getLayout = (small: boolean, theme: UIThemes): CustomLayout => {
 	if (small)
 		return {
 			padding: 0,

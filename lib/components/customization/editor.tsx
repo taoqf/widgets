@@ -4,15 +4,15 @@ import {
 	Button,
 	useTheme,
 	Themes,
-	GeistUIThemesPalette,
-	GeistUIThemesExpressiveness,
-	GeistUIThemesLayout,
+	UIThemesPalette,
+	ThemesExpressiveness,
+	ThemesLayout,
 } from 'components';
 import EditorColorItem from './editor-color-item';
 import EditorInputItem from './editor-input-item';
 import { useConfigs } from 'lib/config-context';
 
-const basicColors: Array<keyof GeistUIThemesPalette> = [
+const basicColors: Array<keyof UIThemesPalette> = [
 	'accents_1',
 	'accents_2',
 	'accents_3',
@@ -24,7 +24,7 @@ const basicColors: Array<keyof GeistUIThemesPalette> = [
 	'foreground',
 	'background',
 ];
-const statusColors: Array<keyof GeistUIThemesPalette> = [
+const statusColors: Array<keyof UIThemesPalette> = [
 	'success',
 	'successLight',
 	'successDark',
@@ -35,7 +35,7 @@ const statusColors: Array<keyof GeistUIThemesPalette> = [
 	'warningLight',
 	'warningDark',
 ];
-const otherColors: Array<keyof GeistUIThemesPalette> = [
+const otherColors: Array<keyof UIThemesPalette> = [
 	'selection',
 	'secondary',
 	'link',
@@ -46,7 +46,7 @@ const otherColors: Array<keyof GeistUIThemesPalette> = [
 	'alert',
 	'violet',
 ];
-const expressiveness: Array<keyof GeistUIThemesExpressiveness> = [
+const expressiveness: Array<keyof ThemesExpressiveness> = [
 	'linkStyle',
 	'linkHoverStyle',
 	'dropdownBoxShadow',
@@ -54,13 +54,13 @@ const expressiveness: Array<keyof GeistUIThemesExpressiveness> = [
 	'shadowMedium',
 	'shadowLarge',
 ];
-const pageLayout: Array<keyof GeistUIThemesLayout> = [
+const pageLayout: Array<keyof ThemesLayout> = [
 	'pageWidth',
 	'pageWidthWithMargin',
 	'pageMargin',
 	'radius',
 ];
-const gapLayout: Array<keyof GeistUIThemesLayout> = [
+const gapLayout: Array<keyof ThemesLayout> = [
 	'gap',
 	'gapNegative',
 	'gapHalf',
@@ -133,11 +133,11 @@ const Editor = () => {
 			{isChinese ? (
 				<p>大多数的布局间距都依赖这些变量，不合理的更改可能会导致布局失衡。</p>
 			) : (
-				<p>
-					Most layout spacing depends on these variables, unreasonable changes may cause
-					layout imbalance.
-				</p>
-			)}
+					<p>
+						Most layout spacing depends on these variables, unreasonable changes may cause
+						layout imbalance.
+					</p>
+				)}
 			<p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
 			<div className="content">
 				{pageLayout.map((item, index) => (

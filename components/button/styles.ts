@@ -1,4 +1,4 @@
-import { GeistUIThemesPalette } from '../themes/presets';
+import { UIThemesPalette } from '../themes/presets';
 import { NormalSizes, ButtonTypes } from '../utils/prop-types';
 import { ButtonProps } from './button';
 import { addColorAlpha } from '../utils/color';
@@ -10,7 +10,7 @@ export interface ButtonColorGroup {
 }
 
 export const getButtonGhostColors = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	type: ButtonTypes,
 ): ButtonColorGroup | null => {
 	const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
@@ -40,7 +40,7 @@ export const getButtonGhostColors = (
 };
 
 export const getButtonColors = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	props: ButtonProps,
 ): ButtonColorGroup => {
 	const { type, disabled, ghost } = props;
@@ -98,7 +98,7 @@ export const getButtonColors = (
 };
 
 export const getButtonGhostHoverColors = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	type: ButtonTypes,
 ): ButtonColorGroup | null => {
 	const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
@@ -128,7 +128,7 @@ export const getButtonGhostHoverColors = (
 };
 
 export const getButtonHoverColors = (
-	palette: GeistUIThemesPalette,
+	palette: UIThemesPalette,
 	props: ButtonProps,
 ): ButtonColorGroup => {
 	const { type, disabled, loading, shadow, ghost } = props;
@@ -289,7 +289,7 @@ export const getButtonSize = (
 	return layouts[size] || defaultLayout;
 };
 
-export const getButtonDripColor = (palette: GeistUIThemesPalette, props: ButtonProps) => {
+export const getButtonDripColor = (palette: UIThemesPalette, props: ButtonProps) => {
 	const { type } = props;
 	const isLightHover = type.endsWith('light');
 	const hoverColors = getButtonHoverColors(palette, props);

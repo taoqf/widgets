@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Text } from '@geist-ui/react';
+import { Card, Text } from '@mmstudio/widgets';
 import './style.css';
 
 const Home = () => (

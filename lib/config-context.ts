@@ -1,9 +1,9 @@
 import React from 'react';
 import { DeepPartial } from 'components/utils/types';
-import { GeistUIThemes } from 'components';
+import { UIThemes } from 'components';
 
 export interface Configs {
-	onThemeChange?: (themes: DeepPartial<GeistUIThemes>) => void;
+	onThemeChange?: (themes: DeepPartial<UIThemes>) => void;
 	isChinese?: boolean;
 	updateChineseState: (state: boolean) => void;
 	sidebarScrollHeight: number;
@@ -12,23 +12,23 @@ export interface Configs {
 	tabbarFixed: boolean;
 	updateTabbarFixed: (state: boolean) => void;
 
-	customTheme: DeepPartial<GeistUIThemes>;
-	updateCustomTheme: (theme: DeepPartial<GeistUIThemes>) => void;
+	customTheme: DeepPartial<UIThemes>;
+	updateCustomTheme: (theme: DeepPartial<UIThemes>) => void;
 	switchTheme: (type: string) => void;
 }
 
 export const defaultConfigs: Configs = {
 	sidebarScrollHeight: 0,
-	updateSidebarScrollHeight: () => {},
-	updateChineseState: () => {},
+	updateSidebarScrollHeight: () => { },
+	updateChineseState: () => { },
 
 	tabbarFixed: false,
-	updateTabbarFixed: () => {},
+	updateTabbarFixed: () => { },
 
 	customTheme: {},
-	updateCustomTheme: () => {},
-	onThemeChange: () => {},
-	switchTheme: () => {},
+	updateCustomTheme: () => { },
+	onThemeChange: () => { },
+	switchTheme: () => { },
 };
 
 export const ConfigContext = React.createContext<Configs>(defaultConfigs);

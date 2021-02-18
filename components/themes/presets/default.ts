@@ -1,11 +1,11 @@
 import {
-	GeistUIThemes,
-	GeistUIThemesPalette,
-	GeistUIThemesExpressiveness,
+	UIThemes,
+	UIThemesPalette,
+	ThemesExpressiveness,
 } from './index';
 import { defaultFont, defaultBreakpoints, defaultLayout } from './shared';
 
-export const palette: GeistUIThemesPalette = {
+export const palette: UIThemesPalette = {
 	accents_1: '#fafafa',
 	accents_2: '#eaeaea',
 	accents_3: '#999',
@@ -46,7 +46,7 @@ export const palette: GeistUIThemesPalette = {
 	link: '#0070f3',
 };
 
-export const expressiveness: GeistUIThemesExpressiveness = {
+export const expressiveness: ThemesExpressiveness = {
 	linkStyle: 'none',
 	linkHoverStyle: 'none',
 	dropdownBoxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.02)',
@@ -64,7 +64,7 @@ export const breakpoints = defaultBreakpoints;
 
 export const layout = defaultLayout;
 
-export const themes: GeistUIThemes = {
+export const themes: UIThemes = {
 	type: 'light',
 	font,
 	layout,

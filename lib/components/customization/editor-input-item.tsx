@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
-import { useTheme, Input, GeistUIThemes } from 'components';
+import { useTheme, Input, UIThemes } from 'components';
 import { useConfigs } from 'lib/config-context';
 
 type Props = {
 	value?: string;
-	groupName: keyof GeistUIThemes;
+	groupName: keyof UIThemes;
 	keyName: string;
 };
 
