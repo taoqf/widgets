@@ -6,17 +6,17 @@ describe('Link', () => {
 	it('should render correctly', () => {
 		const wrapper = mount(
 			<div>
-				<Link href="https://vercel.com/taoqf/widgets">link</Link>
-				<Link href="https://vercel.com/taoqf/widgets" color>
+				<Link href="https://mmstudio.vercel.app">link</Link>
+				<Link href="https://mmstudio.vercel.app" color>
 					link
 				</Link>
-				<Link href="https://vercel.com/taoqf/widgets" icon>
+				<Link href="https://mmstudio.vercel.app" icon>
 					link
 				</Link>
-				<Link href="https://vercel.com/taoqf/widgets" underline>
+				<Link href="https://mmstudio.vercel.app" underline>
 					link
 				</Link>
-				<Link href="https://vercel.com/taoqf/widgets" block>
+				<Link href="https://mmstudio.vercel.app" block>
 					link
 				</Link>
 			</div>,

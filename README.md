@@ -33,8 +33,8 @@ const Application = () => (
 
 ## Documentation
 
-- [Document Site](https://vercel.com/taoqf/widgets)
-- [中文文档](https://vercel.com/taoqf/widgets/zh-cn)
+- [Document Site](https://mmstudio.vercel.app)
+- [中文文档](https://mmstudio.vercel.app/zh-cn)
 
 <br/>
 

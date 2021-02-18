@@ -7,7 +7,7 @@
 	"unpkg": "dist/index.min.js",
 	"license": "MIT",
 	"description": "Modern and minimalist React UI library.",
-	"homepage": "https://vercel.com/taoqf/widgets",
+	"homepage": "https://mmstudio.vercel.app",
 	"bugs": {
 		"url": "https://github.com/taoqf/widgets/issues/new"
 	},

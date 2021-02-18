@@ -33,8 +33,8 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
 				<meta name="referrer" content="strict-origin" />
 				<meta property="og:title" content="React - MMStudio Widgets" />
 				<meta property="og:site_name" content="React - MMStudio Widgets" />
-				<meta property="og:url" content="https://vercel.com/taoqf/widgets" />
-				<link rel="dns-prefetch" href="//vercel.com/taoqf/widgets" />
+				<meta property="og:url" content="https://mmstudio.vercel.app" />
+				<link rel="dns-prefetch" href="//mmstudio.vercel.app" />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="generator" content="MMStudio Widgets" />
 				<meta
