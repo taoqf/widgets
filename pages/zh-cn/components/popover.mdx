@@ -1,20 +1,20 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Popover, Spacer, Link } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Popover, Spacer, Link } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: '气泡卡片 Popover',
-  group: '数据展示',
-}
+	title: '气泡卡片 Popover',
+	group: '数据展示',
+};
 
 ## Popover / 气泡卡片
 
 通过点击或鼠标移入触发的气泡风格弹出层。
 
 <Playground
-  desc="基础示例。"
-  scope={{ Popover, Spacer, Link }}
-  code={`
+	desc="基础示例。"
+	scope={{ Popover, Spacer, Link }}
+	code={`
 () => {
   const content = () => (
     <div style={{ padding: '0 10px' }}>
@@ -33,10 +33,10 @@ export const meta = {
 />
 
 <Playground
-  title="预置子选项"
-  desc="使用预置的 `Item` 组件完成弹出内容的布局。"
-  scope={{ Popover, Spacer, Link }}
-  code={`
+	title="预置子选项"
+	desc="使用预置的 `Item` 组件完成弹出内容的布局。"
+	scope={{ Popover, Spacer, Link }}
+	code={`
 () => {
   const content = () => (
     <>
@@ -65,10 +65,10 @@ export const meta = {
 />
 
 <Playground
-  title="手动关闭"
-  desc="你可以控制何时手动地关闭弹出卡片。"
-  scope={{ Popover, Spacer, Link, useState }}
-  code={`
+	title="手动关闭"
+	desc="你可以控制何时手动地关闭弹出卡片。"
+	scope={{ Popover, Spacer, Link, useState }}
+	code={`
 () => {
   const [visible, setVisible] = useState(false)
   const changeHandler = (next) => {
@@ -135,4 +135,4 @@ type Placement = 'top'
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

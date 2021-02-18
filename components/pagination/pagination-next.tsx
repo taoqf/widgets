@@ -1,19 +1,19 @@
-import React from 'react'
-import PaginationItem from './pagination-item'
-import { usePaginationContext } from './pagination-context'
+import React from 'react';
+import PaginationItem from './pagination-item';
+import { usePaginationContext } from './pagination-context';
 
-export type PaginationNextProps = React.ButtonHTMLAttributes<any>
+export type PaginationNextProps = React.ButtonHTMLAttributes<any>;
 
 const PaginationNext: React.FC<React.PropsWithChildren<PaginationNextProps>> = ({
-  children,
-  ...props
+	children,
+	...props
 }) => {
-  const { update, isLast } = usePaginationContext()
-  return (
-    <PaginationItem onClick={() => update && update('next')} disabled={isLast} {...props}>
-      {children}
-    </PaginationItem>
-  )
-}
+	const { update, isLast } = usePaginationContext();
+	return (
+		<PaginationItem onClick={() => update && update('next')} disabled={isLast} {...props}>
+			{children}
+		</PaginationItem>
+	);
+};
 
-export default PaginationNext
+export default PaginationNext;

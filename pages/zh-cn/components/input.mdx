@@ -1,30 +1,30 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import GitIcon from '@geist-ui/react-icons/github'
-import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
-import { useState, useEffect } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import GitIcon from '@geist-ui/react-icons/github';
+import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components';
+import { useState, useEffect } from 'react';
 
 export const meta = {
-  title: '输入框 Input',
-  group: '数据录入',
-}
+	title: '输入框 Input',
+	group: '数据录入',
+};
 
 ## Input / 输入框
 
 处理用户的输入数据。
 
 <Playground
-  desc="基础的输入字段。"
-  scope={{ Input }}
-  code={`
+	desc="基础的输入字段。"
+	scope={{ Input }}
+	code={`
 <Input placeholder="一个基础示例" />
 `}
 />
 
 <Playground
-  title="大小"
-  desc="不同大小的输入框。"
-  scope={{ Input, Spacer }}
-  code={`
+	title="大小"
+	desc="不同大小的输入框。"
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input size="mini" placeholder="最小的" /> <Spacer y={.5} />
   <Input size="small" placeholder="较小的" /> <Spacer y={.5} />
@@ -35,19 +35,19 @@ export const meta = {
 />
 
 <Playground
-  title="宽度"
-  desc="手动地设置宽度，或其他样式。"
-  scope={{ Input }}
-  code={`
+	title="宽度"
+	desc="手动地设置宽度，或其他样式。"
+	scope={{ Input }}
+	code={`
 <Input placeholder="一个基础示例" width="100%" />
 `}
 />
 
 <Playground
-  title="不可交互地"
-  desc="禁用输入框地所有交互效果。"
-  scope={{ Input, Spacer }}
-  code={`
+	title="不可交互地"
+	desc="禁用输入框地所有交互效果。"
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input disabled placeholder="禁用" />
   <Spacer y={.5} />
@@ -57,10 +57,10 @@ export const meta = {
 />
 
 <Playground
-  title="行内标签"
-  desc="在输入框内显示短小地行内文本。"
-  scope={{ Input, Spacer }}
-  code={`
+	title="行内标签"
+	desc="在输入框内显示短小地行内文本。"
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input label="用户名" placeholder="一个基础示例" />
   <Spacer y={.5} />
@@ -70,10 +70,10 @@ export const meta = {
 />
 
 <Playground
-  title="块级标签"
-  desc="为标签自定义更多样式。"
-  scope={{ Input, Spacer, Text, Code, Dot }}
-  code={`
+	title="块级标签"
+	desc="为标签自定义更多样式。"
+	scope={{ Input, Spacer, Text, Code, Dot }}
+	code={`
 <>
   <Input placeholder="小维特">
     用户名
@@ -93,10 +93,10 @@ export const meta = {
 />
 
 <Playground
-  title="状态"
-  desc="用色彩区分不同的状态。"
-  scope={{ Input, Spacer }}
-  code={`
+	title="状态"
+	desc="用色彩区分不同的状态。"
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input status="secondary" initialValue="次要" />
   <Spacer y={.5} />
@@ -110,10 +110,10 @@ export const meta = {
 />
 
 <Playground
-  title="图标"
-  desc="指定一个图标组件。"
-  scope={{ Input, GitIcon, Spacer }}
-  code={`
+	title="图标"
+	desc="指定一个图标组件。"
+	scope={{ Input, GitIcon, Spacer }}
+	code={`
 <>
   <Input icon={<GitIcon />} placeholder="输入 Git 地址" />
   <Spacer y={.5} />
@@ -123,19 +123,19 @@ export const meta = {
 />
 
 <Playground
-  title="密码"
-  desc="显示或隐藏密码文本。"
-  scope={{ Input }}
-  code={`
+	title="密码"
+	desc="显示或隐藏密码文本。"
+	scope={{ Input }}
+	code={`
 <Input.Password initialValue="123456abc" />
 `}
 />
 
 <Playground
-  title="清除按钮"
-  desc="在输入框内增加一个用于清除文本的按钮。"
-  scope={{ Input }}
-  code={`
+	title="清除按钮"
+	desc="在输入框内增加一个用于清除文本的按钮。"
+	scope={{ Input }}
+	code={`
 <>
   <Input clearable initialValue="示例文字" placeholder="输入文本" />
 </>
@@ -143,10 +143,10 @@ export const meta = {
 />
 
 <Playground
-  title="变化事件"
-  desc="捕获输入框的文本变化。"
-  scope={{ Input, useState }}
-  code={`
+	title="变化事件"
+	desc="捕获输入框的文本变化。"
+	scope={{ Input, useState }}
+	code={`
 () => {
   const [value, setValue] = useState()
   const handler = (e) => {
@@ -161,14 +161,14 @@ export const meta = {
 />
 
 <Playground
-  title={
-    <>
-      <Code>useInput</Code>
-    </>
-  }
-  desc="使用 `hooks` 捕获输入框的文本变化。"
-  scope={{ Input, useInput, useEffect, Button, Spacer }}
-  code={`
+	title={
+		<>
+			<Code>useInput</Code>
+		</>
+	}
+	desc="使用 `hooks` 捕获输入框的文本变化。"
+	scope={{ Input, useInput, useEffect, Button, Spacer }}
+	code={`
 () => {
   const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
   useEffect(() => console.log(state), [state])
@@ -187,10 +187,10 @@ export const meta = {
 />
 
 <Playground
-  title="命令式 API"
-  desc="使用非受控方式更新组件。"
-  scope={{ Input, Spacer, Button }}
-  code={`
+	title="命令式 API"
+	desc="使用非受控方式更新组件。"
+	scope={{ Input, Spacer, Button }}
+	code={`
 () => {
   const ref = React.useRef(null)
   const setChange = () => {
@@ -242,32 +242,32 @@ export const meta = {
 <Attributes.Title>InputSizes</Attributes.Title>
 
 ```ts
-type InputSizes = 'mini' | 'small' | 'medium' | 'large'
+type InputSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 <Attributes.Title>InputStatus</Attributes.Title>
 
 ```ts
-type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error';
 ```
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
 type useInput = (
-  initialValue: string,
+	initialValue: string,
 ) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
-}
+	state: string;
+	setState: Dispatch<SetStateAction<string>>;
+	currentRef: MutableRefObject<string>;
+	reset: () => void;
+	bindings: {
+		value: string;
+		onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	};
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

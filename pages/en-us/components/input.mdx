@@ -1,30 +1,30 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import GitIcon from '@geist-ui/react-icons/github'
-import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
-import { useState, useEffect } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import GitIcon from '@geist-ui/react-icons/github';
+import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components';
+import { useState, useEffect } from 'react';
 
 export const meta = {
-  title: 'Input',
-  group: 'Data Entry',
-}
+	title: 'Input',
+	group: 'Data Entry',
+};
 
 ## Input
 
 Retrieve text input from a user.
 
 <Playground
-  desc="Basic input field."
-  scope={{ Input }}
-  code={`
+	desc="Basic input field."
+	scope={{ Input }}
+	code={`
 <Input placeholder="The Evil Rabbit" />
 `}
 />
 
 <Playground
-  title="Sizes"
-  desc="Inputs of different sizes."
-  scope={{ Input, Spacer }}
-  code={`
+	title="Sizes"
+	desc="Inputs of different sizes."
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input size="mini" placeholder="Mini Input" /> <Spacer y={.5} />
   <Input size="small" placeholder="Small Input" /> <Spacer y={.5} />
@@ -35,19 +35,19 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="Set width"
-  desc="Specify width or other styles."
-  scope={{ Input }}
-  code={`
+	title="Set width"
+	desc="Specify width or other styles."
+	scope={{ Input }}
+	code={`
 <Input placeholder="The Evil Rabbit" width="100%" />
 `}
 />
 
 <Playground
-  title="unwritable"
-  desc="Disable interactive inputs."
-  scope={{ Input, Spacer }}
-  code={`
+	title="unwritable"
+	desc="Disable interactive inputs."
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input disabled placeholder="Disabled" />
   <Spacer y={.5} />
@@ -57,10 +57,10 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="inline label"
-  desc="Show a short label in the line."
-  scope={{ Input, Spacer }}
-  code={`
+	title="inline label"
+	desc="Show a short label in the line."
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input label="username" placeholder="The Evil Rabbit" />
   <Spacer y={.5} />
@@ -70,10 +70,10 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="block label"
-  desc="Labels for custom styles."
-  scope={{ Input, Spacer, Text, Code, Dot }}
-  code={`
+	title="block label"
+	desc="Labels for custom styles."
+	scope={{ Input, Spacer, Text, Code, Dot }}
+	code={`
 <>
   <Input placeholder="Evil Rabbit">
     Username
@@ -93,10 +93,10 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="status"
-  desc="Differentiate states by color."
-  scope={{ Input, Spacer }}
-  code={`
+	title="status"
+	desc="Differentiate states by color."
+	scope={{ Input, Spacer }}
+	code={`
 <>
   <Input status="secondary" initialValue="The Evil Rabbit" />
   <Spacer y={.5} />
@@ -110,10 +110,10 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="Icon"
-  desc="Specify an icon component."
-  scope={{ Input, GitIcon, Spacer }}
-  code={`
+	title="Icon"
+	desc="Specify an icon component."
+	scope={{ Input, GitIcon, Spacer }}
+	code={`
 <>
   <Input icon={<GitIcon />} placeholder="GitHub" />
   <Spacer y={.5} />
@@ -123,10 +123,10 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="Clearable"
-  desc="Add a clear button in the input box."
-  scope={{ Input }}
-  code={`
+	title="Clearable"
+	desc="Add a clear button in the input box."
+	scope={{ Input }}
+	code={`
 <>
   <Input clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
 </>
@@ -134,18 +134,18 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="Password"
-  scope={{ Input }}
-  code={`
+	title="Password"
+	scope={{ Input }}
+	code={`
 <Input.Password initialValue="123456abc" />
 `}
 />
 
 <Playground
-  title="Get Change"
-  desc="Capture changes in input."
-  scope={{ Input, useState }}
-  code={`
+	title="Get Change"
+	desc="Capture changes in input."
+	scope={{ Input, useState }}
+	code={`
 () => {
   const [value, setValue] = useState()
   const handler = (e) => {
@@ -160,14 +160,14 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title={
-    <>
-      With <Code>useInput</Code>
-    </>
-  }
-  desc="Use `hooks` to capture changes."
-  scope={{ Input, useInput, useEffect, Button, Spacer }}
-  code={`
+	title={
+		<>
+			With <Code>useInput</Code>
+		</>
+	}
+	desc="Use `hooks` to capture changes."
+	scope={{ Input, useInput, useEffect, Button, Spacer }}
+	code={`
 () => {
   const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
   useEffect(() => console.log(state), [state])
@@ -186,10 +186,10 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="Imperative API"
-  desc="Update component in an uncontrolled way."
-  scope={{ Input, Spacer, Button }}
-  code={`
+	title="Imperative API"
+	desc="Update component in an uncontrolled way."
+	scope={{ Input, Spacer, Button }}
+	code={`
 () => {
   const ref = React.useRef(null)
   const setChange = () => {
@@ -241,32 +241,32 @@ Retrieve text input from a user.
 <Attributes.Title>InputSizes</Attributes.Title>
 
 ```ts
-type InputSizes = 'mini' | 'small' | 'medium' | 'large'
+type InputSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 <Attributes.Title>InputStatus</Attributes.Title>
 
 ```ts
-type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error';
 ```
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
 type useInput = (
-  initialValue: string,
+	initialValue: string,
 ) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
-}
+	state: string;
+	setState: Dispatch<SetStateAction<string>>;
+	currentRef: MutableRefObject<string>;
+	reset: () => void;
+	bindings: {
+		value: string;
+		onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	};
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

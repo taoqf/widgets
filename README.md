@@ -19,14 +19,14 @@
 2. import into project:
 
 ```jsx
-import { GeistProvider, CssBaseline } from '@geist-ui/react'
+import { GeistProvider, CssBaseline } from '@geist-ui/react';
 
 const Application = () => (
-  <GeistProvider>
-    <CssBaseline /> // ---> Normalize styles
-    <AppComponent /> // ---> Your App Component
-  </GeistProvider>
-)
+	<GeistProvider>
+		<CssBaseline /> // ---> Normalize styles
+		<AppComponent /> // ---> Your App Component
+	</GeistProvider>
+);
 ```
 
 <br/>

@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Spacer, Container, Col } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Spacer, Container, Col } from 'components';
 
 export const meta = {
-  title: 'Spacer',
-  group: 'layout',
-}
+	title: 'Spacer',
+	group: 'layout',
+};
 
 ## Spacer
 
 Provide empty space.
 
 <Playground
-  title="Vertical"
-  scope={{ Spacer, Container }}
-  code={`
+	title="Vertical"
+	scope={{ Spacer, Container }}
+	code={`
 <>
   <Container style={{ background: '#444' }}>
     <Spacer y={1}/>
@@ -31,9 +31,9 @@ Provide empty space.
 />
 
 <Playground
-  title="Horizontal"
-  scope={{ Spacer, Container, Col }}
-  code={`
+	title="Horizontal"
+	scope={{ Spacer, Container, Col }}
+	code={`
 <Container>
   <Col style={{ background: '#444' }} />
   <Spacer x={5}/>
@@ -54,4 +54,4 @@ Provide empty space.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,3 +1,3 @@
-import redirect from 'lib/redirect'
+import redirect from 'lib/redirect';
 
-export default redirect('/zh-cn/components/text')
+export default redirect('/zh-cn/components/text');

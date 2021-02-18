@@ -1,21 +1,21 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Breadcrumbs, Spacer } from 'components'
-import NextLink from 'next/link'
-import Home from '@geist-ui/react-icons/home'
-import Inbox from '@geist-ui/react-icons/inbox'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Breadcrumbs, Spacer } from 'components';
+import NextLink from 'next/link';
+import Home from '@geist-ui/react-icons/home';
+import Inbox from '@geist-ui/react-icons/inbox';
 
 export const meta = {
-  title: '面包屑 Breadcrumbs',
-  group: '导航',
-}
+	title: '面包屑 Breadcrumbs',
+	group: '导航',
+};
 
 ## Breadcrumbs / 面包屑导航
 
 显示用户在应用中的层级位置。
 
 <Playground
-  scope={{ Breadcrumbs }}
-  code={`
+	scope={{ Breadcrumbs }}
+	code={`
 <Breadcrumbs>
   <Breadcrumbs.Item>Home</Breadcrumbs.Item>
   <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
@@ -25,9 +25,9 @@ export const meta = {
 />
 
 <Playground
-  title="大小"
-  scope={{ Breadcrumbs }}
-  code={`
+	title="大小"
+	scope={{ Breadcrumbs }}
+	code={`
 <>
   <Breadcrumbs size="mini">
     <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
@@ -54,10 +54,10 @@ export const meta = {
 />
 
 <Playground
-  title="分隔符"
-  desc="定制字符中的分隔符。"
-  scope={{ Breadcrumbs, Spacer }}
-  code={`
+	title="分隔符"
+	desc="定制字符中的分隔符。"
+	scope={{ Breadcrumbs, Spacer }}
+	code={`
 <>
   <Breadcrumbs separator="-">
     <Breadcrumbs.Item>Home</Breadcrumbs.Item>
@@ -77,10 +77,10 @@ export const meta = {
 />
 
 <Playground
-  title="图标"
-  desc="以图标表达更多信息。"
-  scope={{ Breadcrumbs, Home, Inbox }}
-  code={`
+	title="图标"
+	desc="以图标表达更多信息。"
+	scope={{ Breadcrumbs, Home, Inbox }}
+	code={`
 <Breadcrumbs>
   <Breadcrumbs.Item><Home /></Breadcrumbs.Item>
   <Breadcrumbs.Item href=""><Inbox /> Inbox</Breadcrumbs.Item>
@@ -90,10 +90,10 @@ export const meta = {
 />
 
 <Playground
-  title="结合 NextJS"
-  desc="与 `next.js` 结合使用的示例。"
-  scope={{ Breadcrumbs, NextLink }}
-  code={`
+	title="结合 NextJS"
+	desc="与 `next.js` 结合使用的示例。"
+	scope={{ Breadcrumbs, NextLink }}
+	code={`
 <Breadcrumbs>
   <NextLink href="/">
     <Breadcrumbs.Item nextLink>Home</Breadcrumbs.Item>
@@ -133,9 +133,9 @@ export const meta = {
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

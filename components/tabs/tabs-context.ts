@@ -1,21 +1,21 @@
-import React from 'react'
+import React from 'react';
 
 export interface TabsLabelItem {
-  value: string
-  label: string | React.ReactNode
-  disabled: boolean
+	value: string;
+	label: string | React.ReactNode;
+	disabled: boolean;
 }
 
 export interface TabsConfig {
-  register?: (item: TabsLabelItem) => void
-  currentValue?: string
-  inGroup: boolean
+	register?: (item: TabsLabelItem) => void;
+	currentValue?: string;
+	inGroup: boolean;
 }
 
 const defaultContext = {
-  inGroup: false,
-}
+	inGroup: false,
+};
 
-export const TabsContext = React.createContext<TabsConfig>(defaultContext)
+export const TabsContext = React.createContext<TabsConfig>(defaultContext);
 
-export const useTabsContext = (): TabsConfig => React.useContext<TabsConfig>(TabsContext)
+export const useTabsContext = (): TabsConfig => React.useContext<TabsConfig>(TabsContext);

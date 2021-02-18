@@ -1,26 +1,26 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Keyboard } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Keyboard } from 'components';
 
 export const meta = {
-  title: 'keyboard',
-  group: 'Data Display',
-}
+	title: 'keyboard',
+	group: 'Data Display',
+};
 
 ## Keyboard
 
 Display keyboard input that triggers an action.
 
 <Playground
-  scope={{ Keyboard }}
-  code={`
+	scope={{ Keyboard }}
+	code={`
 <Keyboard>f</Keyboard>
 `}
 />
 
 <Playground
-  title="modifiers"
-  scope={{ Keyboard }}
-  code={`
+	title="modifiers"
+	scope={{ Keyboard }}
+	code={`
 <div>
   <Keyboard command />
   <Keyboard shift />
@@ -31,9 +31,9 @@ Display keyboard input that triggers an action.
 />
 
 <Playground
-  title="combination"
-  scope={{ Keyboard }}
-  code={`
+	title="combination"
+	scope={{ Keyboard }}
+	code={`
 <div>
   <Keyboard command>f</Keyboard>
   <Keyboard shift>e</Keyboard>
@@ -43,9 +43,9 @@ Display keyboard input that triggers an action.
 />
 
 <Playground
-  title="small"
-  scope={{ Keyboard }}
-  code={`
+	title="small"
+	scope={{ Keyboard }}
+	code={`
 <Keyboard small>/</Keyboard>
 `}
 />
@@ -64,4 +64,4 @@ Display keyboard input that triggers an action.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

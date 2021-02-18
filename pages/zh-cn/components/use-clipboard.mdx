@@ -1,10 +1,10 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { useClipboard, Link, Button, useToasts, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { useClipboard, Link, Button, useToasts, Spacer } from 'components';
 
 export const meta = {
-  title: '剪切板 useClipboard',
-  group: '工具包',
-}
+	title: '剪切板 useClipboard',
+	group: '工具包',
+};
 
 ## Use clipboard / 拷贝至剪切板
 
@@ -13,8 +13,8 @@ export const meta = {
 这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
 <Playground
-  scope={{ useClipboard, Button, useToasts }}
-  code={`
+	scope={{ useClipboard, Button, useToasts }}
+	code={`
 () => {
   const [, setToast] = useToasts()
   const { copy } = useClipboard()
@@ -34,16 +34,16 @@ export const meta = {
 
 ```ts
 type UseClipboardOptions = {
-  onError: Function
-}
+	onError: Function;
+};
 
 type CopyResult = {
-  copy: (text: string) => void
-}
+	copy: (text: string) => void;
+};
 
-const useClickAway = (options?: UseClipboardOptions) => CopyResult
+const useClickAway = (options?: UseClipboardOptions) => CopyResult;
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

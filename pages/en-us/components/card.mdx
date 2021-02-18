@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Spacer, Row, Col, Link, Image, Text, Divider, Code } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Card, Spacer, Row, Col, Link, Image, Text, Divider, Code } from 'components';
 
 export const meta = {
-  title: 'card',
-  group: 'Surfaces',
-}
+	title: 'card',
+	group: 'Surfaces',
+};
 
 ## Card
 
 A common container component.
 
 <Playground
-  title="Basic"
-  scope={{ Card }}
-  code={`
+	title="Basic"
+	scope={{ Card }}
+	code={`
 <Card>
   <p>A basic card.</p>
 </Card>
@@ -21,9 +21,9 @@ A common container component.
 />
 
 <Playground
-  title="Hoverable"
-  scope={{ Card }}
-  code={`
+	title="Hoverable"
+	scope={{ Card }}
+	code={`
 <Card hoverable>
   <p>hoverable card.</p>
 </Card>
@@ -31,9 +31,9 @@ A common container component.
 />
 
 <Playground
-  title="Shadow"
-  scope={{ Card }}
-  code={`
+	title="Shadow"
+	scope={{ Card }}
+	code={`
 <Card shadow>
   <h4>The Evil Rabbit</h4>
   <p>shadow card.</p>
@@ -42,10 +42,10 @@ A common container component.
 />
 
 <Playground
-  title="Types"
-  desc="Show different states with colors."
-  scope={{ Card, Spacer, Row, Col }}
-  code={`
+	title="Types"
+	desc="Show different states with colors."
+	scope={{ Card, Spacer, Row, Col }}
+	code={`
 () => {
   const typeLeft = ['secondary', 'success', 'warning', 'error', 'dark']
   const typeRight = ['alert', 'purple', 'violet', 'cyan', 'lite']
@@ -74,9 +74,9 @@ A common container component.
 />
 
 <Playground
-  title="With Footer"
-  scope={{ Card, Link, Spacer, Row }}
-  code={`
+	title="With Footer"
+	scope={{ Card, Link, Spacer, Row }}
+	code={`
 <Row style={{ flexWrap: 'wrap' }} justify="space-around">
   <Card width="330px">
     <h4>Geist UI React</h4>
@@ -97,9 +97,9 @@ A common container component.
 />
 
 <Playground
-  title="With Image"
-  scope={{ Card, Link, Spacer, Text, Image }}
-  code={`
+	title="With Image"
+	scope={{ Card, Link, Spacer, Text, Image }}
+	code={`
 <Card width="400px">
   <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
    height="200" width="400" style={{ objectFit: 'cover' }} />
@@ -113,10 +113,10 @@ A common container component.
 />
 
 <Playground
-  title="With Divider"
-  desc="Show different types of content using `Divider`"
-  scope={{ Card, Text, Divider, Code }}
-  code={`
+	title="With Divider"
+	desc="Show different types of content using `Divider`"
+	scope={{ Card, Text, Divider, Code }}
+	code={`
 <Card width="400px">
   <Card.Content>
     <Text b>Description</Text>
@@ -158,19 +158,19 @@ A common container component.
 
 ```ts
 type CardType =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
-  | 'alert'
-  | 'purple'
-  | 'violet'
-  | 'cyan'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'dark'
+	| 'lite'
+	| 'alert'
+	| 'purple'
+	| 'violet'
+	| 'cyan';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

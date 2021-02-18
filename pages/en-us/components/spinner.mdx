@@ -1,36 +1,36 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Spinner, Spacer, Note, Code, Link } from 'components'
-import NextLink from 'next/link'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Spinner, Spacer, Note, Code, Link } from 'components';
+import NextLink from 'next/link';
 
 export const meta = {
-  title: 'Spinner',
-  group: 'Feedback',
-}
+	title: 'Spinner',
+	group: 'Feedback',
+};
 
 ## Spinner
 
 Indicate an action running in the background.
 
 <Note>
-  Looking for <Code>Loading</Code>? Use the{' '}
-  <NextLink href="/en-us/components/loading">
-    <a>Loading Component</a>
-  </NextLink>
-  .
+	Looking for <Code>Loading</Code>? Use the{' '}
+	<NextLink href="/en-us/components/loading">
+		<a>Loading Component</a>
+	</NextLink>
+	.
 </Note>
 
 <Playground
-  scope={{ Spinner }}
-  code={`
+	scope={{ Spinner }}
+	code={`
 <Spinner />
 `}
 />
 
 <Playground
-  title="Sizes"
-  desc="Components of different sizes."
-  scope={{ Spinner, Spacer }}
-  code={`
+	title="Sizes"
+	desc="Components of different sizes."
+	scope={{ Spinner, Spacer }}
+	code={`
 <>
   <Spinner size="mini" />
   <Spacer y={.5} />
@@ -53,4 +53,4 @@ Indicate an action running in the background.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

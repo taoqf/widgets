@@ -1,30 +1,30 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Modal, Button, Code, useModal, Note, Link } from 'components'
-import NextLink from 'next/link'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Modal, Button, Code, useModal, Note, Link } from 'components';
+import NextLink from 'next/link';
+import { useState } from 'react';
 
 export const meta = {
-  title: 'modal',
-  group: 'Feedback',
-}
+	title: 'modal',
+	group: 'Feedback',
+};
 
 ## Modal
 
 Display popup content that requires attention or provides additional information.
 
 <Note>
-  Just want a text notification? Try{' '}
-  <NextLink href="/en-us/components/toast">
-    <Link color>Toast component</Link>
-  </NextLink>
-  .
+	Just want a text notification? Try{' '}
+	<NextLink href="/en-us/components/toast">
+		<Link color>Toast component</Link>
+	</NextLink>
+	.
 </Note>
 
 <Playground
-  title="Basic"
-  desc="Use `open` control whether `Modal` is displayed."
-  scope={{ Modal, Button, useState }}
-  code={`
+	title="Basic"
+	desc="Use `open` control whether `Modal` is displayed."
+	scope={{ Modal, Button, useState }}
+	code={`
 () => {
   const [state, setState] = useState(false)
   const handler = () => setState(true)
@@ -51,14 +51,14 @@ Display popup content that requires attention or provides additional information
 />
 
 <Playground
-  title={
-    <>
-      With <Code>useModal</Code>
-    </>
-  }
-  desc="Use `hooks` for easier control `Modal`."
-  scope={{ Modal, Button, useModal }}
-  code={`
+	title={
+		<>
+			With <Code>useModal</Code>
+		</>
+	}
+	desc="Use `hooks` for easier control `Modal`."
+	scope={{ Modal, Button, useModal }}
+	code={`
 () => {
   const { visible, setVisible, bindings } = useModal()
   return (
@@ -80,10 +80,10 @@ Display popup content that requires attention or provides additional information
 />
 
 <Playground
-  title="Without Actions"
-  desc="Hide all action buttons."
-  scope={{ Modal, Button, useState }}
-  code={`
+	title="Without Actions"
+	desc="Hide all action buttons."
+	scope={{ Modal, Button, useState }}
+	code={`
 () => {
   const [state, setState] = useState(false)
   const handler = () => setState(true)
@@ -108,10 +108,10 @@ Display popup content that requires attention or provides additional information
 />
 
 <Playground
-  title="Disable Action"
-  desc="Disable one of the buttons."
-  scope={{ Modal, Button, useState }}
-  code={`
+	title="Disable Action"
+	desc="Disable one of the buttons."
+	scope={{ Modal, Button, useState }}
+	code={`
 () => {
   const [state, setState] = useState(false)
   const handler = () => setState(true)
@@ -138,10 +138,10 @@ Display popup content that requires attention or provides additional information
 />
 
 <Playground
-  title="Customizable"
-  desc="Custom `width` or `className`."
-  scope={{ Modal, Button, useModal }}
-  code={`
+	title="Customizable"
+	desc="Custom `width` or `className`."
+	scope={{ Modal, Button, useModal }}
+	code={`
 () => {
   const { setVisible, bindings } = useModal()
   return (
@@ -160,9 +160,9 @@ Display popup content that requires attention or provides additional information
 />
 
 <Playground
-  title="Loading"
-  scope={{ Modal, Button, useModal }}
-  code={`
+	title="Loading"
+	scope={{ Modal, Button, useModal }}
+	code={`
 () => {
   const { visible, setVisible, bindings } = useModal()
   return (
@@ -184,10 +184,10 @@ Display popup content that requires attention or provides additional information
 />
 
 <Playground
-  title="Overlong"
-  desc="Whether it is desktop or mobile, the content beyond the scope has been well handled."
-  scope={{ Modal, Button, useModal }}
-  code={`
+	title="Overlong"
+	desc="Whether it is desktop or mobile, the content beyond the scope has been well handled."
+	scope={{ Modal, Button, useModal }}
+	code={`
 () => {
   const { visible, setVisible, bindings } = useModal()
   return (
@@ -273,26 +273,26 @@ Display popup content that requires attention or provides additional information
 
 ```ts
 type useModal = (
-  initialVisible: boolean,
+	initialVisible: boolean,
 ) => {
-  visible: boolean
-  setVisible: Dispatch<SetStateAction<boolean>>
-  currentRef: MutableRefObject<boolean>
-  bindings: {
-    open: boolean
-    onClose: () => void
-  }
-}
+	visible: boolean;
+	setVisible: Dispatch<SetStateAction<boolean>>;
+	currentRef: MutableRefObject<boolean>;
+	bindings: {
+		open: boolean;
+		onClose: () => void;
+	};
+};
 ```
 
 <Attributes.Title>ModalActionEvent</Attributes.Title>
 
 ```ts
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
-  close: () => void
-}
+	close: () => void;
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,21 +1,21 @@
-import Layout from 'lib/components/layout'
-import Attributes from 'lib/components/attributes'
-import Playground from 'lib/components/playground'
-import { ButtonDropdown, Spacer } from 'components'
+import Layout from 'lib/components/layout';
+import Attributes from 'lib/components/attributes';
+import Playground from 'lib/components/playground';
+import { ButtonDropdown, Spacer } from 'components';
 
 export const meta = {
-  title: '下拉按钮 Btn Dropdown',
-  group: '导航',
-  index: 105,
-}
+	title: '下拉按钮 Btn Dropdown',
+	group: '导航',
+	index: 105,
+};
 
 ## Button Dropdown / 下拉按钮
 
 显示相关的操作。
 
 <Playground
-  scope={{ ButtonDropdown }}
-  code={`
+	scope={{ ButtonDropdown }}
+	code={`
 <ButtonDropdown>
   <ButtonDropdown.Item main>默认按钮</ButtonDropdown.Item>
   <ButtonDropdown.Item>次要的按钮</ButtonDropdown.Item>
@@ -25,10 +25,10 @@ export const meta = {
 />
 
 <Playground
-  title="禁用"
-  desc="禁用所有的按钮。"
-  scope={{ ButtonDropdown }}
-  code={`
+	title="禁用"
+	desc="禁用所有的按钮。"
+	scope={{ ButtonDropdown }}
+	code={`
 <ButtonDropdown disabled>
   <ButtonDropdown.Item main>默认动作</ButtonDropdown.Item>
   <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
@@ -38,10 +38,10 @@ export const meta = {
 />
 
 <Playground
-  title="加载中"
-  desc="显示一个友好的加载指示器。"
-  scope={{ ButtonDropdown }}
-  code={`
+	title="加载中"
+	desc="显示一个友好的加载指示器。"
+	scope={{ ButtonDropdown }}
+	code={`
 <ButtonDropdown loading>
   <ButtonDropdown.Item main>Default Action</ButtonDropdown.Item>
   <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
@@ -51,9 +51,9 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
-  scope={{ ButtonDropdown, Spacer }}
-  code={`
+	title="类型"
+	scope={{ ButtonDropdown, Spacer }}
+	code={`
 <>
   <ButtonDropdown type="secondary">
     <ButtonDropdown.Item main>次要的</ButtonDropdown.Item>
@@ -75,10 +75,10 @@ export const meta = {
 />
 
 <Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ ButtonDropdown, Spacer }}
-  code={`
+	title="大小"
+	desc="不同大小的组件。"
+	scope={{ ButtonDropdown, Spacer }}
+	code={`
 <>
   <ButtonDropdown size="mini" auto>
     <ButtonDropdown.Item main>自动-小</ButtonDropdown.Item>
@@ -112,10 +112,10 @@ export const meta = {
 />
 
 <Playground
-  title="多类型"
-  desc="为每个按钮设定不同的类型。"
-  scope={{ ButtonDropdown }}
-  code={`
+	title="多类型"
+	desc="为每个按钮设定不同的类型。"
+	scope={{ ButtonDropdown }}
+	code={`
 <ButtonDropdown>
   <ButtonDropdown.Item main>访问账户</ButtonDropdown.Item>
   <ButtonDropdown.Item>屏蔽账户</ButtonDropdown.Item>
@@ -148,4 +148,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,19 +1,19 @@
-import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
-import { Row, Col } from 'components'
+import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components';
+import { Row, Col } from 'components';
 
 export const meta = {
-  title: 'layout',
-  group: 'layout',
-}
+	title: 'layout',
+	group: 'layout',
+};
 
 ## Layout
 
 Smart and simple layout components.
 
 <Playground
-  desc="`Row` can create basic row container."
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	desc="`Row` can create basic row container."
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row style={{ marginBottom: '10px' }}> <ExampleBlock /> </Row>
   <Row> <ExampleBlock /> </Row>
@@ -60,10 +60,10 @@ Smart and simple layout components.
 `} />
 
 <Playground
-  title="compose"
-  desc="Create compose layout by combining the basic 1/24 columns."
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	title="compose"
+	desc="Create compose layout by combining the basic 1/24 columns."
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={16}><ExampleBlock /></Col>
@@ -93,10 +93,10 @@ Smart and simple layout components.
 />
 
 <Playground
-  title="alignment"
-  desc="Use `justify` and `align` make to alignment of columns."
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	title="alignment"
+	desc="Use `justify` and `align` make to alignment of columns."
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={16}><ExampleBlock /></Col>
@@ -155,4 +155,4 @@ Smart and simple layout components.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

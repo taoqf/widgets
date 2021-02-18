@@ -1,28 +1,28 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Checkbox, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Checkbox, Spacer } from 'components';
 
 export const meta = {
-  title: 'checkbox',
-  group: 'Data Entry',
-}
+	title: 'checkbox',
+	group: 'Data Entry',
+};
 
 ## Checkbox
 
 Displays a boolean value.
 
 <Playground
-  desc="Change state with `checked` props."
-  scope={{ Checkbox }}
-  code={`
+	desc="Change state with `checked` props."
+	scope={{ Checkbox }}
+	code={`
   <Checkbox checked={true}>Sydney</Checkbox>
 `}
 />
 
 <Playground
-  title="sizes"
-  desc="Checkbox of different sizes."
-  scope={{ Checkbox, Spacer }}
-  code={`
+	title="sizes"
+	desc="Checkbox of different sizes."
+	scope={{ Checkbox, Spacer }}
+	code={`
 <>
   <Checkbox checked={true} size="mini">mini</Checkbox>
   <Spacer y={.5} />
@@ -36,9 +36,9 @@ Displays a boolean value.
 />
 
 <Playground
-  title="disable"
-  scope={{ Checkbox, Spacer }}
-  code={`
+	title="disable"
+	scope={{ Checkbox, Spacer }}
+	code={`
 <>
   <Checkbox>Sydney</Checkbox>
   <Spacer y={.5} />
@@ -48,10 +48,10 @@ Displays a boolean value.
 />
 
 <Playground
-  title="group"
-  desc="Manage a set of `Checkbox`."
-  scope={{ Checkbox, Spacer }}
-  code={`
+	title="group"
+	desc="Manage a set of `Checkbox`."
+	scope={{ Checkbox, Spacer }}
+	code={`
 () => {
   const handler = value => {
     console.log(value)
@@ -94,24 +94,24 @@ Displays a boolean value.
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 <Attributes.Title>CheckboxEvent</Attributes.Title>
 
 ```ts
 interface CheckboxEventTarget {
-  checked: boolean
+	checked: boolean;
 }
 
 export interface CheckboxEvent {
-  target: CheckboxEventTarget
-  stopPropagation: () => void
-  preventDefault: () => void
-  nativeEvent: React.ChangeEvent
+	target: CheckboxEventTarget;
+	stopPropagation: () => void;
+	preventDefault: () => void;
+	nativeEvent: React.ChangeEvent;
 }
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

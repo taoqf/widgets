@@ -1,37 +1,37 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Progress, Spacer, useTheme, Button } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Progress, Spacer, useTheme, Button } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: '进度条 Progress',
-  group: '反馈',
-}
+	title: '进度条 Progress',
+	group: '反馈',
+};
 
 ## Progress / 进度条
 
 展示事件或与之相关的任务进展。
 
 <Playground
-  scope={{ Progress }}
-  code={`
+	scope={{ Progress }}
+	code={`
 <Progress value={50} />
 `}
 />
 
 <Playground
-  title="最大值"
-  desc="自定义进度条的最大数值。"
-  scope={{ Progress }}
-  code={`
+	title="最大值"
+	desc="自定义进度条的最大数值。"
+	scope={{ Progress }}
+	code={`
 <Progress value={45} max={50} />
 `}
 />
 
 <Playground
-  title="动态色彩"
-  desc="你可以指定进度条在任何范围内的颜色。"
-  scope={{ Progress, useState, useTheme, Button, Spacer }}
-  code={`
+	title="动态色彩"
+	desc="你可以指定进度条在任何范围内的颜色。"
+	scope={{ Progress, useState, useTheme, Button, Spacer }}
+	code={`
 () => {
   const theme = useTheme()
   const [value, setValue] = useState(20)
@@ -55,10 +55,10 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
-  desc="我们预置了一些不同风格的进度条。"
-  scope={{ Progress, Spacer }}
-  code={`
+	title="类型"
+	desc="我们预置了一些不同风格的进度条。"
+	scope={{ Progress, Spacer }}
+	code={`
 <>
   <Progress type="secondary" value={10} />
   <Spacer />
@@ -86,4 +86,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

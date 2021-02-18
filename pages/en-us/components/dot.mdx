@@ -1,18 +1,18 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Dot } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Dot } from 'components';
 
 export const meta = {
-  title: 'Dot',
-  group: 'Data Display',
-}
+	title: 'Dot',
+	group: 'Data Display',
+};
 
 ## Dot
 
 Display an indicator of standardization status.
 
 <Playground
-  scope={{ Dot }}
-  code={`
+	scope={{ Dot }}
+	code={`
 <>
   <Dot style={{ marginRight: '15px' }} />
   <Dot style={{ marginRight: '15px' }} type="success" />
@@ -23,8 +23,8 @@ Display an indicator of standardization status.
 />
 
 <Playground
-  scope={{ Dot }}
-  code={`
+	scope={{ Dot }}
+	code={`
 <>
   <Dot style={{ marginRight: '20px' }}>Canceled</Dot>
   <Dot style={{ marginRight: '20px' }} type="success">Ready</Dot>
@@ -44,4 +44,4 @@ Display an indicator of standardization status.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

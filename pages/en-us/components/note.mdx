@@ -1,35 +1,35 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Note } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Note } from 'components';
 
 export const meta = {
-  title: 'note',
-  group: 'Feedback',
-}
+	title: 'note',
+	group: 'Feedback',
+};
 
 ## Note
 
 Display text that requires attention or provides additional information.
 
 <Playground
-  desc="Show a piece of text or components."
-  scope={{ Note }}
-  code={`
+	desc="Show a piece of text or components."
+	scope={{ Note }}
+	code={`
 <Note>This note details something important.</Note>
 `}
 />
 
 <Playground
-  title="secondary"
-  scope={{ Note }}
-  code={`
+	title="secondary"
+	scope={{ Note }}
+	code={`
 <Note type="secondary">This note details something important.</Note>
 `}
 />
 
 <Playground
-  title="status"
-  scope={{ Note }}
-  code={`
+	title="status"
+	scope={{ Note }}
+	code={`
 <>
   <Note type="success">This note details something important.</Note>
   <br/>
@@ -41,33 +41,33 @@ Display text that requires attention or provides additional information.
 />
 
 <Playground
-  title="hidden label"
-  scope={{ Note }}
-  code={`
+	title="hidden label"
+	scope={{ Note }}
+	code={`
 <Note label={false}>Just a quick note!</Note>
 `}
 />
 
 <Playground
-  title="custom label"
-  scope={{ Note }}
-  code={`
+	title="custom label"
+	scope={{ Note }}
+	code={`
 <Note label="custom">This note uses a custom label.</Note>
 `}
 />
 
 <Playground
-  title="small"
-  scope={{ Note }}
-  code={`
+	title="small"
+	scope={{ Note }}
+	code={`
 <Note small>This note details something important.</Note>
 `}
 />
 
 <Playground
-  title="Filled Variant"
-  scope={{ Note }}
-  code={`
+	title="Filled Variant"
+	scope={{ Note }}
+	code={`
 <>
   <Note label="custom" filled>This note uses a custom label.</Note>
   <br/>
@@ -97,4 +97,4 @@ Display text that requires attention or provides additional information.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

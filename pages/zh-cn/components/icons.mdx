@@ -1,14 +1,14 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import Title from 'lib/components/playground/title'
-import { Spacer, Tabs, Snippet } from 'components'
-import * as Icon from '@geist-ui/react-icons'
-import Github from '@geist-ui/react-icons/github'
-import IconsGallery from 'lib/components/displays/icons'
+import { Layout, Playground, Attributes } from 'lib/components';
+import Title from 'lib/components/playground/title';
+import { Spacer, Tabs, Snippet } from 'components';
+import * as Icon from '@geist-ui/react-icons';
+import Github from '@geist-ui/react-icons/github';
+import IconsGallery from 'lib/components/displays/icons';
 
 export const meta = {
-  title: '图标 Icons',
-  group: '通用',
-}
+	title: '图标 Icons',
+	group: '通用',
+};
 
 ## Icons / 图标
 
@@ -16,14 +16,14 @@ export const meta = {
 
 <Title title="安装" desc="安装图标库到你的项目中。" />
 <Tabs initialValue="yarn">
-  <Tabs.Item label="Yarn" value="yarn">
-    <Spacer y={0.6} />
-    <Snippet width="400px">yarn add @geist-ui/react-icons</Snippet>
-  </Tabs.Item>
-  <Tabs.Item label="npm" value="npm">
-    <Spacer y={0.6} />
-    <Snippet width="400px">npm i @geist-ui/react-icons</Snippet>
-  </Tabs.Item>
+	<Tabs.Item label="Yarn" value="yarn">
+		<Spacer y={0.6} />
+		<Snippet width="400px">yarn add @geist-ui/react-icons</Snippet>
+	</Tabs.Item>
+	<Tabs.Item label="npm" value="npm">
+		<Spacer y={0.6} />
+		<Snippet width="400px">npm i @geist-ui/react-icons</Snippet>
+	</Tabs.Item>
 </Tabs>
 
 <Playground
@@ -37,24 +37,24 @@ export const meta = {
 // import Github from '@geist-ui/react-icons/github'
 
 <>
-  <Icon.Github />
-  <Spacer x={1} inline />
-  <Github />
+	<Icon.Github />
+	<Spacer x={1} inline />
+	<Github />
 </>
 `} />
 
 <Playground
-  title="色彩"
-  scope={{ Github }}
-  code={`
+	title="色彩"
+	scope={{ Github }}
+	code={`
 <Github color="red" />
 `}
 />
 
 <Playground
-  title="大小"
-  scope={{ Github, Spacer }}
-  code={`
+	title="大小"
+	scope={{ Github, Spacer }}
+	code={`
 <>
   <Github size={16} /> <Spacer inline x={.35} />
   <Github size={20} /> <Spacer inline x={.35} />
@@ -79,4 +79,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

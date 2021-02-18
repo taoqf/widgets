@@ -1,6 +1,6 @@
-import Collapse from './collapse'
-import CollapseGroup from './collapse-group'
+import Collapse from './collapse';
+import CollapseGroup from './collapse-group';
 
-Collapse.Group = CollapseGroup
+Collapse.Group = CollapseGroup;
 
-export default Collapse
+export default Collapse;

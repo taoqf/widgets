@@ -1,20 +1,20 @@
-import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
-import { Page, Button } from 'components'
-import MockPage from 'lib/components/displays/mock-page'
+import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components';
+import { Page, Button } from 'components';
+import MockPage from 'lib/components/displays/mock-page';
 
 export const meta = {
-  title: '页面 Page',
-  group: '布局',
-}
+	title: '页面 Page',
+	group: '布局',
+};
 
 ## Page / 页面
 
 展示页面内容的通用容器。
 
 <Playground
-  desc="内容将会被展示在页面中间。"
-  scope={{ Page, MockPage, Button }}
-  code={`
+	desc="内容将会被展示在页面中间。"
+	scope={{ Page, MockPage, Button }}
+	code={`
 () => {
   const Child = () => (
     <>
@@ -36,10 +36,10 @@ export const meta = {
 />
 
 <Playground
-  title="内容块"
-  desc="添加 `Header` 和 `Footer` 得到更好的布局效果。"
-  scope={{ Page, MockPage, Button }}
-  code={`
+	title="内容块"
+	desc="添加 `Header` 和 `Footer` 得到更好的布局效果。"
+	scope={{ Page, MockPage, Button }}
+	code={`
 () => {
   const [visible, setVisible] = React.useState(false)
   return (
@@ -97,18 +97,18 @@ export const meta = {
 <Attributes.Title>PageSize</Attributes.Title>
 
 ```ts
-type PageSize = string | 'mini' | 'small' | 'medium' | 'large'
+type PageSize = string | 'mini' | 'small' | 'medium' | 'large';
 ```
 
 <Attributes.Title>PageRenderMode</Attributes.Title>
 
 ```ts
 type PageRenderMode =
-  | 'default' // 正常渲染
-  | 'effect' // 在 effect 第一次触发后渲染
-  | 'effect-seo' // 类似于 "effect"，但首屏为 SEO 额外返回字符串
+	| 'default' // 正常渲染
+	| 'effect' // 在 effect 第一次触发后渲染
+	| 'effect-seo'; // 类似于 "effect"，但首屏为 SEO 额外返回字符串
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

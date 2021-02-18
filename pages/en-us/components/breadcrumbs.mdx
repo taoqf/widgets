@@ -1,21 +1,21 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Breadcrumbs, Spacer } from 'components'
-import NextLink from 'next/link'
-import Home from '@geist-ui/react-icons/home'
-import Inbox from '@geist-ui/react-icons/inbox'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Breadcrumbs, Spacer } from 'components';
+import NextLink from 'next/link';
+import Home from '@geist-ui/react-icons/home';
+import Inbox from '@geist-ui/react-icons/inbox';
 
 export const meta = {
-  title: 'breadcrumbs',
-  group: 'Navigation',
-}
+	title: 'breadcrumbs',
+	group: 'Navigation',
+};
 
 ## Breadcrumbs
 
 Show where users are in the application.
 
 <Playground
-  scope={{ Breadcrumbs }}
-  code={`
+	scope={{ Breadcrumbs }}
+	code={`
 <Breadcrumbs>
   <Breadcrumbs.Item>Home</Breadcrumbs.Item>
   <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
@@ -25,9 +25,9 @@ Show where users are in the application.
 />
 
 <Playground
-  title="Sizes"
-  scope={{ Breadcrumbs }}
-  code={`
+	title="Sizes"
+	scope={{ Breadcrumbs }}
+	code={`
 <>
   <Breadcrumbs size="mini">
     <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
@@ -54,10 +54,10 @@ Show where users are in the application.
 />
 
 <Playground
-  title="Separator"
-  desc="Custom separator in characters."
-  scope={{ Breadcrumbs, Spacer }}
-  code={`
+	title="Separator"
+	desc="Custom separator in characters."
+	scope={{ Breadcrumbs, Spacer }}
+	code={`
 <>
   <Breadcrumbs separator="-">
     <Breadcrumbs.Item>Home</Breadcrumbs.Item>
@@ -77,10 +77,10 @@ Show where users are in the application.
 />
 
 <Playground
-  title="Icons"
-  desc="Show more information with icons."
-  scope={{ Breadcrumbs, Home, Inbox }}
-  code={`
+	title="Icons"
+	desc="Show more information with icons."
+	scope={{ Breadcrumbs, Home, Inbox }}
+	code={`
 <Breadcrumbs>
   <Breadcrumbs.Item><Home /></Breadcrumbs.Item>
   <Breadcrumbs.Item href=""><Inbox /> Inbox</Breadcrumbs.Item>
@@ -90,10 +90,10 @@ Show where users are in the application.
 />
 
 <Playground
-  title="With NextJS"
-  desc="Example for use with `next.js`."
-  scope={{ Breadcrumbs, NextLink }}
-  code={`
+	title="With NextJS"
+	desc="Example for use with `next.js`."
+	scope={{ Breadcrumbs, NextLink }}
+	code={`
 <Breadcrumbs>
   <NextLink href="/">
     <Breadcrumbs.Item nextLink>Home</Breadcrumbs.Item>
@@ -133,9 +133,9 @@ Show where users are in the application.
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

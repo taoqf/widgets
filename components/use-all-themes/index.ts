@@ -1,3 +1,3 @@
-import { useAllThemes } from './all-themes-context'
+import { useAllThemes } from './all-themes-context';
 
-export default useAllThemes
+export default useAllThemes;

@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, ButtonGroup } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Button, Spacer, ButtonGroup } from 'components';
 
 export const meta = {
-  title: 'Button-Group',
-  group: 'Data Entry',
-}
+	title: 'Button-Group',
+	group: 'Data Entry',
+};
 
 ## Button Group
 
 A set of related buttons.
 
 <Playground
-  title="Basic"
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="Basic"
+	scope={{ Button, ButtonGroup }}
+	code={`
 <ButtonGroup>
   <Button>One</Button>
   <Button>Two</Button>
@@ -23,10 +23,10 @@ A set of related buttons.
 />
 
 <Playground
-  title="Variant"
-  desc="set the type or styles of all buttons in the group."
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="Variant"
+	desc="set the type or styles of all buttons in the group."
+	scope={{ Button, ButtonGroup }}
+	code={`
 <>
   <ButtonGroup type="success">
     <Button>One</Button>
@@ -51,9 +51,9 @@ A set of related buttons.
 />
 
 <Playground
-  title="Sizes"
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="Sizes"
+	scope={{ Button, ButtonGroup }}
+	code={`
 <>
   <ButtonGroup size="small">
     <Button>One</Button>
@@ -69,9 +69,9 @@ A set of related buttons.
 />
 
 <Playground
-  title="Vertical"
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="Vertical"
+	scope={{ Button, ButtonGroup }}
+	code={`
 <>
   <ButtonGroup size="small" vertical>
     <Button>One</Button>
@@ -112,24 +112,24 @@ A set of related buttons.
 
 ```ts
 type ButtonTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'abort'
-  | 'secondary-light'
-  | 'success-light'
-  | 'warning-light'
-  | 'error-light'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'abort'
+	| 'secondary-light'
+	| 'success-light'
+	| 'warning-light'
+	| 'error-light';
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

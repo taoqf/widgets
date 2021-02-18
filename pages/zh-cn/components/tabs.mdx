@@ -1,22 +1,22 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Tabs, Spacer, Link, Text, Button, Code, useTabs } from 'components'
-import { useState } from 'react'
-import TwitterIcon from '@geist-ui/react-icons/twitter'
-import TwitchIcon from '@geist-ui/react-icons/twitch'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Tabs, Spacer, Link, Text, Button, Code, useTabs } from 'components';
+import { useState } from 'react';
+import TwitterIcon from '@geist-ui/react-icons/twitter';
+import TwitchIcon from '@geist-ui/react-icons/twitch';
 
 export const meta = {
-  title: '选项卡 Tabs',
-  group: '导航',
-}
+	title: '选项卡 Tabs',
+	group: '导航',
+};
 
 ## Tabs / 选项卡
 
 显示选项卡的内容。
 
 <Playground
-  scope={{ Tabs }}
-  desc="切换显示不同的内容。"
-  code={`
+	scope={{ Tabs }}
+	desc="切换显示不同的内容。"
+	code={`
 <Tabs initialValue="1">
   <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
   <Tabs.Item label="八进制" value="2">八进制表示为开头是0后接大写或小写的O（0o或0O）。</Tabs.Item>
@@ -25,9 +25,9 @@ export const meta = {
 />
 
 <Playground
-  title="禁用"
-  scope={{ Tabs }}
-  code={`
+	title="禁用"
+	scope={{ Tabs }}
+	code={`
 <Tabs initialValue="1">
   <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
   <Tabs.Item label="八进制" value="2" disabled />
@@ -36,9 +36,9 @@ export const meta = {
 />
 
 <Playground
-  title="隐藏分割线"
-  scope={{ Tabs }}
-  code={`
+	title="隐藏分割线"
+	scope={{ Tabs }}
+	code={`
 <Tabs initialValue="html" hideDivider>
   <Tabs.Item label="HTML" value="html">
     <p>HTML 是我们用来构造网站内容的不同部分并定义它们的意义或目的的语言。</p>
@@ -51,10 +51,10 @@ export const meta = {
 />
 
 <Playground
-  title="图标"
-  desc="在选项卡的标签上显示图标组件。"
-  scope={{ Tabs, TwitterIcon, TwitchIcon, Link, Text }}
-  code={`
+	title="图标"
+	desc="在选项卡的标签上显示图标组件。"
+	scope={{ Tabs, TwitterIcon, TwitchIcon, Link, Text }}
+	code={`
 <Tabs initialValue="1">
   <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
     <Text>你好，这是我们在 Twitch 的最新直播。</Text>
@@ -68,10 +68,10 @@ export const meta = {
 />
 
 <Playground
-  title="命令式"
-  desc="以命令式的风格控制选项卡组件。"
-  scope={{ Tabs, Button, Spacer, useState }}
-  code={`
+	title="命令式"
+	desc="以命令式的风格控制选项卡组件。"
+	scope={{ Tabs, Button, Spacer, useState }}
+	code={`
 () => {
   const [value, setValue] = useState('1')
   const switchHandler = () => setValue('2')
@@ -91,14 +91,14 @@ export const meta = {
 />
 
 <Playground
-  title={
-    <>
-      与&nbsp;<Code>useTabs</Code>&nbsp;组合
-    </>
-  }
-  desc="使用 `hooks` 以更简单的方式控制选项卡。"
-  scope={{ Tabs, Button, Spacer, useTabs }}
-  code={`
+	title={
+		<>
+			与&nbsp;<Code>useTabs</Code>&nbsp;组合
+		</>
+	}
+	desc="使用 `hooks` 以更简单的方式控制选项卡。"
+	scope={{ Tabs, Button, Spacer, useTabs }}
+	code={`
 () => {
   const { setState, bindings } = useTabs('1')
   return (
@@ -138,18 +138,18 @@ export const meta = {
 
 ```ts
 type useTabs = (
-  initialValue: string,
+	initialValue: string,
 ) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  bindings: {
-    value: string
-    onChange: (val: string) => void
-  }
-}
+	state: string;
+	setState: Dispatch<SetStateAction<string>>;
+	currentRef: MutableRefObject<string>;
+	bindings: {
+		value: string;
+		onChange: (val: string) => void;
+	};
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Fieldset, Button, Text, Divider } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Card, Fieldset, Button, Text, Divider } from 'components';
 
 export const meta = {
-  title: '控件组 Fieldset',
-  group: '表面',
-}
+	title: '控件组 Fieldset',
+	group: '表面',
+};
 
 ## Fieldset / 控件组
 
 在一个集合内显示相关的信息。
 
 <Playground
-  desc="在 `Actions` 内可以添加自定义的按钮。"
-  scope={{ Fieldset, Button }}
-  code={`
+	desc="在 `Actions` 内可以添加自定义的按钮。"
+	scope={{ Fieldset, Button }}
+	code={`
 <Fieldset>
   <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
   <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
@@ -30,10 +30,10 @@ export const meta = {
 />
 
 <Playground
-  title="定制文本"
-  desc="在不同的场景下定制文本的色彩。"
-  scope={{ Fieldset, Button, Text }}
-  code={`
+	title="定制文本"
+	desc="在不同的场景下定制文本的色彩。"
+	scope={{ Fieldset, Button, Text }}
+	code={`
 <Fieldset>
   <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
   <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
@@ -50,10 +50,10 @@ export const meta = {
 />
 
 <Playground
-  title="选项卡"
-  desc="同时展示多个组件组。"
-  scope={{ Fieldset, Button }}
-  code={`
+	title="选项卡"
+	desc="同时展示多个组件组。"
+	scope={{ Fieldset, Button }}
+	code={`
 () => {
   const handler = v => console.log(v)
   return (
@@ -95,10 +95,10 @@ export const meta = {
 />
 
 <Playground
-  title="组合分割线"
-  desc="使用 `Fieldset.Content` 与其他组件组合成不同布局。"
-  scope={{ Fieldset, Divider }}
-  code={`
+	title="组合分割线"
+	desc="使用 `Fieldset.Content` 与其他组件组合成不同布局。"
+	scope={{ Fieldset, Divider }}
+	code={`
 <Fieldset>
   <Fieldset.Content style={{ paddingTop: '10pt', paddingBottom: '10pt' }}>
     <h4>预备知识</h4>
@@ -161,4 +161,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

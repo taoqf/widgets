@@ -1,18 +1,18 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Capacity, Spacer, useTheme } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Capacity, Spacer, useTheme } from 'components';
 
 export const meta = {
-  title: 'Capacity',
-  group: 'Data Display',
-}
+	title: 'Capacity',
+	group: 'Data Display',
+};
 
 ## Capacity
 
 Display an capacity indicator.
 
 <Playground
-  scope={{ Capacity, Spacer }}
-  code={`
+	scope={{ Capacity, Spacer }}
+	code={`
 <>
   <Capacity value={15} /> <Spacer />
   <Capacity value={45} /> <Spacer />
@@ -22,10 +22,10 @@ Display an capacity indicator.
 />
 
 <Playground
-  title="Fixed Color"
-  desc="Specify a color to override the default."
-  scope={{ Capacity, Spacer, useTheme }}
-  code={`
+	title="Fixed Color"
+	desc="Specify a color to override the default."
+	scope={{ Capacity, Spacer, useTheme }}
+	code={`
 () => {
   const theme = useTheme()
   return <Capacity value={75} color={theme.palette.success} />
@@ -45,4 +45,4 @@ Display an capacity indicator.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

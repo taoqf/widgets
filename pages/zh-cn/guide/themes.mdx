@@ -1,10 +1,10 @@
-import Layout from 'lib/components/layout'
-import { Note, Code, Spacer, Link } from 'components'
+import Layout from 'lib/components/layout';
+import { Note, Code, Spacer, Link } from 'components';
 
 export const meta = {
-  title: '主题',
-  group: '定制化',
-}
+	title: '主题',
+	group: '定制化',
+};
 
 ## 主题
 
@@ -17,12 +17,12 @@ export const meta = {
 ### 切换主题
 
 <Note>
-  在使用任何组件前，请确保已添加 <Code>GeistProvider</Code> 至应用的根节点。
+	在使用任何组件前，请确保已添加 <Code>GeistProvider</Code> 至应用的根节点。
 </Note>
 <Spacer y={0.5} />
 <Note type="success">
-  <Code>CssBaseline</Code> 提供了基础的 CSS 样式，这和你熟悉的 <Code>normalize</Code>{' '}
-  有些类似。
+	<Code>CssBaseline</Code> 提供了基础的 CSS 样式，这和你熟悉的 <Code>normalize</Code>{' '}
+	有些类似。
 </Note>
 <Spacer y={1} />
 
@@ -33,20 +33,20 @@ export const meta = {
 2. 更新 `themeType` 的值，所有的组件都会随之自动变化。
 
 ```jsx
-import { CssBaseline, GeistProvider } from '@geist-ui/react'
+import { CssBaseline, GeistProvider } from '@geist-ui/react';
 
 const App = () => {
-  const [themeType, setThemeType] = useState('light')
-  const switchThemes = () => {
-    setThemeType(last => (last === 'dark' ? 'light' : 'dark'))
-  }
-  return (
-    <GeistProvider themeType={themeType}>
-      <CssBaseline />
-      <YourComponent onClick={switchThemes} />
-    </GeistProvider>
-  )
-}
+	const [themeType, setThemeType] = useState('light');
+	const switchThemes = () => {
+		setThemeType(last => (last === 'dark' ? 'light' : 'dark'));
+	};
+	return (
+		<GeistProvider themeType={themeType}>
+			<CssBaseline />
+			<YourComponent onClick={switchThemes} />
+		</GeistProvider>
+	);
+};
 ```
 
 <Spacer y={3} />
@@ -60,25 +60,25 @@ const App = () => {
 
 <Spacer y={1} />
 <Note type="warning">
-  自定义越多的主题，就会有越多的 <b>重新渲染</b> 发生。
+	自定义越多的主题，就会有越多的 <b>重新渲染</b> 发生。
 </Note>
 
 ```jsx
-import { CssBaseline, GeistProvider, Themes } from '@geist-ui/react'
+import { CssBaseline, GeistProvider, Themes } from '@geist-ui/react';
 
 const myTheme1 = Themes.createFromLight({
-  type: 'coolTheme',
-  palette: {
-    success: '#000',
-  },
-})
+	type: 'coolTheme',
+	palette: {
+		success: '#000',
+	},
+});
 
 const App = () => (
-  <GeistProvider themes={[myTheme1]} themeType="coolTheme">
-    <CssBaseline />
-    <YourAppComponent onClick={switchThemes} />
-  </GeistProvider>
-)
+	<GeistProvider themes={[myTheme1]} themeType="coolTheme">
+		<CssBaseline />
+		<YourAppComponent onClick={switchThemes} />
+	</GeistProvider>
+);
 ```
 
 方法 `Themes.createFromLight` 允许你在 `light` (亮色主题) 的基础上继承与创建一份新的主题，
@@ -102,20 +102,20 @@ const myTheme2 = Themes.create(myBaseTheme, {
 
 ```ts
 import {
-  GeistUIThemes,
-  GeistUIThemesFont,
-  GeistUIThemesPalette,
-  GeistUIThemesExpressiveness,
-  GeistUIThemesLayout,
-} from '@geist-ui/react'
+	GeistUIThemes,
+	GeistUIThemesFont,
+	GeistUIThemesPalette,
+	GeistUIThemesExpressiveness,
+	GeistUIThemesLayout,
+} from '@geist-ui/react';
 
 // 使用示例
 const myStyles: GeistUIThemes = {
-  /* ... */
-}
+	/* ... */
+};
 const myPalette: Partial<GeistUIThemesPalette> = {
-  /* ... */
-}
+	/* ... */
+};
 ```
 
 如果你没有使用 TypeScript，想要了解更多的预置类型，请看<Link color target="_blank" href="https://github.com/geist-org/react/blob/master/components/themes/presets/index.ts">这里的类型声明文件</Link>。
@@ -151,10 +151,10 @@ const MyPage = () => (
 
 ```jsx
 const MyPage = () => (
-  <Row>
-    <Button style={{ margin: '20px' }}>Click me!</Button>
-  </Row>
-)
+	<Row>
+		<Button style={{ margin: '20px' }}>Click me!</Button>
+	</Row>
+);
 ```
 
 <Spacer y={2} />
@@ -165,16 +165,16 @@ const MyPage = () => (
 现在你可以使用 **主题变量** 来完成这件事。
 
 ```jsx
-import { useTheme } from '@geist-ui/react'
+import { useTheme } from '@geist-ui/react';
 
 const MyComponent = () => {
-  const theme = useTheme()
-  return (
-    <div style={{ color: theme.palette.success }}>
-      <span>hello world!</span>
-    </div>
-  )
-}
+	const theme = useTheme();
+	return (
+		<div style={{ color: theme.palette.success }}>
+			<span>hello world!</span>
+		</div>
+	);
+};
 ```
 
 <Spacer y={2} />
@@ -192,4 +192,4 @@ const MyComponent = () => {
 - `Themes.getPresets` - 获取一组由 Geist UI 内置的默认主题。
 - `Themes.getPresetStaticTheme` - 获取一个由 Geist UI 内置的默认主题 (默认加载的)。
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,6 +1,6 @@
-import Avatar from './avatar'
-import AvatarGroup from './avatar-group'
+import Avatar from './avatar';
+import AvatarGroup from './avatar-group';
 
-Avatar.Group = AvatarGroup
+Avatar.Group = AvatarGroup;
 
-export default Avatar
+export default Avatar;

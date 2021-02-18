@@ -1,37 +1,37 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Snippet, Spacer, Code } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Snippet, Spacer, Code } from 'components';
 
 export const meta = {
-  title: 'Snippet',
-  group: 'Others',
-}
+	title: 'Snippet',
+	group: 'Others',
+};
 
 ## Snippet
 
 Display a snippet of copyable code for the command line.
 
 <Playground
-  desc="Basic usage."
-  scope={{ Snippet }}
-  code={`
+	desc="Basic usage."
+	scope={{ Snippet }}
+	code={`
 <Snippet text="yarn add @geist-ui/react" width="300px" />
 `}
 />
 
 <Playground
-  title="width"
-  desc="Specify width manually."
-  scope={{ Snippet }}
-  code={`
+	title="width"
+	desc="Specify width manually."
+	scope={{ Snippet }}
+	code={`
 <Snippet text="yarn add @geist-ui/react" width="100%" />
 `}
 />
 
 <Playground
-  title="types"
-  desc="Show different states with colors."
-  scope={{ Snippet, Spacer }}
-  code={`
+	title="types"
+	desc="Show different states with colors."
+	scope={{ Snippet, Spacer }}
+	code={`
 <>
   <Snippet text="yarn add @geist-ui/react" type="dark" width="300px" />
   <Spacer />
@@ -49,42 +49,42 @@ Display a snippet of copyable code for the command line.
 />
 
 <Playground
-  title="Multi Line"
-  scope={{ Snippet }}
-  code={`
+	title="Multi Line"
+	scope={{ Snippet }}
+	code={`
 <Snippet text={['cd project', 'now']} width="300px" />
 `}
 />
 
 <Playground
-  title="without copy"
-  desc="Hide icon for copy. (disable copy)"
-  scope={{ Snippet }}
-  code={`
+	title="without copy"
+	desc="Hide icon for copy. (disable copy)"
+	scope={{ Snippet }}
+	code={`
 <Snippet copy="prevent" text="yarn add @geist-ui/react" width="300px" />
 `}
 />
 
 <Playground
-  title="custom symbol"
-  scope={{ Snippet }}
-  code={`
+	title="custom symbol"
+	scope={{ Snippet }}
+	code={`
 <Snippet symbol=">" text="yarn add @geist-ui/react" width="300px" />
 `}
 />
 
 <Playground
-  title="custom toast"
-  scope={{ Snippet }}
-  code={`
+	title="custom toast"
+	scope={{ Snippet }}
+	code={`
 <Snippet toastText="Code copied!" toastType="secondary" text="yarn add @geist-ui/react" width="300px" />
 `}
 />
 
 <Playground
-  title="filled"
-  scope={{ Snippet, Spacer }}
-  code={`
+	title="filled"
+	scope={{ Snippet, Spacer }}
+	code={`
 <>
   <Snippet text="yarn add @geist-ui/react" type="success" filled width="300px" />
   <Spacer />
@@ -116,21 +116,21 @@ Display a snippet of copyable code for the command line.
 
 ```ts
 type SnippetTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'dark'
+	| 'lite';
 ```
 
 <Attributes.Title>NormalTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

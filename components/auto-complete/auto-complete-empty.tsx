@@ -1,28 +1,28 @@
-import React from 'react'
-import withDefaults from '../utils/with-defaults'
-import AutoCompleteSearch from './auto-complete-searching'
+import React from 'react';
+import withDefaults from '../utils/with-defaults';
+import AutoCompleteSearch from './auto-complete-searching';
 
 interface Props {
-  hidden?: boolean
-  className?: string
+	hidden?: boolean;
+	className?: string;
 }
 
 const defaultProps = {
-  hidden: false,
-  className: '',
-}
+	hidden: false,
+	className: '',
+};
 
 export type AutoCompleteEmptyProps = Props &
-  typeof defaultProps &
-  React.HTMLAttributes<any>
+	typeof defaultProps &
+	React.HTMLAttributes<any>;
 
 const AutoCompleteEmpty: React.FC<React.PropsWithChildren<AutoCompleteEmptyProps>> = ({
-  children,
-  hidden,
-  className,
+	children,
+	hidden,
+	className,
 }) => {
-  if (hidden) return null
-  return <AutoCompleteSearch className={className}>{children}</AutoCompleteSearch>
-}
+	if (hidden) return null;
+	return <AutoCompleteSearch className={className}>{children}</AutoCompleteSearch>;
+};
 
-export default withDefaults(AutoCompleteEmpty, defaultProps)
+export default withDefaults(AutoCompleteEmpty, defaultProps);

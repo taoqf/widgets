@@ -1,28 +1,28 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { User, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { User, Spacer } from 'components';
 
 export const meta = {
-  title: '用户 User',
-  group: '数据展示',
-}
+	title: '用户 User',
+	group: '数据展示',
+};
 
 ## User / 用户
 
 展示用户的介绍或是社交链接。
 
 <Playground
-  desc="仅展示用户名。"
-  scope={{ User, Spacer }}
-  code={`
+	desc="仅展示用户名。"
+	scope={{ User, Spacer }}
+	code={`
 <User src="/images/avatar.png" name="Evil Rabbit" />
 `}
 />
 
 <Playground
-  title="描述"
-  desc="在用户名下方展示简短的用户介绍。"
-  scope={{ User, Spacer }}
-  code={`
+	title="描述"
+	desc="在用户名下方展示简短的用户介绍。"
+	scope={{ User, Spacer }}
+	code={`
 <User src="https://unix.bio/assets/avatar.png" name="维特">
   JavaScript 工程师
 </User>
@@ -30,10 +30,10 @@ export const meta = {
 />
 
 <Playground
-  title="社交"
-  desc="自定义用户的社交链接与文字。"
-  scope={{ User, Spacer }}
-  code={`
+	title="社交"
+	desc="自定义用户的社交链接与文字。"
+	scope={{ User, Spacer }}
+	code={`
 <User src="https://unix.bio/assets/avatar.png" name="Witt">
   <User.Link href="https://twitter.com/echo_witt">@echo_witt</User.Link>
 </User>
@@ -60,4 +60,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

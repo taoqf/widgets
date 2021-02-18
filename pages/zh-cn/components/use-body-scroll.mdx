@@ -1,10 +1,10 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, useBodyScroll, Text, Link } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Button, Spacer, useBodyScroll, Text, Link } from 'components';
 
 export const meta = {
-  title: '锁定滚动 useBodyScroll',
-  group: '工具包',
-}
+	title: '锁定滚动 useBodyScroll',
+	group: '工具包',
+};
 
 ## Use body scroll / 工具包
 
@@ -13,9 +13,9 @@ export const meta = {
 这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
 <Playground
-  desc="点击按钮以锁定滚动."
-  scope={{ Button, Spacer, useBodyScroll, Text }}
-  code={`
+	desc="点击按钮以锁定滚动."
+	scope={{ Button, Spacer, useBodyScroll, Text }}
+	code={`
 () => {
   const [hidden, setHidden] = useBodyScroll()
   return (
@@ -48,4 +48,4 @@ const useBodyScroll = (
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

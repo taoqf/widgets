@@ -1,11 +1,11 @@
-import Layout from 'lib/components/layout'
-import { Code, Link, Spacer, Note } from 'components'
+import Layout from 'lib/components/layout';
+import { Code, Link, Spacer, Note } from 'components';
 
 export const meta = {
-  title: 'Server Render',
-  group: 'getting-started',
-  index: 15,
-}
+	title: 'Server Render',
+	group: 'getting-started',
+	index: 15,
+};
 
 ## Server Render
 
@@ -14,14 +14,14 @@ export const meta = {
 All Components of `@geist-ui/react` are compatible with **Server Render**. In fact, the document you see now is rendered by the server.
 
 <Note label="readme">
-  If you are looking to build a SPA{' '}
-  <Link
-    href="https://en.wikipedia.org/wiki/Single-page_application"
-    rel="nofollow"
-    underline>
-    (single page application)
-  </Link>
-  , please feel free to skip this section.
+	If you are looking to build a SPA{' '}
+	<Link
+		href="https://en.wikipedia.org/wiki/Single-page_application"
+		rel="nofollow"
+		underline>
+		(single page application)
+	</Link>
+	, please feel free to skip this section.
 </Note>
 
 <Spacer y={0.5} />
@@ -73,24 +73,24 @@ Here's an example of what your `_document.js` file should look like: <Link href=
 In the custom server, also get the style set from function `CssBaseline.flush` as shown below.
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom/server'
-import { CssBaseline } from 'geist-ui/react'
-import App from './app'
+import React from 'react';
+import ReactDOM from 'react-dom/server';
+import { CssBaseline } from 'geist-ui/react';
+import App from './app';
 
 export default (req, res) => {
-  const app = ReactDOM.renderToString(<App />)
-  const styles = CssBaseline.flush()
-  const html = ReactDOM.renderToStaticMarkup(
-    <html>
-      <head>{styles}</head>
-      <body>
-        <div id="root" dangerouslySetInnerHTML={{ __html: app }} />
-      </body>
-    </html>,
-  )
-  res.end('<!doctype html>' + html)
-}
+	const app = ReactDOM.renderToString(<App />);
+	const styles = CssBaseline.flush();
+	const html = ReactDOM.renderToStaticMarkup(
+		<html>
+			<head>{styles}</head>
+			<body>
+				<div id="root" dangerouslySetInnerHTML={{ __html: app }} />
+			</body>
+		</html>,
+	);
+	res.end('<!doctype html>' + html);
+};
 ```
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

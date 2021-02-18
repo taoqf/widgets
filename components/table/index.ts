@@ -1,6 +1,6 @@
-import Table from './table'
-import TableColumn from './table-column'
+import Table from './table';
+import TableColumn from './table-column';
 
-Table.Column = TableColumn
+Table.Column = TableColumn;
 
-export default Table
+export default Table;

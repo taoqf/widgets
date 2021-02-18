@@ -1,5 +1,5 @@
-import Spacer from './spacer'
-import { SpacerProps } from './spacer'
+import Spacer from './spacer';
+import { SpacerProps } from './spacer';
 
-export type Props = SpacerProps
-export default Spacer
+export type Props = SpacerProps;
+export default Spacer;

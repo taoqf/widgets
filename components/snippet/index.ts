@@ -1,3 +1,3 @@
-import Snippet from './snippet'
+import Snippet from './snippet';
 
-export default Snippet
+export default Snippet;

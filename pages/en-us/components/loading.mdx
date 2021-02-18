@@ -1,18 +1,18 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Loading, Spacer, Row } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Loading, Spacer, Row } from 'components';
 
 export const meta = {
-  title: 'Loading',
-  group: 'Feedback',
-}
+	title: 'Loading',
+	group: 'Feedback',
+};
 
 ## Loading
 
 Indicate an action running in the background.
 
 <Playground
-  scope={{ Loading, Row, Spacer }}
-  code={`
+	scope={{ Loading, Row, Spacer }}
+	code={`
 <Row style={{ padding: '10px 0'}}>
   <Loading />
 </Row>
@@ -20,10 +20,10 @@ Indicate an action running in the background.
 />
 
 <Playground
-  title="with text"
-  desc="Customize text next to icon."
-  scope={{ Loading, Row }}
-  code={`
+	title="with text"
+	desc="Customize text next to icon."
+	scope={{ Loading, Row }}
+	code={`
 <Row style={{ padding: '10px 0'}}>
   <Loading>Loading</Loading>
 </Row>
@@ -31,10 +31,10 @@ Indicate an action running in the background.
 />
 
 <Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ Loading, Row, Spacer }}
-  code={`
+	title="sizes"
+	desc="Components of different sizes."
+	scope={{ Loading, Row, Spacer }}
+	code={`
 <>
   <Row style={{ padding: '10px 0', width: '50px' }}>
     <Loading size="mini" />
@@ -56,10 +56,10 @@ Indicate an action running in the background.
 />
 
 <Playground
-  title="type"
-  desc="Loading indicators in different states."
-  scope={{ Loading, Row, Spacer }}
-  code={`
+	title="type"
+	desc="Loading indicators in different states."
+	scope={{ Loading, Row, Spacer }}
+	code={`
 <>
   <Row style={{ padding: '10px 0', width: '50px' }}>
     <Loading type="success" />
@@ -94,4 +94,4 @@ Indicate an action running in the background.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

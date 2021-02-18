@@ -1,18 +1,18 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Toggle, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Toggle, Spacer } from 'components';
 
 export const meta = {
-  title: 'Toggle',
-  group: 'Data Entry',
-}
+	title: 'Toggle',
+	group: 'Data Entry',
+};
 
 ## Toggle
 
 Displays a boolean value.
 
 <Playground
-  scope={{ Toggle, Spacer }}
-  code={`
+	scope={{ Toggle, Spacer }}
+	code={`
 <>
   <Toggle />
   <Spacer y={.5} />
@@ -22,9 +22,9 @@ Displays a boolean value.
 />
 
 <Playground
-  title="disabled"
-  scope={{ Toggle, Spacer }}
-  code={`
+	title="disabled"
+	scope={{ Toggle, Spacer }}
+	code={`
 <>
   <Toggle disabled />
   <Spacer y={.5} />
@@ -34,10 +34,10 @@ Displays a boolean value.
 />
 
 <Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ Toggle, Spacer }}
-  code={`
+	title="sizes"
+	desc="Components of different sizes."
+	scope={{ Toggle, Spacer }}
+	code={`
 <>
   <Toggle size="small" />
   <Spacer y={.5} />
@@ -49,9 +49,9 @@ Displays a boolean value.
 />
 
 <Playground
-  title="get change"
-  scope={{ Toggle, Spacer }}
-  code={`
+	title="get change"
+	scope={{ Toggle, Spacer }}
+	code={`
 () => {
   const handler = event => {
     console.log(event.target.checked)
@@ -77,17 +77,17 @@ Displays a boolean value.
 
 ```ts
 interface ToggleEventTarget {
-  checked: boolean
+	checked: boolean;
 }
 
 export interface ToggleEvent {
-  target: ToggleEventTarget
-  stopPropagation: () => void
-  preventDefault: () => void
-  nativeEvent: React.ChangeEvent
+	target: ToggleEventTarget;
+	stopPropagation: () => void;
+	preventDefault: () => void;
+	nativeEvent: React.ChangeEvent;
 }
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

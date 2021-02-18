@@ -1,36 +1,36 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Spinner, Spacer, Note, Code, Link } from 'components'
-import NextLink from 'next/link'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Spinner, Spacer, Note, Code, Link } from 'components';
+import NextLink from 'next/link';
 
 export const meta = {
-  title: '指示器 Spinner',
-  group: '反馈',
-}
+	title: '指示器 Spinner',
+	group: '反馈',
+};
 
 ## Spinner / 指示器
 
 表示一个动作正在进行中。
 
 <Note>
-  想要表示加载中状态或后台运行任务? 试试{' '}
-  <NextLink href="/zh-cn/components/loading">
-    <a>Loading / 加载中</a>
-  </NextLink>{' '}
-  组件。
+	想要表示加载中状态或后台运行任务? 试试{' '}
+	<NextLink href="/zh-cn/components/loading">
+		<a>Loading / 加载中</a>
+	</NextLink>{' '}
+	组件。
 </Note>
 
 <Playground
-  scope={{ Spinner }}
-  code={`
+	scope={{ Spinner }}
+	code={`
 <Spinner />
 `}
 />
 
 <Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ Spinner, Spacer }}
-  code={`
+	title="大小"
+	desc="不同大小的组件。"
+	scope={{ Spinner, Spacer }}
+	code={`
 <>
   <Spinner size="mini" />
   <Spacer y={.5} />
@@ -53,4 +53,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

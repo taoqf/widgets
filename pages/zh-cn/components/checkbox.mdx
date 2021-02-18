@@ -1,28 +1,28 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Checkbox, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Checkbox, Spacer } from 'components';
 
 export const meta = {
-  title: '复选框 Checkbox',
-  group: '数据录入',
-}
+	title: '复选框 Checkbox',
+	group: '数据录入',
+};
 
 ## Checkbox / 复选框
 
 用于表示多个可选项。
 
 <Playground
-  desc="设置 `initialChecked` 属性初始的状态。"
-  scope={{ Checkbox }}
-  code={`
+	desc="设置 `initialChecked` 属性初始的状态。"
+	scope={{ Checkbox }}
+	code={`
   <Checkbox initialChecked={true}>墨西哥</Checkbox>
 `}
 />
 
 <Playground
-  title="大小"
-  desc="不同大小的复选框。"
-  scope={{ Checkbox, Spacer }}
-  code={`
+	title="大小"
+	desc="不同大小的复选框。"
+	scope={{ Checkbox, Spacer }}
+	code={`
 <>
   <Checkbox checked={true} size="mini">最小</Checkbox>
   <Spacer y={.5} />
@@ -36,9 +36,9 @@ export const meta = {
 />
 
 <Playground
-  title="禁用的"
-  scope={{ Checkbox, Spacer }}
-  code={`
+	title="禁用的"
+	scope={{ Checkbox, Spacer }}
+	code={`
 <>
   <Checkbox>悉尼</Checkbox>
   <Spacer y={.5} />
@@ -48,10 +48,10 @@ export const meta = {
 />
 
 <Playground
-  title="组"
-  desc="管理一组 `Checkbox`。"
-  scope={{ Checkbox, Spacer }}
-  code={`
+	title="组"
+	desc="管理一组 `Checkbox`。"
+	scope={{ Checkbox, Spacer }}
+	code={`
 () => {
   const handler = value => {
     console.log(value)
@@ -94,24 +94,24 @@ export const meta = {
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 <Attributes.Title>CheckboxEvent</Attributes.Title>
 
 ```ts
 interface CheckboxEventTarget {
-  checked: boolean
+	checked: boolean;
 }
 
 export interface CheckboxEvent {
-  target: CheckboxEventTarget
-  stopPropagation: () => void
-  preventDefault: () => void
-  nativeEvent: React.ChangeEvent
+	target: CheckboxEventTarget;
+	stopPropagation: () => void;
+	preventDefault: () => void;
+	nativeEvent: React.ChangeEvent;
 }
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

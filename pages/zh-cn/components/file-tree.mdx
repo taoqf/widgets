@@ -1,22 +1,22 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Tree, useToasts } from 'components'
-import Github from '@geist-ui/react-icons/github'
-import Film from '@geist-ui/react-icons/film'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Tree, useToasts } from 'components';
+import Github from '@geist-ui/react-icons/github';
+import Film from '@geist-ui/react-icons/film';
 
 export const meta = {
-  title: '文件树 File Tree',
-  group: '数据展示',
-}
+	title: '文件树 File Tree',
+	group: '数据展示',
+};
 
 ## File-Tree / 文件树
 
 使用树结构展示文件与文件夹列表。
 
 <Playground
-  title="Basic"
-  desc="所有的文件和文件夹都会被自动排序以便于浏览。"
-  scope={{ Tree }}
-  code={`
+	title="Basic"
+	desc="所有的文件和文件夹都会被自动排序以便于浏览。"
+	scope={{ Tree }}
+	code={`
 <Tree>
   <Tree.File name="package.json" />
   <Tree.Folder name="components">
@@ -34,10 +34,10 @@ export const meta = {
 />
 
 <Playground
-  title="自定义图标"
-  desc="使用自定义图标"
-  scope={{ Tree, Github, Film }}
-  code={`
+	title="自定义图标"
+	desc="使用自定义图标"
+	scope={{ Tree, Github, Film }}
+	code={`
 <Tree>
   <Tree.Folder name="Chris Columbus" icon={<Github />}>
     <Tree.File name="The Fast and the Furious I" icon={<Film />} />
@@ -53,10 +53,10 @@ export const meta = {
 />
 
 <Playground
-  title="命令式"
-  desc="使用 `value` 属性渲染一组数据。"
-  scope={{ Tree }}
-  code={`
+	title="命令式"
+	desc="使用 `value` 属性渲染一组数据。"
+	scope={{ Tree }}
+	code={`
 () => {
   const files = [{
     type: 'directory',
@@ -88,10 +88,10 @@ export const meta = {
 />
 
 <Playground
-  title="额外信息"
-  desc="在文件树中渲染额外的信息。"
-  scope={{ Tree }}
-  code={`
+	title="额外信息"
+	desc="在文件树中渲染额外的信息。"
+	scope={{ Tree }}
+	code={`
 () => {
   const files = [{
     type: 'directory',
@@ -130,10 +130,10 @@ export const meta = {
 />
 
 <Playground
-  title="事件"
-  desc="当文件被点击时会报告层级与路径。"
-  scope={{ Tree, useToasts }}
-  code={`
+	title="事件"
+	desc="当文件被点击时会报告层级与路径。"
+	scope={{ Tree, useToasts }}
+	code={`
 () => {
   const [_, setToast] = useToasts()
   const handler = path => setToast({ text: path })
@@ -171,7 +171,7 @@ export const meta = {
 | 属性             | 描述         | 类型             | 推荐值                            | 默认 |
 | ---------------- | ------------ | ---------------- | --------------------------------- | ---- |
 | **name**(必须的) | 文件名       | `string`         | -                                 | -    |
-| **icon**        | 自定义图标     | `ReactNode`         | -                                 | -    |
+| **icon**         | 自定义图标   | `ReactNode`      | -                                 | -    |
 | **extra**        | 额外文本信息 | `string`         | -                                 | -    |
 | ...              | 原生属性     | `HTMLAttributes` | `'id', 'title', 'className', ...` | -    |
 
@@ -180,8 +180,8 @@ export const meta = {
 | 属性             | 描述           | 类型             | 推荐值                            | 默认 |
 | ---------------- | -------------- | ---------------- | --------------------------------- | ---- |
 | **name**(必须的) | 文件夹名       | `string`         | -                                 | -    |
-| **icon**        | 自定义图标      | `ReactNode`         | -                                 | -    |
-| **expand**    | 默认是否展开 | `boolean`         | -                                 | -    |
+| **icon**         | 自定义图标     | `ReactNode`      | -                                 | -    |
+| **expand**       | 默认是否展开   | `boolean`        | -                                 | -    |
 | **extra**        | 额外的文本信息 | `string`         | -                                 | -    |
 | ...              | 原生属性       | `HTMLAttributes` | `'id', 'title', 'className', ...` | -    |
 
@@ -200,4 +200,4 @@ type FileTreeValue = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,47 +1,47 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Textarea, Spacer, useInput, Button, Code } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Textarea, Spacer, useInput, Button, Code } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: '文本输入框 Textarea',
-  group: '数据录入',
-}
+	title: '文本输入框 Textarea',
+	group: '数据录入',
+};
 
 ## Textarea / 文本输入框
 
 获取用户输入的多行文本。
 
 <Playground
-  desc="基础示例。"
-  scope={{ Textarea }}
-  code={`
+	desc="基础示例。"
+	scope={{ Textarea }}
+	code={`
 <Textarea placeholder="请输入一段描述。" />
 `}
 />
 
 <Playground
-  title="宽度"
-  desc="手动指定文本框的宽度。"
-  scope={{ Textarea }}
-  code={`
+	title="宽度"
+	desc="手动指定文本框的宽度。"
+	scope={{ Textarea }}
+	code={`
 <Textarea width="100%" placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
 `}
 />
 
 <Playground
-  title="禁用"
-  desc="禁用文本框所有交互。"
-  scope={{ Textarea }}
-  code={`
+	title="禁用"
+	desc="禁用文本框所有交互。"
+	scope={{ Textarea }}
+	code={`
 <Textarea width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
 `}
 />
 
 <Playground
-  title="状态"
-  desc="通过色彩区分不同的状态"
-  scope={{ Textarea, Spacer }}
-  code={`
+	title="状态"
+	desc="通过色彩区分不同的状态"
+	scope={{ Textarea, Spacer }}
+	code={`
 <>
   <Textarea status="success" minHeight="65px" value="成功" />
   <Spacer x={.5} inline />
@@ -55,10 +55,10 @@ export const meta = {
 />
 
 <Playground
-  title="事件"
-  desc="捕获文本框的输入事件"
-  scope={{ Textarea, useState }}
-  code={`
+	title="事件"
+	desc="捕获文本框的输入事件"
+	scope={{ Textarea, useState }}
+	code={`
 () => {
   const [value, setValue] = useState()
   const handler = (e) => {
@@ -76,14 +76,14 @@ export const meta = {
 />
 
 <Playground
-  title={
-    <>
-      与&nbsp;<Code>useInput</Code>&nbsp;组合
-    </>
-  }
-  desc="通过 `hooks` 以更简单的方式驱动文本框。"
-  scope={{ Textarea, useInput, Button, Spacer }}
-  code={`
+	title={
+		<>
+			与&nbsp;<Code>useInput</Code>&nbsp;组合
+		</>
+	}
+	desc="通过 `hooks` 以更简单的方式驱动文本框。"
+	scope={{ Textarea, useInput, Button, Spacer }}
+	code={`
 () => {
   const { setState, reset, bindings } = useInput('CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。')
   return (
@@ -100,10 +100,10 @@ export const meta = {
 />
 
 <Playground
-  title="命令式 API"
-  desc="使用非受控方式更新组件。"
-  scope={{ Textarea, Spacer, Button }}
-  code={`
+	title="命令式 API"
+	desc="使用非受控方式更新组件。"
+	scope={{ Textarea, Spacer, Button }}
+	code={`
 () => {
   const ref = React.useRef(null)
   const setChange = () => {
@@ -142,19 +142,19 @@ export const meta = {
 
 ```ts
 type useInput = (
-  initialValue: string,
+	initialValue: string,
 ) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
-}
+	state: string;
+	setState: Dispatch<SetStateAction<string>>;
+	currentRef: MutableRefObject<string>;
+	reset: () => void;
+	bindings: {
+		value: string;
+		onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	};
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

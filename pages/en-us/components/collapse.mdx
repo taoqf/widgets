@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Collapse, Spacer, Text } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Collapse, Spacer, Text } from 'components';
 
 export const meta = {
-  title: 'collapse',
-  group: 'Surfaces',
-}
+	title: 'collapse',
+	group: 'Surfaces',
+};
 
 ## Collapse
 
 Display large amounts of text in collapsible sections. Commonly referred to as an accordion.
 
 <Playground
-  scope={{ Collapse, Text }}
-  desc="Show title only by default."
-  code={`
+	scope={{ Collapse, Text }}
+	desc="Show title only by default."
+	code={`
 <Collapse.Group>
   <Collapse title="Question A">
     <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -30,10 +30,10 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 />
 
 <Playground
-  title="Expanded"
-  desc="Specify what to display first."
-  scope={{ Collapse, Text }}
-  code={`
+	title="Expanded"
+	desc="Specify what to display first."
+	scope={{ Collapse, Text }}
+	code={`
 <Collapse.Group>
   <Collapse title="Question A" initialVisible>
     <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -50,10 +50,10 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 />
 
 <Playground
-  title="Subtitle"
-  desc="Add text or components as subtitle."
-  scope={{ Collapse, Text }}
-  code={`
+	title="Subtitle"
+	desc="Add text or components as subtitle."
+	scope={{ Collapse, Text }}
+	code={`
 <Collapse.Group>
   <Collapse title="Question A" subtitle="More description about Question A">
     <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -70,10 +70,10 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 />
 
 <Playground
-  title="Shadow"
-  desc="Highlight importance at a higher level."
-  scope={{ Collapse, Text }}
-  code={`
+	title="Shadow"
+	desc="Highlight importance at a higher level."
+	scope={{ Collapse, Text }}
+	code={`
 <Collapse shadow title="Question A" subtitle="More description about Question A">
   <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -102,4 +102,4 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

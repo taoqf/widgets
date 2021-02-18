@@ -1,3 +1,3 @@
-import redirect from 'lib/redirect'
+import redirect from 'lib/redirect';
 
-export default redirect('/en-us/guide/introduction')
+export default redirect('/en-us/guide/introduction');

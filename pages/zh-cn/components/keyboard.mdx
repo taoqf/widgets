@@ -1,26 +1,26 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Keyboard } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Keyboard } from 'components';
 
 export const meta = {
-  title: '键盘 keyboard',
-  group: '数据展示',
-}
+	title: '键盘 keyboard',
+	group: '数据展示',
+};
 
 ## Keyboard / 键盘
 
 显示用于键盘输入的按键字符。
 
 <Playground
-  scope={{ Keyboard }}
-  code={`
+	scope={{ Keyboard }}
+	code={`
 <Keyboard>f</Keyboard>
 `}
 />
 
 <Playground
-  title="修饰符"
-  scope={{ Keyboard }}
-  code={`
+	title="修饰符"
+	scope={{ Keyboard }}
+	code={`
 <div>
   <Keyboard command />
   <Keyboard shift />
@@ -31,9 +31,9 @@ export const meta = {
 />
 
 <Playground
-  title="组合键"
-  scope={{ Keyboard }}
-  code={`
+	title="组合键"
+	scope={{ Keyboard }}
+	code={`
 <div>
   <Keyboard command>f</Keyboard>
   <Keyboard shift>e</Keyboard>
@@ -43,9 +43,9 @@ export const meta = {
 />
 
 <Playground
-  title="较小的"
-  scope={{ Keyboard }}
-  code={`
+	title="较小的"
+	scope={{ Keyboard }}
+	code={`
 <Keyboard small>/</Keyboard>
 `}
 />
@@ -64,4 +64,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

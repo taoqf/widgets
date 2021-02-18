@@ -1,6 +1,6 @@
-import Grid from './grid'
-import GridContainer from './grid-container'
+import Grid from './grid';
+import GridContainer from './grid-container';
 
-Grid.Container = GridContainer
+Grid.Container = GridContainer;
 
-export default Grid
+export default Grid;

@@ -1,47 +1,47 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Textarea, Spacer, useInput, Button, Code } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Textarea, Spacer, useInput, Button, Code } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: 'textarea',
-  group: 'Data Entry',
-}
+	title: 'textarea',
+	group: 'Data Entry',
+};
 
 ## Textarea
 
 Retrieve multi-line user input.
 
 <Playground
-  desc="Basic usage."
-  scope={{ Textarea }}
-  code={`
+	desc="Basic usage."
+	scope={{ Textarea }}
+	code={`
 <Textarea placeholder="Please enter a description." />
 `}
 />
 
 <Playground
-  title="width"
-  desc="Specify width manually."
-  scope={{ Textarea }}
-  code={`
+	title="width"
+	desc="Specify width manually."
+	scope={{ Textarea }}
+	code={`
 <Textarea width="100%" placeholder="Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
 `}
 />
 
 <Playground
-  title="disabled"
-  desc="Disable interactive textarea."
-  scope={{ Textarea }}
-  code={`
+	title="disabled"
+	desc="Disable interactive textarea."
+	scope={{ Textarea }}
+	code={`
 <Textarea width="100%" disabled placeholder="Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
 `}
 />
 
 <Playground
-  title="status"
-  desc="Differentiate states by color."
-  scope={{ Textarea, Spacer }}
-  code={`
+	title="status"
+	desc="Differentiate states by color."
+	scope={{ Textarea, Spacer }}
+	code={`
 <>
   <Textarea status="success" minHeight="65px" value="Success" />
   <Spacer x={.5} inline />
@@ -55,10 +55,10 @@ Retrieve multi-line user input.
 />
 
 <Playground
-  title="get change"
-  desc="Capture changes in textarea."
-  scope={{ Textarea, useState }}
-  code={`
+	title="get change"
+	desc="Capture changes in textarea."
+	scope={{ Textarea, useState }}
+	code={`
 () => {
   const [value, setValue] = useState()
   const handler = (e) => {
@@ -76,14 +76,14 @@ Retrieve multi-line user input.
 />
 
 <Playground
-  title={
-    <>
-      With <Code>useInput</Code>
-    </>
-  }
-  desc="Use `hooks` to capture changes."
-  scope={{ Textarea, useInput, Button, Spacer }}
-  code={`
+	title={
+		<>
+			With <Code>useInput</Code>
+		</>
+	}
+	desc="Use `hooks` to capture changes."
+	scope={{ Textarea, useInput, Button, Spacer }}
+	code={`
 () => {
   const { setState, reset, bindings } = useInput('Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.')
   return (
@@ -100,10 +100,10 @@ Retrieve multi-line user input.
 />
 
 <Playground
-  title="Imperative API"
-  desc="Update component in an uncontrolled way."
-  scope={{ Textarea, Spacer, Button }}
-  code={`
+	title="Imperative API"
+	desc="Update component in an uncontrolled way."
+	scope={{ Textarea, Spacer, Button }}
+	code={`
 () => {
   const ref = React.useRef(null)
   const setChange = () => {
@@ -142,19 +142,19 @@ Retrieve multi-line user input.
 
 ```ts
 type useInput = (
-  initialValue: string,
+	initialValue: string,
 ) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
-}
+	state: string;
+	setState: Dispatch<SetStateAction<string>>;
+	currentRef: MutableRefObject<string>;
+	reset: () => void;
+	bindings: {
+		value: string;
+		onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+	};
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,29 +1,29 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Modal, Button, Code, useModal, Note, Link } from 'components'
-import NextLink from 'next/link'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Modal, Button, Code, useModal, Note, Link } from 'components';
+import NextLink from 'next/link';
+import { useState } from 'react';
 
 export const meta = {
-  title: '对话框 Modal',
-  group: '反馈',
-}
+	title: '对话框 Modal',
+	group: '反馈',
+};
 
 ## Modal / 对话框
 
 弹出显示需要额外注意或重要的内容。
 
 <Note>
-  仅仅需要弹出文本信息？ 试试{' '}
-  <NextLink href="/zh-cn/components/toast">
-    <Link color>Toast / 通知</Link>
-  </NextLink>{' '}
-  组件。
+	仅仅需要弹出文本信息？ 试试{' '}
+	<NextLink href="/zh-cn/components/toast">
+		<Link color>Toast / 通知</Link>
+	</NextLink>{' '}
+	组件。
 </Note>
 
 <Playground
-  desc="使用 `open` 属性控制何时显示对话框。"
-  scope={{ Modal, Button, useState, Code }}
-  code={`
+	desc="使用 `open` 属性控制何时显示对话框。"
+	scope={{ Modal, Button, useState, Code }}
+	code={`
 () => {
   const [state, setState] = useState(false)
   const handler = () => setState(true)
@@ -50,14 +50,14 @@ export const meta = {
 />
 
 <Playground
-  title={
-    <>
-      与&nbsp;<Code>useModal</Code>&nbsp;组合
-    </>
-  }
-  desc="使用 `hooks` 可以更简单的控制对话框。"
-  scope={{ Modal, Button, useModal, Code }}
-  code={`
+	title={
+		<>
+			与&nbsp;<Code>useModal</Code>&nbsp;组合
+		</>
+	}
+	desc="使用 `hooks` 可以更简单的控制对话框。"
+	scope={{ Modal, Button, useModal, Code }}
+	code={`
 () => {
   const { visible, setVisible, bindings } = useModal()
   return (
@@ -79,10 +79,10 @@ export const meta = {
 />
 
 <Playground
-  title="无按钮"
-  desc="隐藏指定的按钮。"
-  scope={{ Modal, Button, useState, Code }}
-  code={`
+	title="无按钮"
+	desc="隐藏指定的按钮。"
+	scope={{ Modal, Button, useState, Code }}
+	code={`
 () => {
   const [state, setState] = useState(false)
   const handler = () => setState(true)
@@ -107,10 +107,10 @@ export const meta = {
 />
 
 <Playground
-  title="禁用按钮"
-  desc="禁用指定的按钮。"
-  scope={{ Modal, Button, useState, Code }}
-  code={`
+	title="禁用按钮"
+	desc="禁用指定的按钮。"
+	scope={{ Modal, Button, useState, Code }}
+	code={`
 () => {
   const [state, setState] = useState(false)
   const handler = () => setState(true)
@@ -137,10 +137,10 @@ export const meta = {
 />
 
 <Playground
-  title="定制化"
-  desc="自定义 `width` 或是 `className`。"
-  scope={{ Modal, Button, useModal }}
-  code={`
+	title="定制化"
+	desc="自定义 `width` 或是 `className`。"
+	scope={{ Modal, Button, useModal }}
+	code={`
 () => {
   const { setVisible, bindings } = useModal()
   return (
@@ -159,9 +159,9 @@ export const meta = {
 />
 
 <Playground
-  title="加载中"
-  scope={{ Modal, Button, useModal, Code }}
-  code={`
+	title="加载中"
+	scope={{ Modal, Button, useModal, Code }}
+	code={`
 () => {
   const { visible, setVisible, bindings } = useModal()
   return (
@@ -227,26 +227,26 @@ export const meta = {
 
 ```ts
 type useModal = (
-  initialVisible: boolean,
+	initialVisible: boolean,
 ) => {
-  visible: boolean
-  setVisible: Dispatch<SetStateAction<boolean>>
-  currentRef: MutableRefObject<boolean>
-  bindings: {
-    open: boolean
-    onClose: () => void
-  }
-}
+	visible: boolean;
+	setVisible: Dispatch<SetStateAction<boolean>>;
+	currentRef: MutableRefObject<boolean>;
+	bindings: {
+		open: boolean;
+		onClose: () => void;
+	};
+};
 ```
 
 <Attributes.Title>ModalActionEvent</Attributes.Title>
 
 ```ts
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
-  close: () => void
-}
+	close: () => void;
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

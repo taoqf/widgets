@@ -1,34 +1,34 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Pagination, Spacer } from 'components'
-import ChevronRight from '@geist-ui/react-icons/chevronRight'
-import ChevronLeft from '@geist-ui/react-icons/chevronLeft'
-import ChevronRightCircle from '@geist-ui/react-icons/chevronRightCircle'
-import ChevronLeftCircle from '@geist-ui/react-icons/chevronLeftCircle'
-import ChevronRightCircleFill from '@geist-ui/react-icons/chevronRightCircleFill'
-import ChevronLeftCircleFill from '@geist-ui/react-icons/chevronLeftCircleFill'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Pagination, Spacer } from 'components';
+import ChevronRight from '@geist-ui/react-icons/chevronRight';
+import ChevronLeft from '@geist-ui/react-icons/chevronLeft';
+import ChevronRightCircle from '@geist-ui/react-icons/chevronRightCircle';
+import ChevronLeftCircle from '@geist-ui/react-icons/chevronLeftCircle';
+import ChevronRightCircleFill from '@geist-ui/react-icons/chevronRightCircleFill';
+import ChevronLeftCircleFill from '@geist-ui/react-icons/chevronLeftCircleFill';
 
 export const meta = {
-  title: '分页 Pagination',
-  group: '导航',
-}
+	title: '分页 Pagination',
+	group: '导航',
+};
 
 ## Pagination / 分页
 
 多个页面之间的导航与鉴别。
 
 <Playground
-  scope={{ Pagination }}
-  desc="默认的分页会自动收缩与扩展。"
-  code={`
+	scope={{ Pagination }}
+	desc="默认的分页会自动收缩与扩展。"
+	code={`
 <Pagination count={20} initialPage={3} />
 `}
 />
 
 <Playground
-  title="Limit"
-  desc="调整最大可展示页面数。"
-  scope={{ Pagination }}
-  code={`
+	title="Limit"
+	desc="调整最大可展示页面数。"
+	scope={{ Pagination }}
+	code={`
 <>
   <Pagination count={10} limit={10} />
   <Pagination count={5} />
@@ -40,19 +40,19 @@ export const meta = {
 />
 
 <Playground
-  title="Icon"
-  desc="用图标定制按钮。"
-  scope={{
-    Spacer,
-    Pagination,
-    ChevronRight,
-    ChevronLeft,
-    ChevronRightCircle,
-    ChevronLeftCircle,
-    ChevronRightCircleFill,
-    ChevronLeftCircleFill,
-  }}
-  code={`
+	title="Icon"
+	desc="用图标定制按钮。"
+	scope={{
+		Spacer,
+		Pagination,
+		ChevronRight,
+		ChevronLeft,
+		ChevronRightCircle,
+		ChevronLeftCircle,
+		ChevronRightCircleFill,
+		ChevronLeftCircleFill,
+	}}
+	code={`
 <>
   <Pagination count={5}>
    <Pagination.Next><ChevronRight /></Pagination.Next>
@@ -73,10 +73,10 @@ export const meta = {
 />
 
 <Playground
-  title="Sizes"
-  desc="不同大小的分页器。"
-  scope={{ Pagination }}
-  code={`
+	title="Sizes"
+	desc="不同大小的分页器。"
+	scope={{ Pagination }}
+	code={`
 <>
   <Pagination count={20} size="mini" />
   <Pagination count={20} size="small" />
@@ -114,9 +114,9 @@ export const meta = {
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

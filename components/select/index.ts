@@ -1,6 +1,6 @@
-import Select from './select'
-import SelectOption from './select-option'
+import Select from './select';
+import SelectOption from './select-option';
 
-Select.Option = SelectOption
+Select.Option = SelectOption;
 
-export default Select
+export default Select;

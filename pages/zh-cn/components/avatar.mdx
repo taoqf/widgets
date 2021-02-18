@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Avatar, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Avatar, Spacer } from 'components';
 
 export const meta = {
-  title: '头像 Avatar',
-  group: '数据展示',
-}
+	title: '头像 Avatar',
+	group: '数据展示',
+};
 
 ## Avatar / 头像
 
 头像代表一个用户或团队，堆叠的头像表示了一个群体。
 
 <Playground
-  desc="`Avatar` 组件包含了圆形与方形。"
-  scope={{ Avatar, Spacer }}
-  code={`
+	desc="`Avatar` 组件包含了圆形与方形。"
+	scope={{ Avatar, Spacer }}
+	code={`
 () => {
   const url = '/images/avatar.png'
   return (
@@ -34,10 +34,10 @@ export const meta = {
 />
 
 <Playground
-  title="大小"
-  desc="你可以指定每个 `Avatar` 组件的大小。"
-  scope={{ Avatar }}
-  code={`
+	title="大小"
+	desc="你可以指定每个 `Avatar` 组件的大小。"
+	scope={{ Avatar }}
+	code={`
 () => {
   const url = '/images/avatar.png'
   return (
@@ -53,10 +53,10 @@ export const meta = {
 />
 
 <Playground
-  title="文本"
-  desc="在头像框内显示文本信息。"
-  scope={{ Avatar }}
-  code={`
+	title="文本"
+	desc="在头像框内显示文本信息。"
+	scope={{ Avatar }}
+	code={`
 <>
   <Avatar text="W" />
   <Avatar text="A" />
@@ -67,10 +67,10 @@ export const meta = {
 />
 
 <Playground
-  title="头像组"
-  desc="多个头像框可以堆叠在一起。"
-  scope={{ Avatar, Spacer }}
-  code={`
+	title="头像组"
+	desc="多个头像框可以堆叠在一起。"
+	scope={{ Avatar, Spacer }}
+	code={`
 () => {
   const url = '/images/avatar.png'
   return (
@@ -114,4 +114,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,5 +1,5 @@
-import Tag from './tag'
-import { TagProps } from './tag'
+import Tag from './tag';
+import { TagProps } from './tag';
 
-export type Props = TagProps
-export default Tag
+export type Props = TagProps;
+export default Tag;

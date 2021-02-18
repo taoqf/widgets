@@ -1,10 +1,10 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, Text, Link, useBodyScroll } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Button, Spacer, Text, Link, useBodyScroll } from 'components';
 
 export const meta = {
-  title: 'use-body-scroll',
-  group: 'Utils',
-}
+	title: 'use-body-scroll',
+	group: 'Utils',
+};
 
 ## Use body scroll
 
@@ -13,9 +13,9 @@ Disable scrolling behavior for body or any element, it is useful for displaying 
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
 <Playground
-  desc="Click button to disable scrolling."
-  scope={{ Button, Spacer, Text, useBodyScroll }}
-  code={`
+	desc="Click button to disable scrolling."
+	scope={{ Button, Spacer, Text, useBodyScroll }}
+	code={`
 () => {
   const [hidden, setHidden] = useBodyScroll()
   return (
@@ -48,4 +48,4 @@ const useBodyScroll = (
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

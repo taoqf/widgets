@@ -1,6 +1,6 @@
-import Attributes from './attributes'
-import AttributesTitle from './attributes-title'
+import Attributes from './attributes';
+import AttributesTitle from './attributes-title';
 
-Attributes.Title = AttributesTitle
+Attributes.Title = AttributesTitle;
 
-export default Attributes
+export default Attributes;

@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, ButtonGroup } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Button, Spacer, ButtonGroup } from 'components';
 
 export const meta = {
-  title: '按钮组 Button-Group',
-  group: '数据录入',
-}
+	title: '按钮组 Button-Group',
+	group: '数据录入',
+};
 
 ## Button Group / 按钮组
 
 展示一组具备相关性的按钮。
 
 <Playground
-  title="基础"
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="基础"
+	scope={{ Button, ButtonGroup }}
+	code={`
 <ButtonGroup>
   <Button>One</Button>
   <Button>Two</Button>
@@ -23,10 +23,10 @@ export const meta = {
 />
 
 <Playground
-  title="变体"
-  desc="设置组内所有按钮的类型或样式。"
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="变体"
+	desc="设置组内所有按钮的类型或样式。"
+	scope={{ Button, ButtonGroup }}
+	code={`
 <>
   <ButtonGroup type="success">
     <Button>One</Button>
@@ -51,9 +51,9 @@ export const meta = {
 />
 
 <Playground
-  title="大小"
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="大小"
+	scope={{ Button, ButtonGroup }}
+	code={`
 <>
   <ButtonGroup size="small">
     <Button>One</Button>
@@ -69,9 +69,9 @@ export const meta = {
 />
 
 <Playground
-  title="垂直的"
-  scope={{ Button, ButtonGroup }}
-  code={`
+	title="垂直的"
+	scope={{ Button, ButtonGroup }}
+	code={`
 <>
   <ButtonGroup size="small" vertical>
     <Button>One</Button>
@@ -112,24 +112,24 @@ export const meta = {
 
 ```ts
 type ButtonTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'abort'
-  | 'secondary-light'
-  | 'success-light'
-  | 'warning-light'
-  | 'error-light'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'abort'
+	| 'secondary-light'
+	| 'success-light'
+	| 'warning-light'
+	| 'error-light';
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

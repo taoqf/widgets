@@ -1,6 +1,6 @@
-import ButtonDropdown from './button-dropdown'
-import ButtonDropdownItem from './button-dropdown-item'
+import ButtonDropdown from './button-dropdown';
+import ButtonDropdownItem from './button-dropdown-item';
 
-ButtonDropdown.Item = ButtonDropdownItem
+ButtonDropdown.Item = ButtonDropdownItem;
 
-export default ButtonDropdown
+export default ButtonDropdown;

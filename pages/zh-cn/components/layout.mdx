@@ -1,19 +1,19 @@
-import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
-import { Row, Col } from 'components'
+import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components';
+import { Row, Col } from 'components';
 
 export const meta = {
-  title: '布局 Layout',
-  group: '布局',
-}
+	title: '布局 Layout',
+	group: '布局',
+};
 
 ## Layout / 布局
 
 以简易的方式构建页面布局。
 
 <Playground
-  desc="`Row` 组件可以创建一个行容器。"
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	desc="`Row` 组件可以创建一个行容器。"
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row style={{ marginBottom: '10px' }}> <ExampleBlock /> </Row>
   <Row> <ExampleBlock /> </Row>
@@ -22,10 +22,10 @@ export const meta = {
 />
 
 <Playground
-  title="列"
-  desc="`Col` 组件可以创建不同宽度的列容器。"
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	title="列"
+	desc="`Col` 组件可以创建不同宽度的列容器。"
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row style={{ marginBottom: '15px' }}>
     <Col><ExampleBlock plain={2} /></Col>
@@ -40,10 +40,10 @@ export const meta = {
 />
 
 <Playground
-  title="间距"
-  desc="在 `Row` 组件上指定子元素 (列) 的间距"
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	title="间距"
+	desc="在 `Row` 组件上指定子元素 (列) 的间距"
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col><ExampleBlock /></Col>
@@ -60,10 +60,10 @@ export const meta = {
 />
 
 <Playground
-  title="组合"
-  desc="组合基本的 1/24 列完成布局。"
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	title="组合"
+	desc="组合基本的 1/24 列完成布局。"
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={16}><ExampleBlock /></Col>
@@ -93,10 +93,10 @@ export const meta = {
 />
 
 <Playground
-  title="对齐"
-  desc="使用 `justify` 与 `align` 属性以不同方式对齐列。"
-  scope={{ Row, Col, ExampleBlock }}
-  code={`
+	title="对齐"
+	desc="使用 `justify` 与 `align` 属性以不同方式对齐列。"
+	scope={{ Row, Col, ExampleBlock }}
+	code={`
 <>
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={16}><ExampleBlock /></Col>
@@ -155,4 +155,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

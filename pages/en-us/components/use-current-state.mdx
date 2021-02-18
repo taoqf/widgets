@@ -1,10 +1,10 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { useCurrentState, Link, Button, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { useCurrentState, Link, Button, Spacer } from 'components';
 
 export const meta = {
-  title: 'use-current-state',
-  group: 'Utils',
-}
+	title: 'use-current-state',
+	group: 'Utils',
+};
 
 ## Use current state
 
@@ -18,8 +18,8 @@ try <Link target="_blank" color href="https://reactjs.org/docs/hooks-reference.h
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
 <Playground
-  scope={{ useCurrentState, Button }}
-  code={`
+	scope={{ useCurrentState, Button }}
+	code={`
 () => {
   const [value, setValue] = React.useState(0)
   const [value2, setValue2, value2Ref] = useCurrentState(0)
@@ -53,4 +53,4 @@ const useCurrentState<S> = (
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

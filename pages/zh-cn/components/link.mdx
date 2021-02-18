@@ -1,38 +1,38 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Text, Code, Spacer } from 'components'
-import NextLink from 'next/link'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Link, Text, Code, Spacer } from 'components';
+import NextLink from 'next/link';
 
 export const meta = {
-  title: '链接 Link',
-  group: '导航',
-}
+	title: '链接 Link',
+	group: '导航',
+};
 
 ## Link / 链接
 
 网页之间的超链接。
 
 <Playground
-  desc="组件默认会为链接添加一个图标。"
-  scope={{ Link }}
-  code={`
+	desc="组件默认会为链接添加一个图标。"
+	scope={{ Link }}
+	code={`
 <Link href="#">通过使用指南和教程来学习如何用 React</Link>
 `}
 />
 
 <Playground
-  title="高亮"
-  desc="以不同的颜色区分链接。"
-  scope={{ Link }}
-  code={`
+	title="高亮"
+	desc="以不同的颜色区分链接。"
+	scope={{ Link }}
+	code={`
 <Link href="#" color>通过使用指南和教程来学习如何用 React</Link>
 `}
 />
 
 <Playground
-  title="变体"
-  desc="链接的不同样式。"
-  scope={{ Link, Text }}
-  code={`
+	title="变体"
+	desc="链接的不同样式。"
+	scope={{ Link, Text }}
+	code={`
 <>
   <Text><Link href="#">严格模式通过抛出错误来消除了一些原有静默错误</Link></Text>
   <Text><Link href="#" color>严格模式通过抛出错误来消除了一些原有静默错误</Link></Text>
@@ -43,10 +43,10 @@ export const meta = {
 />
 
 <Playground
-  title="图标"
-  desc="在链接中显示修饰图标。"
-  scope={{ Link, Spacer }}
-  code={`
+	title="图标"
+	desc="在链接中显示修饰图标。"
+	scope={{ Link, Spacer }}
+	code={`
 <>
   <Link href="#" icon>通过使用指南和教程来学习如何用 React</Link>
   <Spacer y={.5} />
@@ -56,23 +56,23 @@ export const meta = {
 />
 
 <Playground
-  title="块级链接"
-  desc="将链接单独作为一个块显示。"
-  scope={{ Link }}
-  code={`
+	title="块级链接"
+	desc="将链接单独作为一个块显示。"
+	scope={{ Link }}
+	code={`
 <Link href="#" block>请参阅转换成严格模式</Link>
 `}
 />
 
 <Playground
-  title={
-    <>
-      与&nbsp;<Code>next/link</Code>&nbsp;组合
-    </>
-  }
-  desc="使用 `Link` 组件与 NextJS 组合使用不需要任何额外的配置。"
-  scope={{ Link, NextLink }}
-  code={`
+	title={
+		<>
+			与&nbsp;<Code>next/link</Code>&nbsp;组合
+		</>
+	}
+	desc="使用 `Link` 组件与 NextJS 组合使用不需要任何额外的配置。"
+	scope={{ Link, NextLink }}
+	code={`
 <NextLink href="/zh-cn/components/button">
   <Link block>浏览更多文档</Link>
 </NextLink>
@@ -94,4 +94,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

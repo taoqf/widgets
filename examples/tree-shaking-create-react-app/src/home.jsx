@@ -1,11 +1,11 @@
-import React from 'react'
-import { Page, Text, Button } from '@geist-ui/react'
+import React from 'react';
+import { Page, Text, Button } from '@geist-ui/react';
 
 const Home = () => (
-  <Page>
-    <Text>Hello world.</Text>
-    <Button>Action</Button>
-  </Page>
-)
+	<Page>
+		<Text>Hello world.</Text>
+		<Button>Action</Button>
+	</Page>
+);
 
-export default Home
+export default Home;

@@ -1,11 +1,11 @@
-import Layout from 'lib/components/layout'
-import { Note, Link, Code, Spacer, Grid, Dot, Tabs, Snippet, Text } from 'components'
+import Layout from 'lib/components/layout';
+import { Note, Link, Code, Spacer, Grid, Dot, Tabs, Snippet, Text } from 'components';
 
 export const meta = {
-  title: '安装',
-  group: '快速上手',
-  index: 10,
-}
+	title: '安装',
+	group: '快速上手',
+	index: 10,
+};
 
 ## 安装
 
@@ -19,12 +19,12 @@ export const meta = {
 <Dot type="success" /> 1. 运行命令下载包:
 <Spacer y={0.8} />
 <Tabs initialValue="yarn" hideDivider>
-  <Tabs.Item label="Yarn" value="yarn">
-    <Snippet width="400px">yarn add @geist-ui/react</Snippet>
-  </Tabs.Item>
-  <Tabs.Item label="Npm" value="npm">
-    <Snippet width="400px">npm i @geist-ui/react</Snippet>
-  </Tabs.Item>
+	<Tabs.Item label="Yarn" value="yarn">
+		<Snippet width="400px">yarn add @geist-ui/react</Snippet>
+	</Tabs.Item>
+	<Tabs.Item label="Npm" value="npm">
+		<Snippet width="400px">npm i @geist-ui/react</Snippet>
+	</Tabs.Item>
 </Tabs>
 <Spacer y={1.5} />
 <Dot type="success" /> 2. 引入包到你的 React 项目中：
@@ -33,14 +33,14 @@ export const meta = {
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { GeistProvider, CssBaseline } from '@geist-ui/react'
+import { GeistProvider, CssBaseline } from '@geist-ui/react';
 
 const Application = () => (
-  <GeistProvider>
-    <CssBaseline /> // ---> 基础样式
-    <AppComponent /> // ---> 你的根组件
-  </GeistProvider>
-)
+	<GeistProvider>
+		<CssBaseline /> // ---> 基础样式
+		<AppComponent /> // ---> 你的根组件
+	</GeistProvider>
+);
 ```
 
 </Grid>
@@ -53,9 +53,9 @@ const Application = () => (
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { Button } from '@geist-ui/react'
+import { Button } from '@geist-ui/react';
 
-const MyComponent = () => <Button>按钮</Button>
+const MyComponent = () => <Button>按钮</Button>;
 ```
 
 </Grid>
@@ -64,10 +64,10 @@ const MyComponent = () => <Button>按钮</Button>
 <Spacer y={1.5} />
 
 <Text h3>
-  在 Windows 上渲染字体{' '}
-  <Text span type="secondary" size=".75em" style={{ textTransform: 'uppercase' }}>
-    [可选的]
-  </Text>
+	在 Windows 上渲染字体{' '}
+	<Text span type="secondary" size=".75em" style={{ textTransform: 'uppercase' }}>
+		[可选的]
+	</Text>
 </Text>
 
 我们知道 Web 应用中一些字体在 _Windows_ 平台上无法得到最好的渲染效果，
@@ -88,7 +88,7 @@ const MyComponent = () => <Button>按钮</Button>
 <Grid xs={24} sm={16}>
 
 ```jsx
-import 'inter-ui/inter.css'
+import 'inter-ui/inter.css';
 ```
 
 </Grid>
@@ -104,9 +104,9 @@ import 'inter-ui/inter.css'
 <Grid xs={24} sm={16}>
 
 ```jsx
-import Button from '@geist-ui/react/esm/button'
+import Button from '@geist-ui/react/esm/button';
 
-const MyComponent = () => <Button>按钮组件</Button>
+const MyComponent = () => <Button>按钮组件</Button>;
 ```
 
 </Grid>
@@ -130,4 +130,4 @@ const MyComponent = () => <Button>按钮组件</Button>
 在 `next.js` 项目中，你需要定制入口文件 <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> 以加载基础配置。
 请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/create-next-app/README.md">这个示例</Link> 开始你的 NextJS 项目。
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

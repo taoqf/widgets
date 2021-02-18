@@ -1,28 +1,28 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Tooltip, Spacer, Row, Col, Button, Link, Badge, Code, Text } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Tooltip, Spacer, Row, Col, Button, Link, Badge, Code, Text } from 'components';
 
 export const meta = {
-  title: 'Tooltip',
-  group: 'Data Display',
-}
+	title: 'Tooltip',
+	group: 'Data Display',
+};
 
 ## Tooltip
 
 Displays additional information on hover.
 
 <Playground
-  desc="Basic usage."
-  scope={{ Tooltip }}
-  code={`
+	desc="Basic usage."
+	scope={{ Tooltip }}
+	code={`
 <Tooltip text={'Push to Git and your website is live.'}>Tooltip</Tooltip>
 `}
 />
 
 <Playground
-  title="Trigger"
-  desc="Trigger by click."
-  scope={{ Tooltip }}
-  code={`
+	title="Trigger"
+	desc="Trigger by click."
+	scope={{ Tooltip }}
+	code={`
 <Tooltip text={'Push to Git and your website is live.'} trigger="click" type="dark">
   <span>Click me</span>
 </Tooltip>
@@ -30,10 +30,10 @@ Displays additional information on hover.
 />
 
 <Playground
-  title="With Components"
-  desc="Combined with different components."
-  scope={{ Tooltip, Button, Link, Spacer, Row, Badge }}
-  code={`
+	title="With Components"
+	desc="Combined with different components."
+	scope={{ Tooltip, Button, Link, Spacer, Row, Badge }}
+	code={`
 <Row align="middle">
   <Tooltip text={'Push to Git and your website is live.'} type="dark">
     <Button auto size="small">Button</Button>
@@ -51,10 +51,10 @@ Displays additional information on hover.
 />
 
 <Playground
-  title="Custom Content"
-  desc="You can customize the pop-up content."
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
-  code={`
+	title="Custom Content"
+	desc="You can customize the pop-up content."
+	scope={{ Tooltip, Spacer, Row, Code, Text }}
+	code={`
 <Row align="middle">
   <Tooltip text={<>Perfect for working with a <Code>CMS</Code>.</>}>
     <span>Top</span>
@@ -68,10 +68,10 @@ Displays additional information on hover.
 />
 
 <Playground
-  title="Types"
-  desc="Different state."
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
-  code={`
+	title="Types"
+	desc="Different state."
+	scope={{ Tooltip, Spacer, Row, Code, Text }}
+	code={`
 <Row align="middle">
   <Tooltip text="Perfect for working with a CMS." type="dark">
     <span>Dark</span>
@@ -97,10 +97,10 @@ Displays additional information on hover.
 />
 
 <Playground
-  title="Variant"
-  desc="Special styles."
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
-  code={`
+	title="Variant"
+	desc="Special styles."
+	scope={{ Tooltip, Spacer, Row, Code, Text }}
+	code={`
 <Row align="middle">
   <Tooltip text="Push to Git and your website is live." type="lite">
     <span>Lite</span>
@@ -114,10 +114,10 @@ Displays additional information on hover.
 />
 
 <Playground
-  title="Placements"
-  desc="There are 12 `placement` options available."
-  scope={{ Tooltip, Spacer, Row, Col }}
-  code={`
+	title="Placements"
+	desc="There are 12 `placement` options available."
+	scope={{ Tooltip, Spacer, Row, Col }}
+	code={`
 () => {
   const text = 'The Evil Rabbit Jumped over the Fence'
   const Center = ({ children, ...props }) => (
@@ -202,13 +202,13 @@ Displays additional information on hover.
 
 ```ts
 type TooltipTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'dark'
+	| 'lite';
 ```
 
 <Attributes.Title>Placement</Attributes.Title>
@@ -230,4 +230,4 @@ type Placement = 'top'
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

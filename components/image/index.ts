@@ -1,6 +1,6 @@
-import Image from './image'
-import ImageBrowser from './image-browser'
+import Image from './image';
+import ImageBrowser from './image-browser';
 
-Image.Browser = ImageBrowser
+Image.Browser = ImageBrowser;
 
-export default Image
+export default Image;

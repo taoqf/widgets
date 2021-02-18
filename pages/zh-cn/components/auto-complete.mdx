@@ -1,21 +1,21 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { AutoComplete, Spacer, Badge, Text, Grid } from 'components'
-import { useState, useRef, useEffect } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { AutoComplete, Spacer, Badge, Text, Grid } from 'components';
+import { useState, useRef, useEffect } from 'react';
 
 export const meta = {
-  title: '自动完成 Auto-Complete',
-  group: '数据录入',
-  index: 104,
-}
+	title: '自动完成 Auto-Complete',
+	group: '数据录入',
+	index: 104,
+};
 
 ## Auto Complete / 自动完成
 
 输入框的自动完成控制。
 
 <Playground
-  desc="基础示例，添加备选列表到输入框中。"
-  scope={{ AutoComplete }}
-  code={`
+	desc="基础示例，添加备选列表到输入框中。"
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -28,10 +28,10 @@ export const meta = {
 />
 
 <Playground
-  title="只允许选择输入"
-  desc="只通过 Select 事件更改值。"
-  scope={{ AutoComplete }}
-  code={`
+	title="只允许选择输入"
+	desc="只通过 Select 事件更改值。"
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -44,10 +44,10 @@ export const meta = {
 />
 
 <Playground
-  desc="禁用所有的交互。"
-  title="禁用"
-  scope={{ AutoComplete }}
-  code={`
+	desc="禁用所有的交互。"
+	title="禁用"
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -60,10 +60,10 @@ export const meta = {
 />
 
 <Playground
-  desc="根据当前输入内容变更备选的列表选项。"
-  title="搜索"
-  scope={{ AutoComplete, useState }}
-  code={`
+	desc="根据当前输入内容变更备选的列表选项。"
+	title="搜索"
+	scope={{ AutoComplete, useState }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -82,10 +82,10 @@ export const meta = {
 />
 
 <Playground
-  title="搜索中"
-  desc="在搜索中的等待时显示友好的 UI 与提示。"
-  scope={{ AutoComplete, useState, useEffect, useRef }}
-  code={`
+	title="搜索中"
+	desc="在搜索中的等待时显示友好的 UI 与提示。"
+	scope={{ AutoComplete, useState, useEffect, useRef }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -120,10 +120,10 @@ export const meta = {
 />
 
 <Playground
-  title="定制搜索中的提示"
-  desc="你可以用文字或任何组件替代默认的提示文字。"
-  scope={{ AutoComplete }}
-  code={`
+	title="定制搜索中的提示"
+	desc="你可以用文字或任何组件替代默认的提示文字。"
+	scope={{ AutoComplete }}
+	code={`
 <AutoComplete searching placeholder="在这里输入" width="100%">
   <AutoComplete.Searching>
     <span style={{ color: 'red' }}>等待中...</span>
@@ -133,10 +133,10 @@ export const meta = {
 />
 
 <Playground
-  title="定制无结果"
-  desc="你也可以用文字或任何组件替代默认的无搜索结果提示。"
-  scope={{ AutoComplete, useState }}
-  code={`
+	title="定制无结果"
+	desc="你也可以用文字或任何组件替代默认的无搜索结果提示。"
+	scope={{ AutoComplete, useState }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -161,10 +161,10 @@ export const meta = {
 />
 
 <Playground
-  title="定制选项"
-  desc="你可以详细定制每一个备选项，让 `自动完成` 组件表达更多的信息。"
-  scope={{ AutoComplete, useState, Text, Badge, Grid }}
-  code={`
+	title="定制选项"
+	desc="你可以详细定制每一个备选项，让 `自动完成` 组件表达更多的信息。"
+	scope={{ AutoComplete, useState, Text, Badge, Grid }}
+	code={`
 () => {
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
@@ -200,10 +200,10 @@ export const meta = {
 />
 
 <Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ AutoComplete, Spacer }}
-  code={`
+	title="大小"
+	desc="不同大小的组件。"
+	scope={{ AutoComplete, Spacer }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -226,10 +226,10 @@ export const meta = {
 />
 
 <Playground
-  title="可清除的"
-  desc="在输入框内添加一个用作清除文字的按钮。"
-  scope={{ AutoComplete }}
-  code={`
+	title="可清除的"
+	desc="在输入框内添加一个用作清除文字的按钮。"
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -242,10 +242,10 @@ export const meta = {
 />
 
 <Playground
-  title="可创建的"
-  desc="为任意值添加待选条目。"
-  scope={{ AutoComplete }}
-  code={`
+	title="可创建的"
+	desc="为任意值添加待选条目。"
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -320,4 +320,4 @@ Array<{
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

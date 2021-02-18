@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Divider, Text } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Divider, Text } from 'components';
 
 export const meta = {
-  title: '分割线 Divider',
-  group: '其他',
-}
+	title: '分割线 Divider',
+	group: '其他',
+};
 
 ## Divider / 分割线
 
 用于分割不同内容块的线条。
 
 <Playground
-  desc="基础示例。"
-  scope={{ Divider, Text }}
-  code={`
+	desc="基础示例。"
+	scope={{ Divider, Text }}
+	code={`
 <>
   <Text>
     在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
@@ -29,10 +29,10 @@ export const meta = {
 />
 
 <Playground
-  title="分割文字"
-  desc="在分割线上显示文字或组件。"
-  scope={{ Divider, Text }}
-  code={`
+	title="分割文字"
+	desc="在分割线上显示文字或组件。"
+	scope={{ Divider, Text }}
+	code={`
 <>
   <Text>
     在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
@@ -52,10 +52,10 @@ export const meta = {
 />
 
 <Playground
-  title="间隔"
-  desc="自定义组件周围的间隔大小。"
-  scope={{ Divider, Text }}
-  code={`
+	title="间隔"
+	desc="自定义组件周围的间隔大小。"
+	scope={{ Divider, Text }}
+	code={`
 <>
   <Text>
     在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
@@ -75,10 +75,10 @@ export const meta = {
 />
 
 <Playground
-  title="体积"
-  desc="指定组件内部的体积。"
-  scope={{ Divider, Text }}
-  code={`
+	title="体积"
+	desc="指定组件内部的体积。"
+	scope={{ Divider, Text }}
+	code={`
 <>
   <Text>
     在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
@@ -98,10 +98,10 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
-  desc="以不同的色彩表达类型。"
-  scope={{ Divider, Text }}
-  code={`
+	title="类型"
+	desc="以不同的色彩表达类型。"
+	scope={{ Divider, Text }}
+	code={`
 <>
   <Text>
     在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
@@ -136,21 +136,21 @@ export const meta = {
 
 ```ts
 type DividerTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'dark'
+	| 'lite';
 ```
 
 <Attributes.Title>DividerAlign</Attributes.Title>
 
 ```ts
-type DividerAlign = 'center' | 'start' | 'left' | 'end' | 'right'
+type DividerAlign = 'center' | 'start' | 'left' | 'end' | 'right';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

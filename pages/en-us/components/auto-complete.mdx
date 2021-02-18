@@ -1,20 +1,20 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { AutoComplete, Spacer, Badge, Grid, Text } from 'components'
-import { useState, useRef, useEffect } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { AutoComplete, Spacer, Badge, Grid, Text } from 'components';
+import { useState, useRef, useEffect } from 'react';
 
 export const meta = {
-  title: 'Auto-Complete',
-  group: 'Data Entry',
-}
+	title: 'Auto-Complete',
+	group: 'Data Entry',
+};
 
 ## Auto Complete
 
 AutoComplete control of input field.
 
 <Playground
-  desc="Basic usage, add auto-complete list for all inputs."
-  scope={{ AutoComplete }}
-  code={`
+	desc="Basic usage, add auto-complete list for all inputs."
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -27,10 +27,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  desc="Disable all."
-  title="disabled"
-  scope={{ AutoComplete }}
-  code={`
+	desc="Disable all."
+	title="disabled"
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -43,10 +43,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="Only allow selected"
-  desc="You can only change the value of the input by select."
-  scope={{ AutoComplete }}
-  code={`
+	title="Only allow selected"
+	desc="You can only change the value of the input by select."
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -59,10 +59,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  desc="Update the contents of drop-down list based on input."
-  title="search"
-  scope={{ AutoComplete }}
-  code={`
+	desc="Update the contents of drop-down list based on input."
+	title="search"
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -81,10 +81,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="Waiting in search"
-  desc="Show friendly tips and UI when searching."
-  scope={{ AutoComplete, useState, useEffect, useRef }}
-  code={`
+	title="Waiting in search"
+	desc="Show friendly tips and UI when searching."
+	scope={{ AutoComplete, useState, useEffect, useRef }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -119,10 +119,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="custom searching text"
-  desc="You can replace the default waiting text with any components."
-  scope={{ AutoComplete }}
-  code={`
+	title="custom searching text"
+	desc="You can replace the default waiting text with any components."
+	scope={{ AutoComplete }}
+	code={`
 <AutoComplete searching placeholder="Enter here" width="100%">
   <AutoComplete.Searching>
     <span style={{ color: 'red' }}>waiting...</span>
@@ -132,10 +132,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="custom no options"
-  desc="You can also customize the prompt with no options."
-  scope={{ AutoComplete, useState }}
-  code={`
+	title="custom no options"
+	desc="You can also customize the prompt with no options."
+	scope={{ AutoComplete, useState }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -160,10 +160,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="custom option"
-  desc="You can rewrite each item of the `AutoComplete` to express more."
-  scope={{ AutoComplete, useState, Text, Badge, Grid }}
-  code={`
+	title="custom option"
+	desc="You can rewrite each item of the `AutoComplete` to express more."
+	scope={{ AutoComplete, useState, Text, Badge, Grid }}
+	code={`
 () => {
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
@@ -199,10 +199,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ AutoComplete, Spacer }}
-  code={`
+	title="sizes"
+	desc="Components of different sizes."
+	scope={{ AutoComplete, Spacer }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -225,10 +225,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="clearable"
-  desc="Add a clear button in the input box."
-  scope={{ AutoComplete }}
-  code={`
+	title="clearable"
+	desc="Add a clear button in the input box."
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const options = [
     { label: 'London', value: 'london' },
@@ -241,10 +241,10 @@ AutoComplete control of input field.
 />
 
 <Playground
-  title="Creatable"
-  desc="Add an entry to be selected for any value."
-  scope={{ AutoComplete }}
-  code={`
+	title="Creatable"
+	desc="Add an entry to be selected for any value."
+	scope={{ AutoComplete }}
+	code={`
 () => {
   const allOptions = [
     { label: 'London', value: 'london' },
@@ -319,4 +319,4 @@ Array<{
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,38 +1,38 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Slider, Row, Spacer } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Slider, Row, Spacer } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: 'Slider',
-  group: 'Data Entry',
-}
+	title: 'Slider',
+	group: 'Data Entry',
+};
 
 ## Slider
 
 Display the current value and an inputable range.
 
 <Playground
-  desc="Accept clicks or drag actions."
-  scope={{ Slider }}
-  code={`
+	desc="Accept clicks or drag actions."
+	scope={{ Slider }}
+	code={`
 <Slider initialValue={20} />
 `}
 />
 
 <Playground
-  title="Disabled"
-  desc="Do not respond to drag and click."
-  scope={{ Slider }}
-  code={`
+	title="Disabled"
+	desc="Do not respond to drag and click."
+	scope={{ Slider }}
+	code={`
 <Slider initialValue={50} disabled />
 `}
 />
 
 <Playground
-  title="Step"
-  desc="Different granularity."
-  scope={{ Slider, Row }}
-  code={`
+	title="Step"
+	desc="Different granularity."
+	scope={{ Slider, Row }}
+	code={`
 <Row style={{ width: '75%' }}>
   <Slider step={10} showMarkers />
 </Row>
@@ -40,10 +40,10 @@ Display the current value and an inputable range.
 />
 
 <Playground
-  title="Range"
-  desc="Specifies the maximum or minimum value of the Slider."
-  scope={{ Slider, Spacer }}
-  code={`
+	title="Range"
+	desc="Specifies the maximum or minimum value of the Slider."
+	scope={{ Slider, Spacer }}
+	code={`
 <div style={{ width: '75%' }}>
   <Slider step={5} max={50} min={10} initialValue={25} showMarkers />
   <Spacer />
@@ -53,10 +53,10 @@ Display the current value and an inputable range.
 />
 
 <Playground
-  title="Event"
-  desc="Get event when slide."
-  scope={{ Slider, Row, useState }}
-  code={`
+	title="Event"
+	desc="Get event when slide."
+	scope={{ Slider, Row, useState }}
+	code={`
 () => {
   const [value, setValue] = useState()
   const handler = val => {
@@ -89,4 +89,4 @@ Display the current value and an inputable range.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

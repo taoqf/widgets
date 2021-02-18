@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { useToasts, Button, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { useToasts, Button, Spacer } from 'components';
 
 export const meta = {
-  title: 'toast',
-  group: 'Feedback',
-}
+	title: 'toast',
+	group: 'Feedback',
+};
 
 ## Toast
 
 Display an important message globally.
 
 <Playground
-  desc="Basic usage."
-  scope={{ Button, useToasts }}
-  code={`
+	desc="Basic usage."
+	scope={{ Button, useToasts }}
+	code={`
 () => {
   const [toasts, setToast] = useToasts()
   const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence.' })
@@ -23,10 +23,10 @@ Display an important message globally.
 />
 
 <Playground
-  title="Multiline"
-  desc="Display multiline or overlong text."
-  scope={{ Button, useToasts }}
-  code={`
+	title="Multiline"
+	desc="Display multiline or overlong text."
+	scope={{ Button, useToasts }}
+	code={`
 () => {
   const [toasts, setToast] = useToasts()
   const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.' })
@@ -36,10 +36,10 @@ Display an important message globally.
 />
 
 <Playground
-  title="Action"
-  desc="Add a custom button to the Toast."
-  scope={{ Button, useToasts }}
-  code={`
+	title="Action"
+	desc="Add a custom button to the Toast."
+	scope={{ Button, useToasts }}
+	code={`
 () => {
   const [, setToast] = useToasts()
   const action = {
@@ -56,10 +56,10 @@ Display an important message globally.
 />
 
 <Playground
-  title="Cancel"
-  desc="Use `passive` to change the style of the button."
-  scope={{ Button, useToasts }}
-  code={`
+	title="Cancel"
+	desc="Use `passive` to change the style of the button."
+	scope={{ Button, useToasts }}
+	code={`
 () => {
   const [, setToast] = useToasts()
   const action = {
@@ -77,9 +77,9 @@ Display an important message globally.
 />
 
 <Playground
-  title="Type"
-  scope={{ Button, useToasts, Spacer }}
-  code={`
+	title="Type"
+	scope={{ Button, useToasts, Spacer }}
+	code={`
 () => {
   const [, setToast] = useToasts()
   const click = type => setToast({
@@ -108,10 +108,10 @@ const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
 
 ```ts
 interface Toast {
-  text?: string
-  type?: NormalTypes
-  delay?: number
-  actions?: Array<ToastAction>
+	text?: string;
+	type?: NormalTypes;
+	delay?: number;
+	actions?: Array<ToastAction>;
 }
 ```
 
@@ -119,18 +119,18 @@ interface Toast {
 
 ```ts
 interface ToastAction {
-  name: string
-  handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
-  passive?: boolean
+	name: string;
+	handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void;
+	passive?: boolean;
 }
 ```
 
 <Attributes.Title>NormalTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

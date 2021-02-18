@@ -1,10 +1,10 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { useClipboard, Link, Button, useToasts, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { useClipboard, Link, Button, useToasts, Spacer } from 'components';
 
 export const meta = {
-  title: 'use-clipboard',
-  group: 'Utils',
-}
+	title: 'use-clipboard',
+	group: 'Utils',
+};
 
 ## Use clipboard
 
@@ -13,8 +13,8 @@ Copy string to clipboard.
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
 <Playground
-  scope={{ useClipboard, Button, useToasts }}
-  code={`
+	scope={{ useClipboard, Button, useToasts }}
+	code={`
 () => {
   const [, setToast] = useToasts()
   const { copy } = useClipboard()
@@ -36,16 +36,16 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
 
 ```ts
 type UseClipboardOptions = {
-  onError: Function
-}
+	onError: Function;
+};
 
 type CopyResult = {
-  copy: (text: string) => void
-}
+	copy: (text: string) => void;
+};
 
-const useClipboard = (options?: UseClipboardOptions) => CopyResult
+const useClipboard = (options?: UseClipboardOptions) => CopyResult;
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

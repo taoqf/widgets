@@ -1,10 +1,10 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Card, Spacer, useClickAway } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Link, Card, Spacer, useClickAway } from 'components';
 
 export const meta = {
-  title: 'use-click-away',
-  group: 'Utils',
-}
+	title: 'use-click-away',
+	group: 'Utils',
+};
 
 ## Use click away
 
@@ -13,9 +13,9 @@ Detect if a click event happened outside of an element.
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
 <Playground
-  desc="Click outside the green card to trigger the callback."
-  scope={{ useClickAway }}
-  code={`
+	desc="Click outside the green card to trigger the callback."
+	scope={{ useClickAway }}
+	code={`
 () => {
   const ref = React.useRef()
   const [count, setCount] = React.useState(0)
@@ -41,4 +41,4 @@ const useClickAway = (
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

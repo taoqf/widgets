@@ -1,43 +1,43 @@
-import React from 'react'
-import css from 'styled-jsx/css'
-import GridContainer from './grid-container'
-import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
+import React from 'react';
+import css from 'styled-jsx/css';
+import GridContainer from './grid-container';
+import GridBasicItem, { GridBasicItemComponentProps } from './basic-item';
 
 interface Props {
-  className: string
+	className: string;
 }
 
 const defaultProps = {
-  className: '',
-}
+	className: '',
+};
 
-export type GridProps = Props & typeof defaultProps & GridBasicItemComponentProps
+export type GridProps = Props & typeof defaultProps & GridBasicItemComponentProps;
 
 const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
-  children,
-  className,
-  ...props
+	children,
+	className,
+	...props
 }) => {
-  const { className: resolveClassName, styles } = css.resolve`
-    margin: 0;
-    box-sizing: border-box;
-    padding: var(--gaid-gap-unit);
-  `
-  return (
-    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
-      {children}
-      {styles}
-    </GridBasicItem>
-  )
-}
+	const { className: resolveClassName, styles } = css.resolve`
+		margin: 0;
+		box-sizing: border-box;
+		padding: var(--gaid-gap-unit);
+	`;
+	return (
+		<GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
+			{children}
+			{styles}
+		</GridBasicItem>
+	);
+};
 
 type MemoGridComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Container: typeof GridContainer
-}
+	Container: typeof GridContainer;
+};
 type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  GridBasicItemComponentProps
+	Omit<Props, keyof typeof defaultProps> &
+	GridBasicItemComponentProps;
 
-Grid.defaultProps = defaultProps
+Grid.defaultProps = defaultProps;
 
-export default React.memo(Grid) as MemoGridComponent<ComponentProps>
+export default React.memo(Grid) as MemoGridComponent<ComponentProps>;

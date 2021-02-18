@@ -1,3 +1,3 @@
-import GeistProvider from './geist-provider'
+import GeistProvider from './geist-provider';
 
-export default GeistProvider
+export default GeistProvider;

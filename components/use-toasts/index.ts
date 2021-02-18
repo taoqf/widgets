@@ -1,3 +1,3 @@
-import useToasts from './use-toast'
+import useToasts from './use-toast';
 
-export default useToasts
+export default useToasts;

@@ -1,3 +1,3 @@
-import Capacity from './capacity'
+import Capacity from './capacity';
 
-export default Capacity
+export default Capacity;

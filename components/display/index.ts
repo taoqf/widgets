@@ -1,5 +1,5 @@
-import Display from './display'
-import { DisplayProps } from './display'
+import Display from './display';
+import { DisplayProps } from './display';
 
-export type Props = DisplayProps
-export default Display
+export type Props = DisplayProps;
+export default Display;

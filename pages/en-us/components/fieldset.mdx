@@ -1,20 +1,20 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Fieldset, Button, Text, Divider } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Card, Fieldset, Button, Text, Divider } from 'components';
 
 export const meta = {
-  title: 'fieldset',
-  group: 'Surfaces',
-}
+	title: 'fieldset',
+	group: 'Surfaces',
+};
 
 ## Fieldset
 
 Display a collection of related information in a single unit.
 
 <Playground
-  title="Basic"
-  desc="Add custom buttons in `Actions`."
-  scope={{ Fieldset, Button }}
-  code={`
+	title="Basic"
+	desc="Add custom buttons in `Actions`."
+	scope={{ Fieldset, Button }}
+	code={`
 <Fieldset>
   <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
   <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
@@ -31,10 +31,10 @@ Display a collection of related information in a single unit.
 />
 
 <Playground
-  title="Custom Text"
-  desc="Representation in different situations."
-  scope={{ Fieldset, Button, Text }}
-  code={`
+	title="Custom Text"
+	desc="Representation in different situations."
+	scope={{ Fieldset, Button, Text }}
+	code={`
 <Fieldset>
   <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
   <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
@@ -51,10 +51,10 @@ Display a collection of related information in a single unit.
 />
 
 <Playground
-  title="Tabs"
-  desc="Show multiple Fieldset."
-  scope={{ Fieldset, Button }}
-  code={`
+	title="Tabs"
+	desc="Show multiple Fieldset."
+	scope={{ Fieldset, Button }}
+	code={`
 () => {
   const handler = v => console.log(v)
   return (
@@ -96,10 +96,10 @@ Display a collection of related information in a single unit.
 />
 
 <Playground
-  title="With Divider"
-  desc="Use `Divider` and `Fieldset.Content` to combine different layouts."
-  scope={{ Fieldset, Divider }}
-  code={`
+	title="With Divider"
+	desc="Use `Divider` and `Fieldset.Content` to combine different layouts."
+	scope={{ Fieldset, Divider }}
+	code={`
 <Fieldset>
   <Fieldset.Content style={{ paddingTop: '10pt', paddingBottom: '10pt' }}>
     <h4>Prerequisites</h4>
@@ -162,4 +162,4 @@ Display a collection of related information in a single unit.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

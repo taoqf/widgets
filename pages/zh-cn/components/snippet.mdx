@@ -1,37 +1,37 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Snippet, Spacer, Code } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Snippet, Spacer, Code } from 'components';
 
 export const meta = {
-  title: '片段 Snippet',
-  group: '其他',
-}
+	title: '片段 Snippet',
+	group: '其他',
+};
 
 ## Snippet / 片段
 
 显示可拷贝的命令行代码片段。
 
 <Playground
-  desc="展示一个命令。"
-  scope={{ Snippet }}
-  code={`
+	desc="展示一个命令。"
+	scope={{ Snippet }}
+	code={`
 <Snippet text="yarn add @geist-ui/react" width="300px" />
 `}
 />
 
 <Playground
-  title="宽度"
-  desc="手动地指定宽度。"
-  scope={{ Snippet }}
-  code={`
+	title="宽度"
+	desc="手动地指定宽度。"
+	scope={{ Snippet }}
+	code={`
 <Snippet text="yarn add @geist-ui/react" width="100%" />
 `}
 />
 
 <Playground
-  title="类型"
-  desc="以颜色区分不同的类型。"
-  scope={{ Snippet, Spacer }}
-  code={`
+	title="类型"
+	desc="以颜色区分不同的类型。"
+	scope={{ Snippet, Spacer }}
+	code={`
 <>
   <Snippet text="yarn add @geist-ui/react" type="dark" width="300px" />
   <Spacer />
@@ -49,26 +49,26 @@ export const meta = {
 />
 
 <Playground
-  title="多行"
-  scope={{ Snippet }}
-  code={`
+	title="多行"
+	scope={{ Snippet }}
+	code={`
 <Snippet text={['cd project', 'now']} width="300px" />
 `}
 />
 
 <Playground
-  title="无拷贝"
-  desc="隐藏拷贝按钮。 (禁用拷贝)"
-  scope={{ Snippet }}
-  code={`
+	title="无拷贝"
+	desc="隐藏拷贝按钮。 (禁用拷贝)"
+	scope={{ Snippet }}
+	code={`
 <Snippet copy="prevent" text="yarn add @geist-ui/react" width="300px" />
 `}
 />
 
 <Playground
-  title="填充"
-  scope={{ Snippet, Spacer }}
-  code={`
+	title="填充"
+	scope={{ Snippet, Spacer }}
+	code={`
 <>
   <Snippet text="yarn add @geist-ui/react" type="success" filled width="300px" />
   <Spacer />
@@ -100,21 +100,21 @@ export const meta = {
 
 ```ts
 type SnippetTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'dark'
+	| 'lite';
 ```
 
 <Attributes.Title>NormalTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,11 +1,11 @@
-import Layout from 'lib/components/layout'
-import { Code, Link, Spacer, Note } from 'components'
+import Layout from 'lib/components/layout';
+import { Code, Link, Spacer, Note } from 'components';
 
 export const meta = {
-  title: '服务端渲染',
-  group: '快速上手',
-  index: 15,
-}
+	title: '服务端渲染',
+	group: '快速上手',
+	index: 15,
+};
 
 ## 服务端渲染
 
@@ -14,14 +14,14 @@ export const meta = {
 `@geist-ui/react` 的所有组件都能完美的适应 **服务端渲染**，实际上，你现在所见的文档站点就是来自服务端渲染。
 
 <Note label="阅读提示">
-  如果你只想创建{' '}
-  <Link
-    href="https://en.wikipedia.org/wiki/Single-page_application"
-    rel="nofollow"
-    underline>
-    一个 SPA 应用
-  </Link>
-  ， 建议跳过此章节。
+	如果你只想创建{' '}
+	<Link
+		href="https://en.wikipedia.org/wiki/Single-page_application"
+		rel="nofollow"
+		underline>
+		一个 SPA 应用
+	</Link>
+	， 建议跳过此章节。
 </Note>
 
 <Spacer y={0.5} />
@@ -73,24 +73,24 @@ class MyDocument extends Document {
 在你自定义的服务端或其他预渲染框架中，你可以通过函数 `CssBaseline.flush` 获取所有样式文本。
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom/server'
-import { CssBaseline } from 'geist-ui/react'
-import App from './app'
+import React from 'react';
+import ReactDOM from 'react-dom/server';
+import { CssBaseline } from 'geist-ui/react';
+import App from './app';
 
 export default (req, res) => {
-  const app = ReactDOM.renderToString(<App />)
-  const styles = CssBaseline.flush()
-  const html = ReactDOM.renderToStaticMarkup(
-    <html>
-      <head>{styles}</head>
-      <body>
-        <div id="root" dangerouslySetInnerHTML={{ __html: app }} />
-      </body>
-    </html>,
-  )
-  res.end('<!doctype html>' + html)
-}
+	const app = ReactDOM.renderToString(<App />);
+	const styles = CssBaseline.flush();
+	const html = ReactDOM.renderToStaticMarkup(
+		<html>
+			<head>{styles}</head>
+			<body>
+				<div id="root" dangerouslySetInnerHTML={{ __html: app }} />
+			</body>
+		</html>,
+	);
+	res.end('<!doctype html>' + html);
+};
 ```
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,20 +1,20 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Text } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Text } from 'components';
 
 export const meta = {
-  title: '文本 Text',
-  group: '通用',
-  index: 10,
-}
+	title: '文本 Text',
+	group: '通用',
+	index: 10,
+};
 
 ## Text / 文本
 
 使用预定义的排版样式显示文本。
 
 <Playground
-  title="标题"
-  scope={{ Text }}
-  code={`
+	title="标题"
+	scope={{ Text }}
+	code={`
 <>
   <Text h1>JavaScript 是一门编程语言。</Text>
   <Text h2>JavaScript 是一门编程语言。</Text>
@@ -58,9 +58,9 @@ export const meta = {
 `} />
 
 <Playground
-  title="引用"
-  scope={{ Text }}
-  code={`
+	title="引用"
+	scope={{ Text }}
+	code={`
 <Text blockquote>
   事件能为网页添加真实的交互能力。
 </Text>
@@ -68,10 +68,10 @@ export const meta = {
 />
 
 <Playground
-  title="色彩"
-  desc="以不同的色彩区分文字的状态。"
-  scope={{ Text }}
-  code={`
+	title="色彩"
+	desc="以不同的色彩区分文字的状态。"
+	scope={{ Text }}
+	code={`
 <>
   <Text type="success">
     中间的代理服务器必须转发未经修改的端到端消息头，并且必须缓存它们。
@@ -110,10 +110,10 @@ export const meta = {
 `} />
 
 <Playground
-  title="类型"
-  desc="以不同的色彩区分状态文字。"
-  scope={{ Text }}
-  code={`
+	title="类型"
+	desc="以不同的色彩区分状态文字。"
+	scope={{ Text }}
+	code={`
 <>
   <Text p type="success">事件能为网页添加真实的交互能力。</Text>
   <Text p type="warning">事件能为网页添加真实的交互能力。</Text>
@@ -124,9 +124,9 @@ export const meta = {
 />
 
 <Playground
-  title="字体大小"
-  scope={{ Text }}
-  code={`
+	title="字体大小"
+	scope={{ Text }}
+	code={`
 <>
   <Text size={12}>Font Size: 12px;</Text>
   <Text size={14}>Font Size: 14px;</Text>
@@ -158,9 +158,9 @@ export const meta = {
 <Attributes.Title>TextTypes</Attributes.Title>
 
 ```ts
-type TextTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type TextTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

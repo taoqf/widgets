@@ -1,28 +1,28 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { User, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { User, Spacer } from 'components';
 
 export const meta = {
-  title: 'User',
-  group: 'Data Display',
-}
+	title: 'User',
+	group: 'Data Display',
+};
 
 ## User
 
 Display user profile or social information.
 
 <Playground
-  desc="Show username."
-  scope={{ User, Spacer }}
-  code={`
+	desc="Show username."
+	scope={{ User, Spacer }}
+	code={`
 <User src="/images/avatar.png" name="Evil Rabbit" />
 `}
 />
 
 <Playground
-  title="Description"
-  desc="Show an extra description."
-  scope={{ User, Spacer }}
-  code={`
+	title="Description"
+	desc="Show an extra description."
+	scope={{ User, Spacer }}
+	code={`
 <User src="https://unix.bio/assets/avatar.png" name="Witt">
   JavaScript engineer
 </User>
@@ -30,10 +30,10 @@ Display user profile or social information.
 />
 
 <Playground
-  title="Social"
-  desc="Show link below user name."
-  scope={{ User, Spacer }}
-  code={`
+	title="Social"
+	desc="Show link below user name."
+	scope={{ User, Spacer }}
+	code={`
 <User src="https://unix.bio/assets/avatar.png" name="Witt">
   <User.Link href="https://twitter.com/echo_witt">@echo_witt</User.Link>
 </User>
@@ -60,4 +60,4 @@ Display user profile or social information.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

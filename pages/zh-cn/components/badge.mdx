@@ -1,20 +1,20 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Badge, Spacer, Button, Link, Avatar, useTheme } from 'components'
-import NextLink from 'next/link'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Badge, Spacer, Button, Link, Avatar, useTheme } from 'components';
+import NextLink from 'next/link';
 
 export const meta = {
-  title: '徽章 Badge',
-  group: '数据展示',
-}
+	title: '徽章 Badge',
+	group: '数据展示',
+};
 
 ## Badge / 徽章
 
 显示一个需要注意的指标。
 
 <Playground
-  scope={{ Badge, Spacer }}
-  desc="展示一个数字或一段文字。"
-  code={`
+	scope={{ Badge, Spacer }}
+	desc="展示一个数字或一段文字。"
+	code={`
   <>
     <Badge>1</Badge> <Spacer y={.5} />
     <Badge>50</Badge> <Spacer y={.5} />
@@ -25,10 +25,10 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
-  desc="以不同的色彩表达不同的状态。"
-  scope={{ Badge, Spacer }}
-  code={`
+	title="类型"
+	desc="以不同的色彩表达不同的状态。"
+	scope={{ Badge, Spacer }}
+	code={`
   <>
     <Badge type="success">成功</Badge> <Spacer y={.5} />
     <Badge type="warning">警告</Badge> <Spacer y={.5} />
@@ -39,18 +39,18 @@ export const meta = {
 />
 
 <Playground
-  title="Custom color"
-  desc={
-    <>
-      了解更多颜色，请参考{' '}
-      <NextLink href="/zh-cn/guide/colors">
-        <Link color>色彩章节</Link>
-      </NextLink>
-      。
-    </>
-  }
-  scope={{ Badge, Spacer, useTheme }}
-  code={`
+	title="Custom color"
+	desc={
+		<>
+			了解更多颜色，请参考{' '}
+			<NextLink href="/zh-cn/guide/colors">
+				<Link color>色彩章节</Link>
+			</NextLink>
+			。
+		</>
+	}
+	scope={{ Badge, Spacer, useTheme }}
+	code={`
 () => {
   const theme = useTheme()
   return (
@@ -68,10 +68,10 @@ export const meta = {
 />
 
 <Playground
-  title="大小"
-  desc="不同大小的徽章组件。"
-  scope={{ Badge, Spacer }}
-  code={`
+	title="大小"
+	desc="不同大小的徽章组件。"
+	scope={{ Badge, Spacer }}
+	code={`
   <>
     <Badge size="mini">极小</Badge> <Spacer y={.5} />
     <Badge size="small">较小</Badge> <Spacer y={.5} />
@@ -82,10 +82,10 @@ export const meta = {
 />
 
 <Playground
-  title="锚点"
-  desc="将徽章固定在指定位置。"
-  scope={{ Badge, Avatar, Spacer, Button, Link }}
-  code={`
+	title="锚点"
+	desc="将徽章固定在指定位置。"
+	scope={{ Badge, Avatar, Spacer, Button, Link }}
+	code={`
 <>
   <Badge.Anchor>
     <Badge size="mini">10</Badge>
@@ -135,21 +135,21 @@ export const meta = {
 <Attributes.Title>NormalTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error';
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'medium' | 'mini' | 'small' | 'large'
+type NormalSizes = 'medium' | 'mini' | 'small' | 'large';
 ```
 
 <Attributes.Title>AnchorPlacement</Attributes.Title>
 
 ```ts
-type AnchorPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight'
+type AnchorPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

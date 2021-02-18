@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Popover, Spacer, Link } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Popover, Spacer, Link } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: 'Popover',
-  group: 'Data Display',
-}
+	title: 'Popover',
+	group: 'Data Display',
+};
 
 ## Popover
 
 The floating box popped by clicking or hovering.
 
 <Playground
-  scope={{ Popover, Spacer, Link }}
-  code={`
+	scope={{ Popover, Spacer, Link }}
+	code={`
 () => {
   const content = () => (
     <div style={{ padding: '0 10px' }}>
@@ -32,10 +32,10 @@ The floating box popped by clicking or hovering.
 />
 
 <Playground
-  title="Preset Item"
-  desc="Use preset `Item` component build layout."
-  scope={{ Popover, Spacer, Link }}
-  code={`
+	title="Preset Item"
+	desc="Use preset `Item` component build layout."
+	scope={{ Popover, Spacer, Link }}
+	code={`
 () => {
   const content = () => (
     <>
@@ -64,10 +64,10 @@ The floating box popped by clicking or hovering.
 />
 
 <Playground
-  title="Close Manual"
-  desc="You can control when to close the pop-up box."
-  scope={{ Popover, Spacer, Link, useState }}
-  code={`
+	title="Close Manual"
+	desc="You can control when to close the pop-up box."
+	scope={{ Popover, Spacer, Link, useState }}
+	code={`
 () => {
   const [visible, setVisible] = useState(false)
   const changeHandler = (next) => {
@@ -134,4 +134,4 @@ type Placement = 'top'
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,46 +1,46 @@
-import React from 'react'
-import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
+import React from 'react';
+import useTheme from '../use-theme';
+import withDefaults from '../utils/with-defaults';
 
 interface Props {
-  className?: string
+	className?: string;
 }
 
 const defaultProps = {
-  className: '',
-}
+	className: '',
+};
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CardContentProps = Props & typeof defaultProps & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type CardContentProps = Props & typeof defaultProps & NativeAttrs;
 
 const CardContent: React.FC<React.PropsWithChildren<CardContentProps>> = ({
-  className,
-  children,
-  ...props
+	className,
+	children,
+	...props
 }) => {
-  const theme = useTheme()
+	const theme = useTheme();
 
-  return (
-    <div className={`content ${className}`} {...props}>
-      {children}
-      <style jsx>{`
-        .content {
-          width: 100%;
-          padding: ${theme.layout.gap} ${theme.layout.gap};
-        }
+	return (
+		<div className={`content ${className}`} {...props}>
+			{children}
+			<style jsx>{`
+				.content {
+					width: 100%;
+					padding: ${theme.layout.gap} ${theme.layout.gap};
+				}
 
-        .content > :global(*:first-child) {
-          margin-top: 0;
-        }
+				.content > :global(*:first-child) {
+					margin-top: 0;
+				}
 
-        .content > :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      `}</style>
-    </div>
-  )
-}
+				.content > :global(*:last-child) {
+					margin-bottom: 0;
+				}
+			`}</style>
+		</div>
+	);
+};
 
-const MemoCardContent = React.memo(CardContent)
+const MemoCardContent = React.memo(CardContent);
 
-export default withDefaults(MemoCardContent, defaultProps)
+export default withDefaults(MemoCardContent, defaultProps);

@@ -1,20 +1,20 @@
-import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
-import { Page, Button } from 'components'
-import MockPage from 'lib/components/displays/mock-page'
+import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components';
+import { Page, Button } from 'components';
+import MockPage from 'lib/components/displays/mock-page';
 
 export const meta = {
-  title: 'Page',
-  group: 'layout',
-}
+	title: 'Page',
+	group: 'layout',
+};
 
 ## Page
 
 Container of general for display page content.
 
 <Playground
-  desc="The content will be displayed in the center."
-  scope={{ Page, MockPage, Button }}
-  code={`
+	desc="The content will be displayed in the center."
+	scope={{ Page, MockPage, Button }}
+	code={`
 () => {
   const Child = () => (
     <>
@@ -36,10 +36,10 @@ Container of general for display page content.
 />
 
 <Playground
-  title="Content"
-  desc="Add `Header` and `Footer` for better layout."
-  scope={{ Page, MockPage, Button }}
-  code={`
+	title="Content"
+	desc="Add `Header` and `Footer` for better layout."
+	scope={{ Page, MockPage, Button }}
+	code={`
 () => {
   const [visible, setVisible] = React.useState(false)
   return (
@@ -97,18 +97,18 @@ Container of general for display page content.
 <Attributes.Title>PageSize</Attributes.Title>
 
 ```ts
-type PageSize = string | 'mini' | 'small' | 'medium' | 'large'
+type PageSize = string | 'mini' | 'small' | 'medium' | 'large';
 ```
 
 <Attributes.Title>PageRenderMode</Attributes.Title>
 
 ```ts
 type PageRenderMode =
-  | 'default' // Normal rendering
-  | 'effect' // Render after the first effect trigger
-  | 'effect-seo' // like "effect", but prerender strings for SEO
+	| 'default' // Normal rendering
+	| 'effect' // Render after the first effect trigger
+	| 'effect-seo'; // like "effect", but prerender strings for SEO
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

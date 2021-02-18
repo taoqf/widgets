@@ -1,6 +1,6 @@
-import Badge from './badge'
-import BadgeAnchor from './badge-anchor'
+import Badge from './badge';
+import BadgeAnchor from './badge-anchor';
 
-Badge.Anchor = BadgeAnchor
+Badge.Anchor = BadgeAnchor;
 
-export default Badge
+export default Badge;

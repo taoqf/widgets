@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Spacer, Container, Col } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Spacer, Container, Col } from 'components';
 
 export const meta = {
-  title: '间距 Spacer',
-  group: '布局',
-}
+	title: '间距 Spacer',
+	group: '布局',
+};
 
 ## Spacer / 间距
 
 为排版提供标准化的空间。
 
 <Playground
-  title="垂直的"
-  scope={{ Spacer, Container }}
-  code={`
+	title="垂直的"
+	scope={{ Spacer, Container }}
+	code={`
 <>
   <Container style={{ background: '#444' }}>
     <Spacer y={1}/>
@@ -31,9 +31,9 @@ export const meta = {
 />
 
 <Playground
-  title="水平的"
-  scope={{ Spacer, Container, Col }}
-  code={`
+	title="水平的"
+	scope={{ Spacer, Container, Col }}
+	code={`
 <Container>
   <Col style={{ background: '#444' }} />
   <Spacer x={5}/>
@@ -54,4 +54,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

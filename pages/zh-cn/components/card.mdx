@@ -1,18 +1,18 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Row, Col, Link, Spacer, Text, Image, Divider, Code } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Card, Row, Col, Link, Spacer, Text, Image, Divider, Code } from 'components';
 
 export const meta = {
-  title: '卡片 Card',
-  group: '表面',
-}
+	title: '卡片 Card',
+	group: '表面',
+};
 
 ## Card / 卡片
 
 基础的组件容器。
 
 <Playground
-  scope={{ Card }}
-  code={`
+	scope={{ Card }}
+	code={`
 <Card>
   <p>一个基础的卡片。</p>
 </Card>
@@ -20,9 +20,9 @@ export const meta = {
 />
 
 <Playground
-  title="可悬停的"
-  scope={{ Card }}
-  code={`
+	title="可悬停的"
+	scope={{ Card }}
+	code={`
 <Card hoverable>
   <p>可悬停的卡片。</p>
 </Card>
@@ -30,9 +30,9 @@ export const meta = {
 />
 
 <Playground
-  title="阴影"
-  scope={{ Card }}
-  code={`
+	title="阴影"
+	scope={{ Card }}
+	code={`
 <Card shadow>
   <h4>这是一个 React 组件。</h4>
   <p>阴影卡片组件。</p>
@@ -41,10 +41,10 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
-  desc="以各式色彩表达不同的类型或状态。"
-  scope={{ Card, Row, Col }}
-  code={`
+	title="类型"
+	desc="以各式色彩表达不同的类型或状态。"
+	scope={{ Card, Row, Col }}
+	code={`
 () => {
   const typeLeft = ['secondary', 'success', 'warning', 'error', 'dark']
   const typeRight = ['alert', 'purple', 'violet', 'cyan', 'lite']
@@ -77,9 +77,9 @@ export const meta = {
 />
 
 <Playground
-  title="卡片页脚"
-  scope={{ Card, Link, Spacer, Row }}
-  code={`
+	title="卡片页脚"
+	scope={{ Card, Link, Spacer, Row }}
+	code={`
 <Row style={{ flexWrap: 'wrap' }} justify="space-around">
   <Card width="330px">
     <h4>Geist UI React</h4>
@@ -100,9 +100,9 @@ export const meta = {
 />
 
 <Playground
-  title="组合图片"
-  scope={{ Card, Link, Spacer, Text, Image }}
-  code={`
+	title="组合图片"
+	scope={{ Card, Link, Spacer, Text, Image }}
+	code={`
 <Card width="400px">
   <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
    height="200" width="400" style={{ objectFit: 'cover' }} />
@@ -116,10 +116,10 @@ export const meta = {
 />
 
 <Playground
-  title="组合分割线"
-  desc="使用分割线展示不同类型的内容。"
-  scope={{ Card, Text, Divider, Code }}
-  code={`
+	title="组合分割线"
+	desc="使用分割线展示不同类型的内容。"
+	scope={{ Card, Text, Divider, Code }}
+	code={`
 <Card width="400px">
   <Card.Content>
     <Text b>语法描述</Text>
@@ -161,19 +161,19 @@ export const meta = {
 
 ```ts
 type CardType =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
-  | 'alert'
-  | 'purple'
-  | 'violet'
-  | 'cyan'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'dark'
+	| 'lite'
+	| 'alert'
+	| 'purple'
+	| 'violet'
+	| 'cyan';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,8 +1,8 @@
-import Pagination from './pagination'
-import PaginationPrevious from './pagination-previous'
-import PaginationNext from './pagination-next'
+import Pagination from './pagination';
+import PaginationPrevious from './pagination-previous';
+import PaginationNext from './pagination-next';
 
-Pagination.Previous = PaginationPrevious
-Pagination.Next = PaginationNext
+Pagination.Previous = PaginationPrevious;
+Pagination.Next = PaginationNext;
 
-export default Pagination
+export default Pagination;

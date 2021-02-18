@@ -1,12 +1,12 @@
-import Layout from 'lib/components/layout'
-import { Note, Code, Spacer, Link, Display } from 'components'
-import NextLink from 'next/link'
-import Colors from 'lib/components/displays/colors'
+import Layout from 'lib/components/layout';
+import { Note, Code, Spacer, Link, Display } from 'components';
+import NextLink from 'next/link';
+import Colors from 'lib/components/displays/colors';
 
 export const meta = {
-  title: '色彩',
-  group: '定制化',
-}
+	title: '色彩',
+	group: '定制化',
+};
 
 ## 色彩
 
@@ -22,13 +22,13 @@ export const meta = {
 <Display width="90%" caption={<span>从 <Code>useTheme</Code> 函数中获取调色板。</span>}>
 
 ```jsx
-import { useTheme } from '@geist-ui/react'
+import { useTheme } from '@geist-ui/react';
 
 const myComponent = () => {
-  const { palette } = useTheme()
+	const { palette } = useTheme();
 
-  return <p style={{ color: palette.accents_1 }}>myComponent</p>
-}
+	return <p style={{ color: palette.accents_1 }}>myComponent</p>;
+};
 ```
 
 </Display>
@@ -60,4 +60,4 @@ const myComponent = () => {
 <Colors type="highlight" />
 <Spacer y={3} />
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

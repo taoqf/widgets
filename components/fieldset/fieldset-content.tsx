@@ -1,43 +1,43 @@
-import React from 'react'
-import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
+import React from 'react';
+import useTheme from '../use-theme';
+import withDefaults from '../utils/with-defaults';
 
 interface Props {
-  className?: string
+	className?: string;
 }
 
 const defaultProps = {
-  className: '',
-}
+	className: '',
+};
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type FieldsetContentProps = Props & typeof defaultProps & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type FieldsetContentProps = Props & typeof defaultProps & NativeAttrs;
 
 const FieldsetContent: React.FC<React.PropsWithChildren<FieldsetContentProps>> = ({
-  className,
-  children,
-  ...props
+	className,
+	children,
+	...props
 }) => {
-  const theme = useTheme()
+	const theme = useTheme();
 
-  return (
-    <div className={`content ${className}`} {...props}>
-      {children}
-      <style jsx>{`
-        .content {
-          padding: ${theme.layout.gap};
-        }
+	return (
+		<div className={`content ${className}`} {...props}>
+			{children}
+			<style jsx>{`
+				.content {
+					padding: ${theme.layout.gap};
+				}
 
-        .content :global(*:first-child) {
-          margin-top: 0;
-        }
+				.content :global(*:first-child) {
+					margin-top: 0;
+				}
 
-        .content :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      `}</style>
-    </div>
-  )
-}
+				.content :global(*:last-child) {
+					margin-bottom: 0;
+				}
+			`}</style>
+		</div>
+	);
+};
 
-export default withDefaults(FieldsetContent, defaultProps)
+export default withDefaults(FieldsetContent, defaultProps);

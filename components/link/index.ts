@@ -1,5 +1,5 @@
-import Link from './link'
-import { LinkProps } from './link'
+import Link from './link';
+import { LinkProps } from './link';
 
-export type Props = LinkProps
-export default Link
+export type Props = LinkProps;
+export default Link;

@@ -1,37 +1,37 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Progress, Spacer, useTheme, Button } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Progress, Spacer, useTheme, Button } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: 'Progress',
-  group: 'Feedback',
-}
+	title: 'Progress',
+	group: 'Feedback',
+};
 
 ## Progress
 
 Display progress relative to a limit or related to a task.
 
 <Playground
-  scope={{ Progress }}
-  code={`
+	scope={{ Progress }}
+	code={`
 <Progress value={50} />
 `}
 />
 
 <Playground
-  title="Custom Max"
-  desc="Modify the maximum value of progress."
-  scope={{ Progress }}
-  code={`
+	title="Custom Max"
+	desc="Modify the maximum value of progress."
+	scope={{ Progress }}
+	code={`
 <Progress value={45} max={50} />
 `}
 />
 
 <Playground
-  title="Dynamic Colors"
-  desc="You can specify the color of the progress in any range."
-  scope={{ Progress, useState, useTheme, Button, Spacer }}
-  code={`
+	title="Dynamic Colors"
+	desc="You can specify the color of the progress in any range."
+	scope={{ Progress, useState, useTheme, Button, Spacer }}
+	code={`
 () => {
   const theme = useTheme()
   const [value, setValue] = useState(20)
@@ -55,10 +55,10 @@ Display progress relative to a limit or related to a task.
 />
 
 <Playground
-  title="Type"
-  desc="We prepared some different styles in advance."
-  scope={{ Progress, Spacer }}
-  code={`
+	title="Type"
+	desc="We prepared some different styles in advance."
+	scope={{ Progress, Spacer }}
+	code={`
 <>
   <Progress type="secondary" value={10} />
   <Spacer />
@@ -86,4 +86,4 @@ Display progress relative to a limit or related to a task.
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

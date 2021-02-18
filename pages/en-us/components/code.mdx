@@ -1,37 +1,37 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Code, Note, Link } from 'components'
-import NextLink from 'next/link'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Code, Note, Link } from 'components';
+import NextLink from 'next/link';
 
 export const meta = {
-  title: 'Code',
-  group: 'General',
-}
+	title: 'Code',
+	group: 'General',
+};
 
 ## Code
 
 Show source code in a standardized way.
 
 <Note>
-  Want to display <Code>shell</Code> code snippets? Try{' '}
-  <NextLink href="/en-us/components/snippet">
-    <Link color>Snippet</Link>
-  </NextLink>
-  .
+	Want to display <Code>shell</Code> code snippets? Try{' '}
+	<NextLink href="/en-us/components/snippet">
+		<Link color>Snippet</Link>
+	</NextLink>
+	.
 </Note>
 
 <Playground
-  desc="Basic inline codes."
-  scope={{ Code }}
-  code={`
+	desc="Basic inline codes."
+	scope={{ Code }}
+	code={`
 <p>Run <Code>npm i @geist-ui/react</Code> to install.</p>
 `}
 />
 
 <Playground
-  title="Code Block"
-  desc="Multi line code display."
-  scope={{ Code }}
-  code={`
+	title="Code Block"
+	desc="Multi line code display."
+	scope={{ Code }}
+	code={`
 () => {
   const codes = \`npm i @geist-ui/react
 yarn add @geist-ui/react\`
@@ -41,10 +41,10 @@ yarn add @geist-ui/react\`
 />
 
 <Playground
-  title="width"
-  desc="Specify width manually, or other styles."
-  scope={{ Code }}
-  code={`
+	title="width"
+	desc="Specify width manually, or other styles."
+	scope={{ Code }}
+	code={`
 () => {
   const codes = \`npm i @geist-ui/react
 yarn add @geist-ui/react\`
@@ -54,10 +54,10 @@ yarn add @geist-ui/react\`
 />
 
 <Playground
-  title="overlong"
-  desc="Out of range presentation."
-  scope={{ Code }}
-  code={`
+	title="overlong"
+	desc="Out of range presentation."
+	scope={{ Code }}
+	code={`
 () => {
   const codes = \`npm i @geist-ui/react npm i @geist-ui/react npm i @geist-ui/react
 yarn add @geist-ui/react\`
@@ -77,4 +77,4 @@ yarn add @geist-ui/react\`
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

@@ -1,18 +1,18 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Tag, Spacer } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Tag, Spacer } from 'components';
 
 export const meta = {
-  title: '标签 Tag',
-  group: '数据展示',
-}
+	title: '标签 Tag',
+	group: '数据展示',
+};
 
 ## Tag / 标签
 
 标记文档的状态与功能。
 
 <Playground
-  scope={{ Tag, Spacer }}
-  code={`
+	scope={{ Tag, Spacer }}
+	code={`
 <>
   <Tag>状态: 不稳定的</Tag>
   <Spacer />
@@ -22,9 +22,9 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
-  scope={{ Tag, Spacer }}
-  code={`
+	title="类型"
+	scope={{ Tag, Spacer }}
+	code={`
 <>
   <Tag type="success">成功</Tag>
   <Spacer y={.5} />
@@ -40,10 +40,10 @@ export const meta = {
 />
 
 <Playground
-  title="反转"
-  desc="反转展示背景与主色。"
-  scope={{ Tag, Spacer }}
-  code={`
+	title="反转"
+	desc="反转展示背景与主色。"
+	scope={{ Tag, Spacer }}
+	code={`
 <>
   <Tag type="default" invert>默认的</Tag>
   <Spacer y={.5} />
@@ -71,15 +71,15 @@ export const meta = {
 
 ```ts
 type TagTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+	| 'default'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'dark'
+	| 'lite';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

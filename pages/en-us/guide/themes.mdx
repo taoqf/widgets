@@ -1,10 +1,10 @@
-import Layout from 'lib/components/layout'
-import { Note, Code, Spacer, Link } from 'components'
+import Layout from 'lib/components/layout';
+import { Note, Code, Spacer, Link } from 'components';
 
 export const meta = {
-  title: 'Themes',
-  group: 'customization',
-}
+	title: 'Themes',
+	group: 'customization',
+};
 
 ## Themes
 
@@ -17,12 +17,12 @@ As a basic option, there are two themes available, `light` and `dark`.
 ### Switch themes
 
 <Note>
-  Before using any Components, you must add <Code>GeistProvider</Code> to the root node.
+	Before using any Components, you must add <Code>GeistProvider</Code> to the root node.
 </Note>
 <Spacer y={0.5} />
 <Note type="success">
-  <Code>CssBaseline</Code> provides basic CSS support, which is similar to{' '}
-  <Code>normalize</Code>.
+	<Code>CssBaseline</Code> provides basic CSS support, which is similar to{' '}
+	<Code>normalize</Code>.
 </Note>
 <Spacer y={1} />
 
@@ -33,20 +33,20 @@ As a basic option, there are two themes available, `light` and `dark`.
 2. Update the value of `themeType`, and the theme of all components will follow automatically.
 
 ```jsx
-import { CssBaseline, GeistProvider } from '@geist-ui/react'
+import { CssBaseline, GeistProvider } from '@geist-ui/react';
 
 const App = () => {
-  const [themeType, setThemeType] = useState('light')
-  const switchThemes = () => {
-    setThemeType(last => (last === 'dark' ? 'light' : 'dark'))
-  }
-  return (
-    <GeistProvider themeType={themeType}>
-      <CssBaseline />
-      <YourComponent onClick={switchThemes} />
-    </GeistProvider>
-  )
-}
+	const [themeType, setThemeType] = useState('light');
+	const switchThemes = () => {
+		setThemeType(last => (last === 'dark' ? 'light' : 'dark'));
+	};
+	return (
+		<GeistProvider themeType={themeType}>
+			<CssBaseline />
+			<YourComponent onClick={switchThemes} />
+		</GeistProvider>
+	);
+};
 ```
 
 <Spacer y={3} />
@@ -61,25 +61,25 @@ Of course, if a _component_ doesn't use your customized variables, it doesn't ma
 
 <Spacer y={1} />
 <Note type="warning">
-  The more changes you customise, the more Components will <b>Re-Render</b>.
+	The more changes you customise, the more Components will <b>Re-Render</b>.
 </Note>
 
 ```jsx
-import { CssBaseline, GeistProvider, Themes } from '@geist-ui/react'
+import { CssBaseline, GeistProvider, Themes } from '@geist-ui/react';
 
 const myTheme1 = Themes.createFromLight({
-  type: 'coolTheme',
-  palette: {
-    success: '#000',
-  },
-})
+	type: 'coolTheme',
+	palette: {
+		success: '#000',
+	},
+});
 
 const App = () => (
-  <GeistProvider themes={[myTheme1]} themeType="coolTheme">
-    <CssBaseline />
-    <YourAppComponent onClick={switchThemes} />
-  </GeistProvider>
-)
+	<GeistProvider themes={[myTheme1]} themeType="coolTheme">
+		<CssBaseline />
+		<YourAppComponent onClick={switchThemes} />
+	</GeistProvider>
+);
 ```
 
 Function `Themes.createFromLight` allows you to fork a new theme based on Light Theme,
@@ -104,20 +104,20 @@ If you are using TypeScript, you can import various preset types:
 
 ```ts
 import {
-  GeistUIThemes,
-  GeistUIThemesFont,
-  GeistUIThemesPalette,
-  GeistUIThemesExpressiveness,
-  GeistUIThemesLayout,
-} from '@geist-ui/react'
+	GeistUIThemes,
+	GeistUIThemesFont,
+	GeistUIThemesPalette,
+	GeistUIThemesExpressiveness,
+	GeistUIThemesLayout,
+} from '@geist-ui/react';
 
 // usage:
 const myStyles: GeistUIThemes = {
-  /* ... */
-}
+	/* ... */
+};
 const myPalette: Partial<GeistUIThemesPalette> = {
-  /* ... */
-}
+	/* ... */
+};
 ```
 
 If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/geist-org/react/blob/master/components/themes/presets/index.ts">here</Link>.
@@ -153,10 +153,10 @@ Defining an `inline-style` will also correctly override the component.
 
 ```jsx
 const MyPage = () => (
-  <Row>
-    <Button style={{ margin: '20px' }}>Click me!</Button>
-  </Row>
-)
+	<Row>
+		<Button style={{ margin: '20px' }}>Click me!</Button>
+	</Row>
+);
 ```
 
 <Spacer y={2} />
@@ -166,16 +166,16 @@ const MyPage = () => (
 Sometimes you want to create new components, but you want to be consistent with the current theme. Now you can try using **theme variables** in your components
 
 ```jsx
-import { useTheme } from '@geist-ui/react'
+import { useTheme } from '@geist-ui/react';
 
 const MyComponent = () => {
-  const theme = useTheme()
-  return (
-    <div style={{ color: theme.palette.success }}>
-      <span>hello world!</span>
-    </div>
-  )
-}
+	const theme = useTheme();
+	return (
+		<div style={{ color: theme.palette.success }}>
+			<span>hello world!</span>
+		</div>
+	);
+};
 ```
 
 <Spacer y={2} />
@@ -193,4 +193,4 @@ const MyComponent = () => {
 - `Themes.getPresets` - Get a default list of themes.
 - `Themes.getPresetStaticTheme` - Get the theme loaded by Geist UI default.
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

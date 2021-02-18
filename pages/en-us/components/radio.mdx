@@ -1,28 +1,28 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Radio, Spacer, Code, Text } from 'components'
-import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Radio, Spacer, Code, Text } from 'components';
+import { useState } from 'react';
 
 export const meta = {
-  title: 'radio',
-  group: 'Data Entry',
-}
+	title: 'radio',
+	group: 'Data Entry',
+};
 
 ## Radio
 
 Provides single user input from a selection of options.
 
 <Playground
-  scope={{ Radio }}
-  code={`
+	scope={{ Radio }}
+	code={`
 <Radio checked={false}>Option 1</Radio>
 `}
 />
 
 <Playground
-  title="Group"
-  desc="A group of radio components."
-  scope={{ Radio, useState }}
-  code={`
+	title="Group"
+	desc="A group of radio components."
+	scope={{ Radio, useState }}
+	code={`
 () => {
   const [state, setState] = useState('1')
   const handler = val => {
@@ -42,10 +42,10 @@ Provides single user input from a selection of options.
 />
 
 <Playground
-  title="Sizes"
-  desc="Radio of different sizes."
-  scope={{ Radio, Spacer, Text }}
-  code={`
+	title="Sizes"
+	desc="Radio of different sizes."
+	scope={{ Radio, Spacer, Text }}
+	code={`
 <>
   <Text span size="12px" type="secondary">SINGLE</Text>
   <div style={{ paddingLeft: '.25rem', marginTop: '.25rem' }}>
@@ -68,10 +68,10 @@ Provides single user input from a selection of options.
 />
 
 <Playground
-  title="Description"
-  desc="`Description` can be combined with other components."
-  scope={{ Radio, Code }}
-  code={`
+	title="Description"
+	desc="`Description` can be combined with other components."
+	scope={{ Radio, Code }}
+	code={`
 <Radio.Group value="1" onChange={val => console.log(val)}>
   <Radio value="1">
     Option 1
@@ -86,10 +86,10 @@ Provides single user input from a selection of options.
 />
 
 <Playground
-  title="Disabled"
-  desc="Disable all radios."
-  scope={{ Radio, useState, Code }}
-  code={`
+	title="Disabled"
+	desc="Disable all radios."
+	scope={{ Radio, useState, Code }}
+	code={`
 <Radio.Group value="1" disabled>
   <Radio value="1">Option 1</Radio>
   <Radio value="2">Option 2</Radio>
@@ -98,10 +98,10 @@ Provides single user input from a selection of options.
 />
 
 <Playground
-  title="Row"
-  desc="Horizontal arrangement."
-  scope={{ Radio, Code }}
-  code={`
+	title="Row"
+	desc="Horizontal arrangement."
+	scope={{ Radio, Code }}
+	code={`
 <Radio.Group value="1" useRow>
   <Radio value="1">
     Option 1
@@ -149,9 +149,9 @@ Provides single user input from a selection of options.
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large';
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

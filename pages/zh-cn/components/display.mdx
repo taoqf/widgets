@@ -1,19 +1,19 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Display, Code, Snippet, Image } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Display, Code, Snippet, Image } from 'components';
 
 export const meta = {
-  title: '陈列框 Display',
-  group: '数据展示',
-}
+	title: '陈列框 Display',
+	group: '数据展示',
+};
 
 ## Display / 陈列框
 
 以居中对齐的方式展示重要的信息或图像。
 
 <Playground
-  desc="为一张图片添加描述文本。"
-  scope={{ Display, Image }}
-  code={`
+	desc="为一张图片添加描述文本。"
+	scope={{ Display, Image }}
+	code={`
   <Display shadow caption="用于构建现代应用的开源设计系统。">
     <Image width="435" height="200" src="/images/geist-banner.png" />
   </Display>
@@ -21,10 +21,10 @@ export const meta = {
 />
 
 <Playground
-  title="与代码组件组合"
-  desc="展示多行的代码块。"
-  scope={{ Display, Code }}
-  code={`
+	title="与代码组件组合"
+	desc="展示多行的代码块。"
+	scope={{ Display, Code }}
+	code={`
 () => {
   const codes = \`{
   "build": {
@@ -43,10 +43,10 @@ export const meta = {
 />
 
 <Playground
-  title="与片段组件组合"
-  desc="展示 Shell 代码片段。"
-  scope={{ Display, Snippet }}
-  code={`
+	title="与片段组件组合"
+	desc="展示 Shell 代码片段。"
+	scope={{ Display, Snippet }}
+	code={`
   <Display width="500px" caption="运行此命令以下载库。">
     <Snippet type="dark">yarn add @geist-ui/react</Snippet>
   </Display>
@@ -54,10 +54,10 @@ export const meta = {
 />
 
 <Playground
-  title="组件标题"
-  desc="在 `caption` 属性上使用组件表达更丰富的信息。"
-  scope={{ Display, Code, Image }}
-  code={`
+	title="组件标题"
+	desc="在 `caption` 属性上使用组件表达更丰富的信息。"
+	scope={{ Display, Code, Image }}
+	code={`
   <Display shadow caption={<p>访问地址 <Code>react.geist-ui.dev</Code> 获取更多的文档信息。</p>}>
     <Image width="650" height="297" src="/images/geist-banner.png" />
   </Display>
@@ -76,4 +76,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
