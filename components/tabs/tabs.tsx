@@ -73,9 +73,8 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
 				<header className={hideDivider ? 'hide-divider' : ''}>
 					{tabs.map(item => (
 						<div
-							className={`tab ${selfValue === item.value ? 'active' : ''} ${
-								item.disabled ? 'disabled' : ''
-							}`}
+							className={`tab ${selfValue === item.value ? 'active' : ''} ${item.disabled ? 'disabled' : ''
+								}`}
 							role="button"
 							key={item.value}
 							onClick={() => clickHandler(item)}>
@@ -87,7 +86,6 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
 				<style jsx>{`
 					.tabs {
 						width: initial;
-						overflow: auto;
 					}
 
 					header {
