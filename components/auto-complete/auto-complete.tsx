@@ -87,6 +87,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 	dropdownStyle,
 	disableMatchWidth,
 	disableFreeSolo,
+	placeholder = 'Select...',
 	...props
 }) => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -105,16 +106,16 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 			return hasSearchChild ? (
 				searchChild
 			) : (
-				<AutoCompleteSearching>Searching...</AutoCompleteSearching>
-			);
+					<AutoCompleteSearching>Searching...</AutoCompleteSearching>
+				);
 		}
 		if (options.length === 0) {
 			if (state === '') return null;
 			return hasEmptyChild ? (
 				emptyChild
 			) : (
-				<AutoCompleteEmpty>No Options</AutoCompleteEmpty>
-			);
+					<AutoCompleteEmpty>No Options</AutoCompleteEmpty>
+				);
 		}
 		return childrenToOptionsNode(options as Array<AutoCompleteOption>);
 	}, [searching, options]);
@@ -196,6 +197,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 					onBlur={() => toggleFocusHandler(false)}
 					clearable={showClearIcon}
 					iconRight={getSearchIcon(searching)}
+					placeholder={placeholder}
 					{...inputProps}
 				/>
 				<AutoCompleteDropdown

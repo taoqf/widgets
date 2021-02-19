@@ -1,6 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components';
-import { AutoComplete, Spacer, Badge, Grid, Text } from 'components';
-import { useState, useRef, useEffect } from 'react';
+import { AutoComplete, Spacer, Badge, Grid, Text, Note, Link } from 'components';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 export const meta = {
 	title: 'Auto-Complete',
@@ -9,7 +9,9 @@ export const meta = {
 
 ## Auto Complete
 
-AutoComplete control of input field.
+<Text type="secondary" h4>Autocomplete select control, built on top of react-select.</Text>
+
+<Note>This component is superseded by <Link color href="./combobox">Combobox</Link>.</Note>
 
 <Playground
 	desc="Basic usage, add auto-complete list for all inputs."
@@ -262,6 +264,76 @@ AutoComplete control of input field.
     setOptions(optionsWithCreatable)
   }
   return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
+}
+`}
+/>
+
+
+<Playground
+	title="errored"
+	scope={{ AutoComplete, useState }}
+	code={`
+() => {
+  const options = [
+    { value: 'a', label: 'One' },
+    { value: 'b', label: 'Two' },
+    { value: 'c', label: 'Three' }
+  ];
+	const [selected, setSelected] = useState(options[0]);
+	return <AutoComplete options={options} status='error' />;
+}
+`}
+/>
+
+<Playground
+	title="callback"
+	scope={{ AutoComplete, useState }}
+	code={`
+() => {
+  const options = [
+    { value: 'a', label: 'One' },
+    { value: 'b', label: 'Two' },
+    { value: 'c', label: 'Three' }
+  ]
+  const [selected, setSelected] = useState(options[0])
+	return <AutoComplete
+		options={options}
+		onChange={(selected) => {
+			if(selected){
+				setSelected(selected)
+				alert('Selected value: ' + selected)
+			}
+		}} />;
+}
+`}
+/>
+
+<Playground
+	title="async"
+	scope={{ AsyncAutocomplete: AutoComplete, useCallback }}
+	code={`
+() => {
+  const options = [
+    { value: 'a', label: 'One' },
+    { value: 'b', label: 'Two' },
+    { value: 'c', label: 'Three' }
+  ];
+  const filter = useCallback(value => {
+    return options.filter(opt =>
+      opt.label.toLowerCase().includes(value.toLowerCase())
+    )
+  }, [options]);
+  const promiseOptions = useCallback(
+    value => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(filter(value))
+        }, 1000)
+      })
+    },
+    [filter]
+  );
+  return <AsyncAutocomplete loadOptions={promiseOptions} />
 }
 `}
 />
