@@ -6,4 +6,4 @@ export const ENGLISH_LANGUAGE_IDENT = 'en-us';
 
 export const GITHUB_URL = 'https://github.com/taoqf/widgets';
 
-export const CONTRIBUTORS_URL = 'https://contributors.geist-ui.dev/api/users';
+export const CONTRIBUTORS_URL = 'https://api.github.com/repos/taoqf/widgets/commits';

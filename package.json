@@ -26,7 +26,6 @@
 		"docs-build": "yarn docs-collect && next build",
 		"docs-start": "next start",
 		"docs-collect": "node scripts/collect-meta.js",
-		"contributor-collect": "node scripts/collect-contributors.js",
 		"clear": "rm -rf ./dist ./esm",
 		"lint": "eslint \"{components,lib}/**/*.{js,ts,tsx}\"",
 		"prettier": "prettier --write .",
