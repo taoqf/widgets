@@ -1,4 +1,4 @@
-# MMstudio Widgets - Contributing Guide
+# MMStudio widgets - Contributing Guide
 
 ## Ready to start
 

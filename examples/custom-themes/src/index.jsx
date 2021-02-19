@@ -11,7 +11,7 @@ const App = () => {
 			<CssBaseline />
 			<Page size="mini" dotBackdrop>
 				<Page.Header>
-					<Text h2>Custom themes for MMStudio Widgets</Text>
+					<Text h2>Custom themes for MMStudio widgets</Text>
 				</Page.Header>
 				<Home onThemeChange={next => setTheme(next)} />
 			</Page>

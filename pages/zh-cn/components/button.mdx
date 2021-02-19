@@ -47,6 +47,21 @@ export const meta = {
 />
 
 <Playground
+	title="异步单击事件"
+	desc="挂起单击事件"
+	scope={{ Button }}
+	code={`
+<Button onClick={async()=>{
+return new Promise((resolve)=>{
+	setTimeout(()=>{
+		resolve();
+	}, 5000);
+});
+}}>5秒钟之内只能点击一次</Button>
+`}
+/>
+
+<Playground
 	title="阴影"
 	desc="使用阴影突出显示更高层级的按钮。"
 	scope={{ Button }}

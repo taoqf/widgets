@@ -8,9 +8,9 @@ export const meta = {
 
 ## 主题
 
-**MMStudio Widgets** 现在支持多种主题，并能以简单易用的方式随意切换或是创建新的主题，不需要任何配置与第三方库。
+**MMStudio widgets** 现在支持多种主题，并能以简单易用的方式随意切换或是创建新的主题，不需要任何配置与第三方库。
 
-作为基础的选项，MMStudio Widgets 内置了两种可用的基础主题，`light` 和 `dark` (亮色和暗色)。
+作为基础的选项，MMStudio widgets 内置了两种可用的基础主题，`light` 和 `dark` (亮色和暗色)。
 
 <Spacer y={2} />
 
@@ -53,7 +53,7 @@ const App = () => {
 
 ### 自定义主题
 
-自定义主题样式在 MMStudio Widgets 中非常简单，你只需要提供一个新的样式对象给 `MMProvider`，所有的组件都会自然变化以适应你自定义的属性。
+自定义主题样式在 MMStudio widgets 中非常简单，你只需要提供一个新的样式对象给 `MMProvider`，所有的组件都会自然变化以适应你自定义的属性。
 这里有 <Link target="_blank" color href="https://github.com/taoqf/widgets/tree/master/examples/custom-themes">一个完整的示例项目</Link> 可供参考。
 
 当然，如果一个组件未使用到你自定义的变量，它不会有任何变化也不会重新渲染。
@@ -186,10 +186,10 @@ const MyComponent = () => {
 - `Themes.create` - 创建一个新主题。
 - `Themes.createFromDark` - 以暗色模式为基础创建新主题。
 - `Themes.createFromLight` - 以亮色模式为基础创建新主题。
-- `Themes.isPresetTheme` - 检查一个主题对象是否来自 MMStudio Widgets。
+- `Themes.isPresetTheme` - 检查一个主题对象是否来自 MMStudio widgets。
 - `Themes.isAvailableThemeType` - 检查一个主题名是否可用。(是否重复)
 - `Themes.hasUserCustomTheme` - 检查一组主题中是否包含自定义的主题。
-- `Themes.getPresets` - 获取一组由 MMStudio Widgets 内置的默认主题。
-- `Themes.getPresetStaticTheme` - 获取一个由 MMStudio Widgets 内置的默认主题 (默认加载的)。
+- `Themes.getPresets` - 获取一组由 MMStudio widgets 内置的默认主题。
+- `Themes.getPresetStaticTheme` - 获取一个由 MMStudio widgets 内置的默认主题 (默认加载的)。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>;

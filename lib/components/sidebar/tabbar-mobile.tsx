@@ -17,7 +17,7 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
 			<Button className="toggle" auto type="abort" onClick={handler}>
 				<SlidersIcon size={16} />
 			</Button>
-			<span>MMStudio Widgets</span>
+			<span>MMStudio widgets</span>
 			<style jsx>{`
 				.tabbar {
 					position: fixed;

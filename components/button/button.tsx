@@ -64,6 +64,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 		const [dripY, setDripY] = useState<number>(0);
 		const groupConfig = useButtonGroupContext();
 		const filteredProps = filterPropsWithGroup(btnProps, groupConfig);
+		const [clicked, setClicked] = useState(false);
 		/* eslint-disable @typescript-eslint/no-unused-vars */
 		const {
 			children,
@@ -92,9 +93,10 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 			theme.palette,
 			filteredProps,
 		]);
-		const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [
+		const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading || clicked), [
 			disabled,
 			loading,
+			clicked
 		]);
 		const { height, minWidth, padding, width, fontSize } = useMemo(
 			() => getButtonSize(size, auto),
@@ -112,18 +114,23 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 			setDripY(0);
 		};
 
-		const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
-			if (disabled || loading) return;
-			const showDrip = !shadow && !ghost && effect;
-			/* istanbul ignore next */
-			if (showDrip && buttonRef.current) {
-				const rect = buttonRef.current.getBoundingClientRect();
-				setDripShow(true);
-				setDripX(event.clientX - rect.left);
-				setDripY(event.clientY - rect.top);
-			}
+		const clickHandler = async (event: MouseEvent<HTMLButtonElement>) => {
+			if (disabled || loading || clicked) return;
+			setClicked(true);
+			try {
+				const showDrip = !shadow && !ghost && effect;
+				/* istanbul ignore next */
+				if (showDrip && buttonRef.current) {
+					const rect = buttonRef.current.getBoundingClientRect();
+					setDripShow(true);
+					setDripX(event.clientX - rect.left);
+					setDripY(event.clientY - rect.top);
+				}
 
-			onClick && onClick(event);
+				await (onClick && onClick(event));
+			} finally {
+				setClicked(false);
+			}
 		};
 
 		const childrenWithIcon = useMemo(
@@ -143,7 +150,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 				disabled={disabled}
 				onClick={clickHandler}
 				{...props}>
-				{loading && <ButtonLoading color={color} />}
+				{(loading || clicked) && <ButtonLoading color={color} />}
 				{childrenWithIcon}
 				{dripShow && (
 					<ButtonDrip

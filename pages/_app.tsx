@@ -27,16 +27,16 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Head>
-				<title>React - MMStudio Widgets</title>
+				<title>React - MMStudio widgets</title>
 				<meta name="google" content="notranslate" />
 				<meta name="twitter:creator" content="@echo_witt" />
 				<meta name="referrer" content="strict-origin" />
-				<meta property="og:title" content="React - MMStudio Widgets" />
-				<meta property="og:site_name" content="React - MMStudio Widgets" />
+				<meta property="og:title" content="React - MMStudio widgets" />
+				<meta property="og:site_name" content="React - MMStudio widgets" />
 				<meta property="og:url" content="https://mmstudio.vercel.app" />
 				<link rel="dns-prefetch" href="//mmstudio.vercel.app" />
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="generator" content="MMStudio Widgets" />
+				<meta name="generator" content="MMStudio widgets" />
 				<meta
 					name="description"
 					content="An open-source design system for building modern websites and applications."

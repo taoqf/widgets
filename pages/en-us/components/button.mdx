@@ -48,6 +48,21 @@ Used to trigger an operation.
 />
 
 <Playground
+	title="Async MouseClickEventHandler"
+	desc="suspend click action."
+	scope={{ Button }}
+	code={`
+<Button onClick={async()=>{
+return new Promise((resolve)=>{
+	setTimeout(()=>{
+		resolve();
+	}, 5000);
+});
+}}>You could not click me twice in 5 seconds</Button>
+`}
+/>
+
+<Playground
 	title="Shadow"
 	desc="The shadow highlights the level of the button."
 	scope={{ Button }}

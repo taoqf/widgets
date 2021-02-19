@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { LiveEditor } from 'react-live';
 import { useConfigs } from 'lib/config-context';
-import { useTheme, useToasts, Row, Col, useClipboard } from 'components';
+import { useTheme, useToasts, Row, Col, useClipboard, Spacer } from 'components';
 import CopyIcon from 'components/icons/copy';
 import RightIcon from 'components/icons/chevronRight';
+import ResetIcon from 'components/icons/reset';
 
 interface Props {
 	code: string;
@@ -15,6 +16,8 @@ const Editor: React.FC<Props> = ({ code }) => {
 	const { isChinese } = useConfigs();
 	const [visible, setVisible] = useState(false);
 	const [, setToast] = useToasts();
+	const [value, setValue] = useState(code);
+
 	const clickHandler = (event: React.MouseEvent) => {
 		event.stopPropagation();
 		event.preventDefault();
@@ -24,9 +27,16 @@ const Editor: React.FC<Props> = ({ code }) => {
 	const copyHandler = (event: React.MouseEvent) => {
 		event.stopPropagation();
 		event.preventDefault();
-		copy(code);
+		copy(value);
 		setToast({ text: isChinese ? '代码已拷贝至剪切板。' : 'code copied.' });
 	};
+
+	function resetHandler(event: React.MouseEvent) {
+		event.stopPropagation();
+		event.preventDefault();
+		setValue(code);
+		setToast({ text: code });
+	}
 
 	return (
 		<div className="editor">
@@ -44,18 +54,35 @@ const Editor: React.FC<Props> = ({ code }) => {
 						</Col>
 						<Col className="action">
 							{visible && (
-								<span
-									className="copy"
-									onClick={copyHandler}
-									title={isChinese ? '拷贝代码' : 'Copy Code'}>
-									<CopyIcon size={18} />
-								</span>
+								<Row justify='end'>
+									<Col>
+										<span
+											className="reset"
+											onClick={resetHandler}
+											title={isChinese ? '还原' : 'Reset'}>
+											<ResetIcon size={20} />
+										</span>
+									</Col>
+									<Col>
+										<Spacer x={1} />
+									</Col>
+									<Col>
+										<span
+											className="copy"
+											onClick={copyHandler}
+											title={isChinese ? '拷贝代码' : 'Copy Code'}>
+											<CopyIcon size={20} />
+										</span>
+									</Col>
+								</Row>
 							)}
 						</Col>
 					</Row>
 				</summary>
 				<div className="area">
-					<LiveEditor />
+					<LiveEditor code={value} onChange={(val) => {
+						setValue(val);
+					}} />
 				</div>
 			</details>
 
@@ -119,14 +146,14 @@ const Editor: React.FC<Props> = ({ code }) => {
 					margin-right: 0.5rem;
 				}
 
-				.copy {
+				.copy,.reset {
 					display: inline-flex;
 					align-items: center;
 					color: ${theme.palette.accents_4};
 					transition: color 0.2s ease;
 				}
 
-				.copy:hover {
+				.copy:hover,.reset:hover {
 					color: ${theme.palette.accents_6};
 				}
 			`}</style>
