@@ -61,8 +61,7 @@ export const meta = {
 />
 
 <Playground
-	desc="Update the contents of drop-down list based on input."
-	title="search"
+	title="async"
 	scope={{ AutoComplete }}
 	code={`
 () => {
@@ -71,51 +70,16 @@ export const meta = {
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  const [options, setOptions] = React.useState()
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    setOptions(relatedOptions)
-  }
-  return <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
-}
-`}
-/>
-
-<Playground
-	title="Waiting in search"
-	desc="Show friendly tips and UI when searching."
-	scope={{ AutoComplete, useState, useEffect, useRef }}
-	code={`
-() => {
-  const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  const [options, setOptions] = useState()
-  const [searching, setSearching] = useState(false)
-  const timer = useRef()
-  // triggered every time input
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    setSearching(true)
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    // this is mock async request
-    // you can get data in any way
-    timer.current && clearTimeout(timer.current)
-    timer.current = setTimeout(() => {
-      setOptions(relatedOptions)
-      setSearching(false)
-      clearTimeout(timer.current)
-    }, 1000)
-  }
-  return (
-    <AutoComplete searching={searching}
-      options={options}
-      placeholder="Enter here"
-      onSearch={searchHandler} />
-  )
+	return <AutoComplete options={(value) => {
+		if (!value) return [];
+		return new Promise((resolve)=>{
+			setTimeout(() => {
+				const options = allOptions.filter(item => item.value.includes(value));
+				resolve(options);
+			}, 3000)
+	});
+	}}
+	placeholder="Enter here" />
 }
 `}
 />
@@ -125,18 +89,33 @@ export const meta = {
 	desc="You can replace the default waiting text with any components."
 	scope={{ AutoComplete }}
 	code={`
-<AutoComplete searching placeholder="Enter here" width="100%">
-  <AutoComplete.Searching>
-    <span style={{ color: 'red' }}>waiting...</span>
-  </AutoComplete.Searching>
-</AutoComplete>
+() => {
+	const allOptions = [
+		{ label: 'London', value: 'london' },
+		{ label: 'Sydney', value: 'sydney' },
+		{ label: 'Shanghai', value: 'shanghai' },
+	]
+	return <AutoComplete options={(value) => {
+		if (!value) return [];
+		return new Promise((resolve)=>{
+			setTimeout(() => {
+				const options = allOptions.filter(item => item.value.includes(value));
+				resolve(options);
+			}, 3000)
+	});
+		}} placeholder="Enter here" width="100%">
+		<AutoComplete.Searching>
+			<span style={{ color: 'red' }}>waiting...</span>
+		</AutoComplete.Searching>
+	</AutoComplete>;
+}
 `}
 />
 
 <Playground
 	title="custom no options"
 	desc="You can also customize the prompt with no options."
-	scope={{ AutoComplete, useState }}
+	scope={{ AutoComplete }}
 	code={`
 () => {
   const allOptions = [
@@ -144,14 +123,12 @@ export const meta = {
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  const [options, setOptions] = useState()
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    setOptions(relatedOptions)
+  const searchHandler = (value) => {
+    if (!value) return []
+    return allOptions.filter(item => item.value.includes(value))
   }
   return (
-    <AutoComplete placeholder="Enter here" width="100%" options={options} onSearch={searchHandler}>
+    <AutoComplete placeholder="Enter here" width="100%" options={searchHandler}>
       <AutoComplete.Empty>
         <span>no options...</span>
       </AutoComplete.Empty>
@@ -164,7 +141,7 @@ export const meta = {
 <Playground
 	title="custom option"
 	desc="You can rewrite each item of the `AutoComplete` to express more."
-	scope={{ AutoComplete, useState, Text, Badge, Grid }}
+	scope={{ AutoComplete, Text, Badge, Grid }}
 	code={`
 () => {
   const makeOption = (label, value) => (
@@ -183,18 +160,15 @@ export const meta = {
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  const [options, setOptions] = useState()
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
-    setOptions(customOptions)
+  const searchHandler = (value) => {
+    if (!value) return []
+    const relatedOptions = allOptions.filter(item => item.value.includes(value))
+    return relatedOptions.map(({ label, value }) => makeOption(label, value))
   }
   return (
     <AutoComplete placeholder="Enter here"
       width="100%"
-      options={options}
-      onSearch={searchHandler} />
+      options={searchHandler} />
   )
 }
 `}
@@ -253,17 +227,16 @@ export const meta = {
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  const [options, setOptions] = React.useState()
   const searchHandler = (currentValue) => {
     const createOptions = [{
       value: currentValue, label: 'Add "' + currentValue + '"'
     }]
-    if (!currentValue) return setOptions([])
+    if (!currentValue) return []
     const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
     const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
-    setOptions(optionsWithCreatable)
+    return optionsWithCreatable;
   }
-  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
+  return <AutoComplete options={searchHandler} clearable disableFreeSolo placeholder="Type mm to see result" />
 }
 `}
 />
@@ -308,57 +281,26 @@ export const meta = {
 `}
 />
 
-<Playground
-	title="async"
-	scope={{ AsyncAutocomplete: AutoComplete, useCallback }}
-	code={`
-() => {
-  const options = [
-    { value: 'a', label: 'One' },
-    { value: 'b', label: 'Two' },
-    { value: 'c', label: 'Three' }
-  ];
-  const filter = useCallback(value => {
-    return options.filter(opt =>
-      opt.label.toLowerCase().includes(value.toLowerCase())
-    )
-  }, [options]);
-  const promiseOptions = useCallback(
-    value => {
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve(filter(value))
-        }, 1000)
-      })
-    },
-    [filter]
-  );
-  return <AsyncAutocomplete loadOptions={promiseOptions} />
-}
-`}
-/>
-
 <Attributes edit="/pages/en-us/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
-| Attribute             | Description                               | Type                                             | Accepted values                                         | Default   |
-| --------------------- | ----------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
-| **options**           | options of input                          | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
-| **status**            | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**              | input size                                | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **initialValue**      | initial value                             | `string`                                         | -                                                       | -         |
-| **value**             | current value                             | `string`                                         | -                                                       | -         |
-| **width**             | container width                           | `string`                                         | -                                                       | -         |
-| **clearable**         | show clear icon                           | `boolean`                                        | -                                                       | `false`   |
-| **searching**         | show loading icon for search              | `boolean`                                        | -                                                       | `false`   |
-| **onChange**          | value of input is changed                 | `(value: string) => void`                        | -                                                       | -         |
-| **onSearch**          | called when searching items               | `(value: string) => void`                        | -                                                       | -         |
-| **onSelect**          | called when a option is selected          | `(value: string) => void`                        | -                                                       | -         |
-| **dropdownClassName** | className of dropdown box                 | `string`                                         | -                                                       | -         |
-| **dropdownStyle**     | style of dropdown box                     | `object`                                         | -                                                       | -         |
-| **disableMatchWidth** | disable Option from follow parent width   | `boolean`                                        | -                                                       | `false`   |
-| **disableFreeSolo**   | only values can be changed through Select | `boolean`                                        | -                                                       | `false`   |
-| ...                   | native props                              | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
+| Attribute             | Description                                      | Type                                                                                                       | Accepted values                                         | Default   |
+| --------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | --------- |
+| **options**           | options of input                                 | [AutoCompleteOptions](#type-autocompleteoptions) or [AutoCompleteFunOptions](#type-autocompletefunoptions) | -                                                       | -         |
+| **status**            | input type                                       | `NormalTypes`                                                                                              | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size**              | input size                                       | `NormalSizes`                                                                                              | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
+| **initialValue**      | initial value                                    | `string`                                                                                                   | -                                                       | -         |
+| **value**             | current value                                    | `string`                                                                                                   | -                                                       | -         |
+| **width**             | container width                                  | `string`                                                                                                   | -                                                       | -         |
+| **clearable**         | show clear icon                                  | `boolean`                                                                                                  | -                                                       | `false`   |
+| **onChange**          | value of input is changed                        | `(value: string) => void`                                                                                  | -                                                       | -         |
+| **onSelect**          | called when a option is selected                 | `(value: string) => void`                                                                                  | -                                                       | -         |
+| **dropdownClassName** | className of dropdown box                        | `string`                                                                                                   | -                                                       | -         |
+| **dropdownStyle**     | style of dropdown box                            | `object`                                                                                                   | -                                                       | -         |
+| **disableMatchWidth** | disable Option from follow parent width          | `boolean`                                                                                                  | -                                                       | `false`   |
+| **disableFreeSolo**   | only values can be changed through Select        | `boolean`                                                                                                  | -                                                       | `false`   |
+| **minsearchinterval** | min time between twice searching in milliseconds | `number`                                                                                                   | -                                                       | `200`     |
+| ...                   | native props                                     | `InputHTMLAttributes`                                                                                      | `'id', 'className', ...`                                | -         |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
 
@@ -387,6 +329,12 @@ Array<{
   label: string
   value: string
 } | AutoComplete.Item>
+```
+
+<Attributes.Title>type AutoCompleteFunOptions</Attributes.Title>
+
+```ts
+(value: string) => AutoCompleteOptions | Promise<AutoCompleteOptions>;
 ```
 
 </Attributes>

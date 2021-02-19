@@ -15,25 +15,26 @@ export type AutoCompleteOption = {
 	value: string;
 };
 
+export type AutoCompleteFunOptions = (value: string) => AutoCompleteOptions | Promise<AutoCompleteOptions>;
+
 export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>;
 
 interface Props {
-	options: AutoCompleteOptions;
+	options: AutoCompleteOptions | AutoCompleteFunOptions;
 	size?: NormalSizes;
 	status?: NormalTypes;
 	initialValue?: string;
 	value?: string;
 	width?: string;
 	onChange?: (value: string) => void;
-	onSearch?: (value: string) => void;
 	onSelect?: (value: string) => void;
-	searching?: boolean | undefined;
 	clearable?: boolean;
 	dropdownClassName?: string;
 	dropdownStyle?: CSSProperties;
 	disableMatchWidth?: boolean;
 	disableFreeSolo?: boolean;
 	className?: string;
+	minsearchinterval?: number;
 }
 
 const defaultProps = {
@@ -45,6 +46,8 @@ const defaultProps = {
 	disableMatchWidth: false,
 	disableFreeSolo: false,
 	className: '',
+	placeholder: 'Select...',
+	minsearchinterval: 200,
 };
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>;
@@ -70,12 +73,10 @@ const getSearchIcon = (searching?: boolean) => {
 };
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
-	options,
+	options: opts,
 	initialValue: customInitialValue,
 	onSelect,
-	onSearch,
 	onChange,
-	searching,
 	children,
 	size,
 	status,
@@ -88,6 +89,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 	disableMatchWidth,
 	disableFreeSolo,
 	placeholder = 'Select...',
+	minsearchinterval = 200,
 	...props
 }) => {
 	const ref = useRef<HTMLDivElement>(null);
@@ -96,6 +98,9 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 	const [state, setState, stateRef] = useCurrentState<string>(customInitialValue);
 	const [selectVal, setSelectVal] = useState<string>(customInitialValue);
 	const [visible, setVisible] = useState<boolean>(false);
+	const [searching, setSearching] = useState(false);
+	const [options, setOptions] = useState(Array.isArray(opts) ? opts : []);
+	const [lastSearchTm, setLastSearchTm] = useState(0);
 
 	const [, searchChild] = pickChild(children, AutoCompleteSearching);
 	const [, emptyChild] = pickChild(children, AutoCompleteEmpty);
@@ -119,7 +124,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 		}
 		return childrenToOptionsNode(options as Array<AutoCompleteOption>);
 	}, [searching, options]);
-	const showClearIcon = useMemo(() => clearable && searching === undefined, [
+	const showClearIcon = useMemo(() => clearable && searching === false, [
 		clearable,
 		searching,
 	]);
@@ -131,11 +136,27 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 		setState(val);
 		inputRef.current && inputRef.current.focus();
 	};
+	async function searchoptions(val: string) {
+		if (typeof opts === 'function') {
+			const now = new Date().getTime();
+			if (now - lastSearchTm > minsearchinterval) {
+				setLastSearchTm(now);
+				try {
+					setSearching(true);
+					const result = await opts(val);
+					setOptions(result);
+				} finally {
+					setSearching(false);
+				}
+			}
+		}
+	}
 	const updateVisible = (next: boolean) => setVisible(next);
 	const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const val = event.target.value;
 		setVisible(true);
-		onSearch && onSearch(event.target.value);
-		setState(event.target.value);
+		setState(val);
+		searchoptions(val);
 	};
 	const resetInputValue = () => {
 		if (!disableFreeSolo) return;
@@ -169,7 +190,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 		clearTimeout(resetTimer.current);
 		setVisible(next);
 		if (next) {
-			onSearch && onSearch(stateRef.current);
+			searchoptions(stateRef.current);
 		} else {
 			resetTimer.current = window.setTimeout(() => {
 				resetInputValue();
@@ -227,7 +248,6 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 type AutoCompleteComponent<P = {}> = React.FC<P> & {
 	Item: typeof AutoCompleteItem;
 	Option: typeof AutoCompleteItem;
-	Searching: typeof AutoCompleteSearching;
 	Empty: typeof AutoCompleteEmpty;
 };
 

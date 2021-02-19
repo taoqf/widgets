@@ -1,6 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components';
-import { AutoComplete, Spacer, Badge, Text, Grid } from 'components';
-import { useState, useRef, useEffect } from 'react';
+import { AutoComplete, Spacer, Badge, Grid, Text, Note, Link } from 'components';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 export const meta = {
 	title: '自动完成 Auto-Complete',
@@ -8,9 +8,11 @@ export const meta = {
 	index: 104,
 };
 
-## Auto Complete / 自动完成
+## Auto Complete
 
-输入框的自动完成控制。
+<Text type="secondary" h4>输入框的自动完成控件。在react-select基础上构建</Text>
+
+<Note>该组件可以被 <Link color href="./combobox">Combobox</Link>替代。</Note>
 
 <Playground
 	desc="基础示例，添加备选列表到输入框中。"
@@ -18,27 +20,11 @@ export const meta = {
 	code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
   return <AutoComplete placeholder="在这里输入" options={options} />
-}
-`}
-/>
-
-<Playground
-	title="只允许选择输入"
-	desc="只通过 Select 事件更改值。"
-	scope={{ AutoComplete }}
-	code={`
-() => {
-  const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
 }
 `}
 />
@@ -50,71 +36,51 @@ export const meta = {
 	code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
-  return <AutoComplete disabled options={options} initialValue="London" />
+  return <AutoComplete disabled options={options} initialValue="london" />
 }
 `}
 />
 
 <Playground
-	desc="根据当前输入内容变更备选的列表选项。"
-	title="搜索"
-	scope={{ AutoComplete, useState }}
+	title="只允许选择输入"
+	desc="只通过 Select 事件更改值。"
+	scope={{ AutoComplete }}
 	code={`
 () => {
-  const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+  const options = [
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
-  const [options, setOptions] = useState()
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    setOptions(relatedOptions)
-  }
-  return <AutoComplete options={options} placeholder="在这里输入" onSearch={searchHandler} />
+  return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
 }
 `}
 />
 
 <Playground
-	title="搜索中"
-	desc="在搜索中的等待时显示友好的 UI 与提示。"
-	scope={{ AutoComplete, useState, useEffect, useRef }}
+	title="异步"
+	scope={{ AutoComplete }}
 	code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
-  const [options, setOptions] = useState()
-  const [searching, setSearching] = useState(false)
-  const timer = useRef()
-  // triggered every time input
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    setSearching(true)
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    // this is mock async request
-    // you can get data in any way
-    timer.current && clearTimeout(timer.current)
-    timer.current = setTimeout(() => {
-      setOptions(relatedOptions)
-      setSearching(false)
-      clearTimeout(timer.current)
-    }, 1000)
-  }
-  return (
-    <AutoComplete searching={searching}
-      options={options}
-      placeholder="在这里输入"
-      onSearch={searchHandler} />
-  )
+	return <AutoComplete options={(value) => {
+		if (!value) return [];
+		return new Promise((resolve)=>{
+			setTimeout(() => {
+				const options = allOptions.filter(item => item.value.includes(value));
+				resolve(options);
+			}, 3000)
+	});
+	}}
+	placeholder="输入后选择" />
 }
 `}
 />
@@ -124,33 +90,46 @@ export const meta = {
 	desc="你可以用文字或任何组件替代默认的提示文字。"
 	scope={{ AutoComplete }}
 	code={`
-<AutoComplete searching placeholder="在这里输入" width="100%">
-  <AutoComplete.Searching>
-    <span style={{ color: 'red' }}>等待中...</span>
-  </AutoComplete.Searching>
-</AutoComplete>
+() => {
+	const allOptions = [
+		{ label: '伦敦', value: 'london' },
+		{ label: '悉尼', value: 'sydney' },
+		{ label: '上海', value: 'shanghai' },
+	]
+	return <AutoComplete options={(value) => {
+		if (!value) return [];
+		return new Promise((resolve)=>{
+			setTimeout(() => {
+				const options = allOptions.filter(item => item.value.includes(value));
+				resolve(options);
+			}, 3000)
+	});
+		}} placeholder="在这里输入" width="100%">
+		<AutoComplete.Searching>
+			<span style={{ color: 'red' }}>等待中...</span>
+		</AutoComplete.Searching>
+	</AutoComplete>;
+}
 `}
 />
 
 <Playground
 	title="定制无结果"
 	desc="你也可以用文字或任何组件替代默认的无搜索结果提示。"
-	scope={{ AutoComplete, useState }}
+	scope={{ AutoComplete }}
 	code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
-  const [options, setOptions] = useState()
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    setOptions(relatedOptions)
+  const searchHandler = (value) => {
+    if (!value) return []
+    return allOptions.filter(item => item.value.includes(value))
   }
   return (
-    <AutoComplete placeholder="在这里输入" width="100%" options={options} onSearch={searchHandler}>
+    <AutoComplete placeholder="在这里输入" width="100%" options={searchHandler}>
       <AutoComplete.Empty>
         <span>没有结果</span>
       </AutoComplete.Empty>
@@ -163,13 +142,13 @@ export const meta = {
 <Playground
 	title="定制选项"
 	desc="你可以详细定制每一个备选项，让 `自动完成` 组件表达更多的信息。"
-	scope={{ AutoComplete, useState, Text, Badge, Grid }}
+	scope={{ AutoComplete, Text, Badge, Grid }}
 	code={`
 () => {
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
       <Grid.Container style={{ padding: '10pt 0' }}>
-        <Grid xs={24}><Text span b size="1.2rem">最近的搜索结果</Text></Grid>
+        <Grid xs={24}><Text span b size="1.2rem">最近搜索结果</Text></Grid>
         <Grid.Container xs={24}>
           <Grid xs><Text span>{label}</Text></Grid>
           <Grid xs={4}><Badge type="success">推荐的</Badge></Grid>
@@ -178,22 +157,19 @@ export const meta = {
     </AutoComplete.Option>
   )
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
-  const [options, setOptions] = useState()
-  const searchHandler = (currentValue) => {
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
-    setOptions(customOptions)
+  const searchHandler = (value) => {
+    if (!value) return []
+    const relatedOptions = allOptions.filter(item => item.value.includes(value))
+    return relatedOptions.map(({ label, value }) => makeOption(label, value))
   }
   return (
     <AutoComplete placeholder="在这里输入"
       width="100%"
-      options={options}
-      onSearch={searchHandler} />
+      options={searchHandler} />
   )
 }
 `}
@@ -206,9 +182,9 @@ export const meta = {
 	code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
   return (
     <>
@@ -232,9 +208,9 @@ export const meta = {
 	code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
   return <AutoComplete placeholder="在这里输入" clearable options={options} />
 }
@@ -248,21 +224,60 @@ export const meta = {
 	code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: '伦敦', value: 'london' },
+    { label: '悉尼', value: 'sydney' },
+    { label: '上海', value: 'shanghai' },
   ]
-  const [options, setOptions] = React.useState()
   const searchHandler = (currentValue) => {
     const createOptions = [{
-      value: currentValue, label: 'Add "' + currentValue + '"'
+      value: currentValue, label: '新增 "' + currentValue + '"'
     }]
-    if (!currentValue) return setOptions([])
+    if (!currentValue) return []
     const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
     const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
-    setOptions(optionsWithCreatable)
+    return optionsWithCreatable;
   }
-  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
+  return <AutoComplete options={searchHandler} clearable disableFreeSolo placeholder="试试输入 mm" />
+}
+`}
+/>
+
+
+<Playground
+	title="展示错误"
+	scope={{ AutoComplete, useState }}
+	code={`
+() => {
+  const options = [
+    { value: 'a', label: 'One' },
+    { value: 'b', label: 'Two' },
+    { value: 'c', label: 'Three' }
+  ];
+	const [selected, setSelected] = useState(options[0]);
+	return <AutoComplete options={options} status='error' />;
+}
+`}
+/>
+
+<Playground
+	title="事件"
+	scope={{ AutoComplete, useState }}
+	code={`
+() => {
+  const options = [
+    { value: 'a', label: 'One' },
+    { value: 'b', label: 'Two' },
+    { value: 'c', label: 'Three' }
+  ]
+  const [selected, setSelected] = useState(options[0])
+	return <AutoComplete
+		options={options}
+		onChange={(selected) => {
+			if(selected){
+				setSelected(selected)
+				alert('当前选择值: ' + selected)
+			}
+		}} />;
 }
 `}
 />
@@ -270,44 +285,44 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
-| 属性                  | 描述                                                 | 类型                                             | 推荐值                                                  | 默认      |
-| --------------------- | ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
-| **options**           | 输入框的可选项                                       | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
-| **status**            | 输入框类型                                           | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**              | 输入框大小                                           | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **initialValue**      | 初始值                                               | `string`                                         | -                                                       | -         |
-| **value**             | 命令式的输入框的值                                   | `string`                                         | -                                                       | -         |
-| **width**             | 组件容器的宽度                                       | `string`                                         | -                                                       | -         |
-| **clearable**         | 是否显示清除按钮                                     | `boolean`                                        | -                                                       | `false`   |
-| **searching**         | 是否显示正在搜索中                                   | `boolean`                                        | -                                                       | `false`   |
-| **onChange**          | 输入框的值发生变化触发此事件                         | `(value: string) => void`                        | -                                                       | -         |
-| **onSearch**          | 搜索事件，当用户手动输入时触发                       | `(value: string) => void`                        | -                                                       | -         |
-| **onSelect**          | 当备选框被选中后触发的事件                           | `(value: string) => void`                        | -                                                       | -         |
-| **dropdownClassName** | 自定义下拉框的类名                                   | `string`                                         | -                                                       | -         |
-| **dropdownStyle**     | 自定义下拉框的样式                                   | `object`                                         | -                                                       | -         |
-| **disableMatchWidth** | 禁止 Option 跟随父元素的宽度                         | `boolean`                                        | -                                                       | `false`   |
-| **disableFreeSolo**   | 只允许通过 Select 事件更改值 (禁止 Input 输入随意值) | `boolean`                                        | -                                                       | `false`   |
-| ...                   | 原生属性                                             | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
+| 属性                  | 描述                                            | 类型                                                                                                       | 推荐值                                                   | 默认      |
+| --------------------- | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | --------- |
+| **options**           | 输入框的可选项                                   | [AutoCompleteOptions](#type-autocompleteoptions) 或 [AutoCompleteFunOptions](#type-autocompletefunoptions) | -                                                       | -         |
+| **status**            | 输入框类型                                      | `NormalTypes`                                                                                              | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size**              | 输入框大小                                      | `NormalSizes`                                                                                              | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
+| **initialValue**      | 初始值                                         | `string`                                                                                                   | -                                                       | -         |
+| **value**             | 命令式的输入框的值                               | `string`                                                                                                   | -                                                       | -         |
+| **width**             | 组件容器的宽度                                   | `string`                                                                                                   | -                                                       | -         |
+| **clearable**         | 是否显示清除按钮                                  | `boolean`                                                                                                  | -                                                       | `false`   |
+| **searching**         | 是否显示正在搜索中                                | `boolean`                                                                                                  | -                                                       | `false`   |
+| **onChange**          | 输入框的值发生变化触发此事件                        | `(value: string) => void`                                                                                  | -                                                       | -         |
+| **onSelect**          | 当备选框被选中后触发的事件                         | `(value: string) => void`                                                                                  | -                                                       | -         |
+| **dropdownClassName** | 自定义下拉框的类名                                | `string`                                                                                                   | -                                                       | -         |
+| **dropdownStyle**     | 自定义下拉框的样式                                | `object`                                                                                                   | -                                                       | -         |
+| **disableMatchWidth** | 禁止 Option 跟随父元素的宽度                       | `boolean`                                                                                                  | -                                                       | `false`   |
+| **disableFreeSolo**   | 只允许通过 Select 事件更改值 (禁止 Input 输入随意值) | `boolean`                                                                                                  | -                                                       | `false`   |
+| **minsearchinterval** | 两次搜索最小时间（单位:毫秒） | `number`            | -                                                                                                          | `200`                                                   |           |
+| ...                   | 原生属性                                         | `InputHTMLAttributes`                                                                                      | `'id', 'className', ...`                                | -         |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
 
-| 属性      | 描述                       | 类型             | 推荐值                   | 默认 |
-| --------- | -------------------------- | ---------------- | ------------------------ | ---- |
+| 属性       | 描述                   | 类型              | 推荐值                   | 默认  |
+| --------- | ---------------------- | ---------------- | ------------------------ | --- |
 | **value** | 用于鉴别多个备选项的唯一值 | `string`         | -                        | -    |
-| ...       | 原生属性                   | `HTMLAttributes` | `'id', 'className', ...` | -    |
+| ...       | 原生属性                | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>AutoComplete.Searching</Attributes.Title>
 
-| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
-| ---- | -------- | ---------------- | ------------------------ | ---- |
-| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
+| 属性 | 描述     | 类型             | 推荐值                    | 默认 |
+| ---- | ------- | --------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -   |
 
 <Attributes.Title>AutoComplete.Empty</Attributes.Title>
 
-| 属性   | 描述             | 类型             | 推荐值                   | 默认    |
-| ------ | ---------------- | ---------------- | ------------------------ | ------- |
-| hidden | 隐藏无结果提示框 | `boolean`        | -                        | `false` |
-| ...    | 原生属性         | `HTMLAttributes` | `'id', 'className', ...` | -       |
+| 属性    | 描述           | 类型              | 推荐值                    | 默认     |
+| ------ | -------------- | ---------------- | ------------------------ | ------- |
+| hidden | hide empty box | `boolean`        | -                        | `false` |
+| ...    | native props   | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>type AutoCompleteOptions</Attributes.Title>
 
@@ -316,6 +331,12 @@ Array<{
   label: string
   value: string
 } | AutoComplete.Item>
+```
+
+<Attributes.Title>type AutoCompleteFunOptions</Attributes.Title>
+
+```ts
+(value: string) => AutoCompleteOptions | Promise<AutoCompleteOptions>;
 ```
 
 </Attributes>
