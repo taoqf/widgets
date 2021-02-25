@@ -1,0 +1,77 @@
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Note, Code } from 'components';
+import { useState } from 'react';
+import { ControlledMenu, Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
+import '@szhsin/react-menu/dist/index.css';
+
+export const meta = {
+	title: 'Menu',
+	group: 'Data Display',
+};
+
+## Menu
+
+显示一段用于提示的额外文本信息。
+
+<Playground
+	title="Installation"
+	scope={{ Code }}
+	code={`
+()=>{
+const codes = \`
+yarn add @szhsin/react-menu
+\`
+  return <Code block>{codes}</Code>
+}
+`}
+/>
+
+<Playground
+	title="Import"
+	scope={{ Code }}
+	code={`
+()=>{
+const codes = \`
+import { Menu, MenuItem, MenuButton } from '@szhsin/react-menu';
+import '@szhsin/react-menu/dist/index.css';
+\`
+  return <Code block>{codes}</Code>
+}
+`}
+/>
+
+<Playground
+	title="basic"
+	scope={{ Menu, MenuItem, MenuButton }}
+	code={`
+<Menu menuButton={<MenuButton>Open menu</MenuButton>}>
+		<MenuItem>New File</MenuItem>
+		<MenuItem>Save</MenuItem>
+		<MenuItem>Close Window</MenuItem>
+</Menu>
+`}
+/>
+
+<Playground
+	title="content menu"
+	scope={{ ControlledMenu, MenuItem, useState }}
+	code={`
+()=>{
+const [isOpen, setOpen] = useState(false);
+const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
+return <div onContextMenu={(e) => {
+    e.preventDefault();
+    setAnchorPoint({ x: e.clientX, y: e.clientY });
+    setOpen(true);
+}}>
+    Right click to open context menu
+    <ControlledMenu anchorPoint={anchorPoint} isOpen={isOpen}
+        onClose={() => setOpen(false)}>
+        <MenuItem>Cut</MenuItem>
+        <MenuItem>Copy</MenuItem>
+        <MenuItem>Paste</MenuItem>
+    </ControlledMenu>
+</div>;
+}
+`}
+/>

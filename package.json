@@ -53,6 +53,7 @@
 		"@mapbox/rehype-prism": "^0.5.0",
 		"@mdx-js/loader": "^1.6.22",
 		"@next/mdx": "^10.0.7",
+		"@szhsin/react-menu": "^1.6.1",
 		"@testing-library/react-hooks": "^5.0.3",
 		"@types/enzyme": "^3.10.8",
 		"@types/jest": "^26.0.20",

@@ -1601,6 +1601,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@szhsin/react-menu@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.npm.taobao.org/@szhsin/react-menu/download/@szhsin/react-menu-1.6.1.tgz#a9e2c1abb85d9c76cf387e20858bf55c6d78d59d"
+  integrity sha1-qeLBq7hdnHbPOH4ghYv1XG141Z0=
+
 "@testing-library/react-hooks@^5.0.3":
   version "5.0.3"
   resolved "https://registry.npm.taobao.org/@testing-library/react-hooks/download/@testing-library/react-hooks-5.0.3.tgz#dd0d2048817b013b266d35ca45e3ea48a19fd87e"
