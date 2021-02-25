@@ -249,6 +249,7 @@ type AutoCompleteComponent<P = {}> = React.FC<P> & {
 	Item: typeof AutoCompleteItem;
 	Option: typeof AutoCompleteItem;
 	Empty: typeof AutoCompleteEmpty;
+	Searching: typeof AutoCompleteSearching;
 };
 
 type ComponentProps = Partial<typeof defaultProps> &
