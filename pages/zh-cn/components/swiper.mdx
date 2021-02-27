@@ -1,0 +1,63 @@
+import { Layout, Playground, Attributes } from 'lib/components';
+import { Note, Code } from 'components';
+import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
+
+export const meta = {
+	title: 'swiper',
+	group: 'General',
+	index: 10,
+};
+
+## 轮播
+
+<Playground
+	title="Installation"
+	scope={{ Code }}
+	code={`
+()=>{
+const codes = \`yarn add swiper
+\`
+  return <Code block>{codes}</Code>
+}
+`}
+/>
+
+<Playground
+	title="Import"
+	scope={{ Code }}
+	code={`
+()=>{
+const codes = \`
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
+\`
+  return <Code block>{codes}</Code>
+}
+`}
+/>
+
+<Playground
+	title="basic"
+	scope={{ Swiper, SwiperSlide }}
+	code={`
+()=>{
+return <Swiper
+	spaceBetween={50}
+	slidesPerView={2}
+	onSlideChange={() => console.log('slide change')}
+	onSwiper={(swiper) => console.log(swiper)}
+>
+	<SwiperSlide>Slide 1asdfas</SwiperSlide>
+	<SwiperSlide>Slide 2</SwiperSlide>
+	<SwiperSlide>Slide 3</SwiperSlide>
+	<SwiperSlide>Slide 4</SwiperSlide>
+	<SwiperSlide>Slide 5</SwiperSlide>
+	<SwiperSlide>Slide 6</SwiperSlide>
+</Swiper>
+}
+`}
+/>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
