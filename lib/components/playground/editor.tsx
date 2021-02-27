@@ -8,15 +8,16 @@ import ResetIcon from 'components/icons/reset';
 
 interface Props {
 	code: string;
+	onChange(value: string): unknown;
+	onReset(): unknown;
 }
 
-const Editor: React.FC<Props> = ({ code }) => {
+const Editor: React.FC<Props> = ({ code, onChange, onReset }) => {
 	const theme = useTheme();
 	const { copy } = useClipboard();
 	const { isChinese } = useConfigs();
 	const [visible, setVisible] = useState(false);
 	const [, setToast] = useToasts();
-	const [value, setValue] = useState(code);
 
 	const clickHandler = (event: React.MouseEvent) => {
 		event.stopPropagation();
@@ -27,15 +28,14 @@ const Editor: React.FC<Props> = ({ code }) => {
 	const copyHandler = (event: React.MouseEvent) => {
 		event.stopPropagation();
 		event.preventDefault();
-		copy(value);
+		copy(code);
 		setToast({ text: isChinese ? '代码已拷贝至剪切板。' : 'code copied.' });
 	};
 
 	function resetHandler(event: React.MouseEvent) {
 		event.stopPropagation();
 		event.preventDefault();
-		setValue(code);
-		setToast({ text: code });
+		onReset();
 	}
 
 	return (
@@ -80,8 +80,8 @@ const Editor: React.FC<Props> = ({ code }) => {
 					</Row>
 				</summary>
 				<div className="area">
-					<LiveEditor code={value} onChange={(val) => {
-						setValue(val);
+					<LiveEditor onChange={(val) => {
+						onChange(val);
 					}} />
 				</div>
 			</details>

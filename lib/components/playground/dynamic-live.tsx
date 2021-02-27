@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LivePreview, LiveProvider, LiveError } from 'react-live';
 import { useTheme } from 'components';
 import makeCodeTheme from './code-theme';
@@ -14,13 +14,22 @@ export interface Props {
 const DynamicLive: React.FC<Props> = ({ code, scope }) => {
 	const theme = useTheme();
 	const codeTheme = makeCodeTheme(theme);
+	const [value, setvalue] = useState(code);
 	return (
-		<LiveProvider code={code} scope={scope} theme={codeTheme}>
+		<LiveProvider code={value} scope={scope} theme={codeTheme}>
 			<div className="wrapper">
 				<LivePreview />
 				<LiveError />
 			</div>
-			<Editor code={code} />
+			<Editor
+				code={value}
+				onChange={(val) => {
+					setvalue(val);
+				}}
+				onReset={() => {
+					setvalue(code);
+				}}
+			/>
 			<style jsx>{`
 				.wrapper {
 					width: 100%;
