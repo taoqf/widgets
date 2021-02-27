@@ -2,6 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components';
 import { Note, Code } from 'components';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Swiper as Core, EffectCoverflow, EffectCube, EffectFade, EffectFlip, Keyboard } from 'swiper';
 import 'swiper/swiper.min.css';
 
 export const meta = {
@@ -40,15 +41,102 @@ import 'swiper/swiper.min.css';
 
 <Playground
 	title="basic"
-	scope={{ Swiper, SwiperSlide }}
+	scope={{ Swiper, SwiperSlide, Autoplay, Core, EffectCoverflow, EffectCube, EffectFade, EffectFlip, Keyboard }}
 	code={`
 ()=>{
 return <Swiper
-	autoplay
 	spaceBetween={50}
 	slidesPerView={2}
 	onSlideChange={() => console.log('slide change')}
 	onSwiper={(swiper) => console.log(swiper)}
+	effect='cube'
+>
+	<SwiperSlide>Slide 1</SwiperSlide>
+	<SwiperSlide>Slide 2</SwiperSlide>
+	<SwiperSlide>Slide 3</SwiperSlide>
+	<SwiperSlide>Slide 4</SwiperSlide>
+	<SwiperSlide>Slide 5</SwiperSlide>
+	<SwiperSlide>Slide 6</SwiperSlide>
+</Swiper>
+}
+`}
+/>
+
+<Playground
+	title="autoplay"
+	scope={{ Swiper, SwiperSlide, Autoplay, Core }}
+	code={`
+()=>{
+Core.use([Autoplay]);
+return <Swiper
+	spaceBetween={50}
+	slidesPerView={2}
+	// autoplay={true}
+	autoplay={{
+		delay: 3000,
+		waitForTransition: false,
+		reverseDirection: false,
+		stopOnLastSlide: false,
+		disableOnInteraction: true
+	}}
+	onSlideChange={() => console.log('slide change')}
+	onSwiper={(swiper) => console.log(swiper)}
+>
+	<SwiperSlide>Slide 1</SwiperSlide>
+	<SwiperSlide>Slide 2</SwiperSlide>
+	<SwiperSlide>Slide 3</SwiperSlide>
+	<SwiperSlide>Slide 4</SwiperSlide>
+	<SwiperSlide>Slide 5</SwiperSlide>
+	<SwiperSlide>Slide 6</SwiperSlide>
+</Swiper>
+}
+`}
+/>
+
+<Playground
+	title="keyboard"
+	scope={{ Swiper, SwiperSlide, Autoplay, Core, Keyboard }}
+	code={`
+()=>{
+Core.use([Autoplay, Keyboard]);
+return <Swiper
+	autoplay
+	keyboard={{
+		enabled: true,
+		onlyInViewport: true,
+		pageUpDown: true
+	}}
+	spaceBetween={50}
+	slidesPerView={2}
+	onSlideChange={() => console.log('slide change')}
+	onSwiper={(swiper) => console.log(swiper)}
+	effect='cube'
+>
+	<SwiperSlide>Slide 1</SwiperSlide>
+	<SwiperSlide>Slide 2</SwiperSlide>
+	<SwiperSlide>Slide 3</SwiperSlide>
+	<SwiperSlide>Slide 4</SwiperSlide>
+	<SwiperSlide>Slide 5</SwiperSlide>
+	<SwiperSlide>Slide 6</SwiperSlide>
+</Swiper>
+}
+`}
+/>
+
+<Playground
+	title="effect"
+	scope={{ Swiper, SwiperSlide, Autoplay, Core, EffectFlip, Keyboard }}
+	code={`
+()=>{
+Core.use([Autoplay, Keyboard, EffectFlip]);
+return <Swiper
+	autoplay
+	keyboard
+	spaceBetween={50}
+	slidesPerView={2}
+	onSlideChange={() => console.log('slide change')}
+	onSwiper={(swiper) => console.log(swiper)}
+	effect='flip'
 >
 	<SwiperSlide>Slide 1</SwiperSlide>
 	<SwiperSlide>Slide 2</SwiperSlide>
