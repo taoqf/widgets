@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components';
 import { Note, Code } from 'components';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Swiper as Core, EffectCoverflow, EffectCube, EffectFade, EffectFlip, Keyboard } from 'swiper';
+import SwiperCore, { Autoplay, EffectCoverflow, EffectCube, EffectFade, EffectFlip, Keyboard } from 'swiper/core';
 import 'swiper/swiper.min.css';
 
 export const meta = {
@@ -11,7 +11,7 @@ export const meta = {
 	index: 10,
 };
 
-## 轮播
+## Swiper
 
 <Playground
 	title="Installation"
@@ -32,6 +32,7 @@ const codes = \`yarn add swiper
 ()=>{
 const codes = \`
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Autoplay, EffectCoverflow, EffectCube, EffectFade, EffectFlip, Keyboard } from 'swiper/core';
 import 'swiper/swiper.min.css';
 \`
   return <Code block>{codes}</Code>
@@ -41,7 +42,7 @@ import 'swiper/swiper.min.css';
 
 <Playground
 	title="basic"
-	scope={{ Swiper, SwiperSlide, Autoplay, Core, EffectCoverflow, EffectCube, EffectFade, EffectFlip, Keyboard }}
+	scope={{ Swiper, SwiperSlide }}
 	code={`
 ()=>{
 return <Swiper
@@ -64,10 +65,10 @@ return <Swiper
 
 <Playground
 	title="autoplay"
-	scope={{ Swiper, SwiperSlide, Autoplay, Core }}
+	scope={{ Swiper, SwiperSlide, Autoplay, SwiperCore }}
 	code={`
 ()=>{
-Core.use([Autoplay]);
+SwiperCore.use([Autoplay]);
 return <Swiper
 	spaceBetween={50}
 	slidesPerView={2}
@@ -95,10 +96,10 @@ return <Swiper
 
 <Playground
 	title="keyboard"
-	scope={{ Swiper, SwiperSlide, Autoplay, Core, Keyboard }}
+	scope={{ Swiper, SwiperSlide, Autoplay, SwiperCore, Keyboard }}
 	code={`
 ()=>{
-Core.use([Autoplay, Keyboard]);
+SwiperCore.use([Autoplay, Keyboard]);
 return <Swiper
 	autoplay
 	keyboard={{
@@ -125,10 +126,10 @@ return <Swiper
 
 <Playground
 	title="effect"
-	scope={{ Swiper, SwiperSlide, Autoplay, Core, EffectFlip, Keyboard }}
+	scope={{ Swiper, SwiperSlide, Autoplay, SwiperCore, EffectFlip, Keyboard }}
 	code={`
 ()=>{
-Core.use([Autoplay, Keyboard, EffectFlip]);
+SwiperCore.use([Autoplay, Keyboard, EffectCoverflow]);
 return <Swiper
 	autoplay
 	keyboard
