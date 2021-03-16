@@ -7,7 +7,7 @@ export default function Home() {
 				<Text h2>React Application with MMStudio widgets</Text>
 			</Page.Header>
 			<Text>
-				Hello, I am using <Text b>Gesit UI</Text> !
+				Hello, I am using <Text b>MMStudio widgets</Text> !
 			</Text>
 		</Page>
 	);
