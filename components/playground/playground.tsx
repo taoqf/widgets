@@ -1,9 +1,9 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { useTheme, Loading } from 'components';
-import withDefaults from 'components/utils/with-defaults';
-import { useConfigs } from 'lib/config-context';
+import withDefaults from '../utils/with-defaults';
 import Title from './title';
+import useTheme from '../use-theme';
+import Loading from '../loading';
 
 const DynamicLive = dynamic(() => import('./dynamic-live'), {
 	ssr: false,
@@ -34,9 +34,8 @@ export type PlaygroundProps = Props & typeof defaultProps;
 const Playground: React.FC<PlaygroundProps> = React.memo(
 	({ title: inputTitle, code: inputCode, desc, scope }) => {
 		const theme = useTheme();
-		const { isChinese } = useConfigs();
 		const code = inputCode.trim();
-		const title = inputTitle || (isChinese ? '基础的' : 'Default');
+		const title = inputTitle || ('Default');
 
 		return (
 			<>

@@ -1,6 +1,5 @@
 import React from 'react';
-import VirtualAnchor from 'lib/components/anchor';
-import withDefaults from 'components/utils/with-defaults';
+import withDefaults from '../utils/with-defaults';
 
 interface Props {
 	title: React.ReactNode | string;
@@ -28,7 +27,7 @@ const Title: React.FC<TitleProps> = React.memo(({ title, desc }) => {
 	return (
 		<>
 			<h3>
-				<VirtualAnchor>{title}</VirtualAnchor>
+				{title}
 			</h3>
 			{desc && isStringDesc && (
 				<p dangerouslySetInnerHTML={{ __html: replaceCode(desc) }} />

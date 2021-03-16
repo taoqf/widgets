@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { LiveEditor } from 'react-live';
-import { useConfigs } from 'lib/config-context';
-import { useTheme, useToasts, Row, Col, useClipboard, Spacer } from 'components';
-import CopyIcon from 'components/icons/copy';
-import RightIcon from 'components/icons/chevronRight';
-import ResetIcon from 'components/icons/reset';
+import CopyIcon from '../icons/copy';
+import RightIcon from '../icons/chevronRight';
+import ResetIcon from '../icons/reset';
+import useTheme from '../use-theme';
+import useToasts from '../use-toasts';
+import Row from '../row';
+import Col from '../col';
+import useClipboard from '../use-clipboard';
+import Spacer from '../spacer';
 
 interface Props {
 	code: string;
@@ -15,7 +19,6 @@ interface Props {
 const Editor: React.FC<Props> = ({ code, onChange, onReset }) => {
 	const theme = useTheme();
 	const { copy } = useClipboard();
-	const { isChinese } = useConfigs();
 	const [visible, setVisible] = useState(false);
 	const [, setToast] = useToasts();
 
@@ -29,7 +32,7 @@ const Editor: React.FC<Props> = ({ code, onChange, onReset }) => {
 		event.stopPropagation();
 		event.preventDefault();
 		copy(code);
-		setToast({ text: isChinese ? '代码已拷贝至剪切板。' : 'code copied.' });
+		setToast({ text: 'Code copied.' });
 	};
 
 	function resetHandler(event: React.MouseEvent) {
@@ -50,7 +53,7 @@ const Editor: React.FC<Props> = ({ code, onChange, onReset }) => {
 							<span className="arrow">
 								<RightIcon size={16} />
 							</span>
-							<span>{isChinese ? '编辑代码' : 'Code Editor'}</span>
+							<span>{'Code Editor'}</span>
 						</Col>
 						<Col className="action">
 							{visible && (
@@ -59,7 +62,7 @@ const Editor: React.FC<Props> = ({ code, onChange, onReset }) => {
 										<span
 											className="reset"
 											onClick={resetHandler}
-											title={isChinese ? '还原' : 'Reset'}>
+											title={'Reset'}>
 											<ResetIcon size={20} />
 										</span>
 									</Col>
@@ -70,7 +73,7 @@ const Editor: React.FC<Props> = ({ code, onChange, onReset }) => {
 										<span
 											className="copy"
 											onClick={copyHandler}
-											title={isChinese ? '拷贝代码' : 'Copy Code'}>
+											title={'Copy Code'}>
 											<CopyIcon size={20} />
 										</span>
 									</Col>

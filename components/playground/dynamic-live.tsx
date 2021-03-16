@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { LivePreview, LiveProvider, LiveError } from 'react-live';
-import { useTheme } from 'components';
 import makeCodeTheme from './code-theme';
 import Editor from './editor';
+import useTheme from '../use-theme';
 
 export interface Props {
 	code: string;

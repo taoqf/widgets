@@ -1,5 +1,5 @@
 import { PrismTheme } from 'prism-react-renderer';
-import { UIThemes } from 'components/themes/presets';
+import { UIThemes } from '../themes/presets';
 
 const makeCodeTheme = (theme: UIThemes): PrismTheme => ({
 	plain: {

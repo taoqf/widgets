@@ -4,7 +4,7 @@ import { LiveEditor, LiveProvider } from 'react-live';
 import { useConfigs } from 'lib/config-context';
 import { CUSTOM_THEME_TYPE } from 'lib/constants';
 import CopyIcon from 'components/snippet/snippet-icon';
-import makeCodeTheme from 'lib/components/playground/code-theme';
+import makeCodeTheme from 'components/playground/code-theme';
 import {
 	Text,
 	Spacer,
@@ -82,10 +82,10 @@ const CustomizationCodes: React.FC<unknown> = () => {
 					这里是你所有的变更，点击 <Code>copy</Code> 按钮即可使用在你自己的项目中。
 				</Text>
 			) : (
-					<Text>
-						This is all your changes, click <Code>copy</Code> to use it in your own project.
-					</Text>
-				)}
+				<Text>
+					This is all your changes, click <Code>copy</Code> to use it in your own project.
+				</Text>
+			)}
 			<Spacer y={2} />
 			<div className="codes">
 				<div className="copy" onClick={copyCode}>
